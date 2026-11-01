@@ -1,0 +1,80 @@
+<!--
+  Name: Karan
+  Roll Number: [Roll No: To be filled]
+  Assignment: Assignment 15 - Responsive Pages with Media Queries (Task 1)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile First Responsive Cards</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            padding: 2rem 1rem;
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #0f172a;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.75rem;
+        }
+        /* Mobile-first base styles: cards stack vertically */
+        .cards {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            padding: 1.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        .card h2 {
+            margin-top: 0;
+            color: #2563eb;
+            font-size: 1.35rem;
+        }
+        .card p {
+            margin: 0;
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        /* Tablet & desktop screens: 600px and up */
+        @media (min-width: 600px) {
+            .cards {
+                flex-direction: row;
+            }
+            .card {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Responsive Cards (Mobile-First)</h1>
+        <div class="cards">
+            <div class="card">
+                <h2>Mobile Strategy</h2>
+                <p>Mobile-first development prioritizes compact screens, optimizing performance and essential content for handheld devices.</p>
+            </div>
+            <div class="card">
+                <h2>Desktop Enhancement</h2>
+                <p>At screens 600px and wider, media queries trigger horizontal card arrangements to utilize available display width.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!--
+  Name: Karan
+  Roll Number: [Roll No: To be filled]
+  Assignment: Assignment 15 - Responsive Pages with Media Queries (Task 3)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Typography</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            font-size: 1rem;
+            padding: 2.5rem 1.5rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            padding: 2.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        h1 {
+            font-size: 1.5rem;
+            color: #0f172a;
+            margin-top: 0;
+            transition: font-size 0.2s ease;
+        }
+        p {
+            color: #475569;
+            margin-bottom: 0;
+        }
+
+        /* Responsive typography query: 600px and up */
+        @media (min-width: 600px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Responsive Typography with REM Units</h1>
+        <p>This layout sets the body font size to 1rem and initial heading to 1.5rem. When screen width reaches 600px or wider, a media query dynamically expands the h1 size to 2.5rem for enhanced visual hierarchy on large displays.</p>
+    </div>
+</body>
+</html>

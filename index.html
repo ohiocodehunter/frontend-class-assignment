@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invertis University | HTML & CSS Lab Portal (BCS554)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #090d16;
+            --bg-secondary: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.7);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --accent-blue: #38bdf8;
+            --accent-purple: #818cf8;
+            --accent-green: #34d399;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --font-main: 'Plus Jakarta Sans', system-ui, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: var(--font-main);
+            min-height: 100vh;
+            line-height: 1.6;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(129, 140, 248, 0.12) 0px, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        header {
+            padding: 3.5rem 2rem 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            color: var(--accent-blue);
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        h1 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, #ffffff 40%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.75rem;
+        }
+
+        .subtitle {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 650px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .student-info-bar {
+            display: inline-flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(12px);
+            padding: 0.85rem 1.75rem;
+            border-radius: 12px;
+            font-size: 0.95rem;
+        }
+
+        .student-info-bar span {
+            color: var(--text-secondary);
+        }
+
+        .student-info-bar strong {
+            color: #ffffff;
+            margin-left: 0.35rem;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem 5rem;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.75rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(56, 189, 248, 0.3);
+            box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.85rem;
+        }
+
+        .lab-number {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent-blue);
+            background: rgba(56, 189, 248, 0.1);
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+        }
+
+        .card h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.6rem;
+        }
+
+        .card-aim {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+            flex-grow: 1;
+        }
+
+        .tasks-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1.25rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .task-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 0.55rem 0.85rem;
+            border-radius: 8px;
+            font-size: 0.88rem;
+        }
+
+        .task-name {
+            font-family: var(--font-mono);
+            color: #e2e8f0;
+        }
+
+        .task-link {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.82rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            transition: color 0.15s;
+        }
+
+        .task-link:hover {
+            color: #7dd3fc;
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            background: var(--bg-secondary);
+        }
+
+        @media (max-width: 640px) {
+            h1 { font-size: 2rem; }
+            .grid-cards { grid-template-columns: 1fr; }
+            .student-info-bar { flex-direction: column; gap: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="badge-pill">Invertis University, Bareilly &bull; B.Tech CSE</div>
+        <h1>HTML & CSS Development Lab</h1>
+        <p class="subtitle">Course Code: BCS554 &bull; Comprehensive Lab Assignments & Project Submissions</p>
+        
+        <div class="student-info-bar">
+            <div><span>Student Name:</span> <strong>Karan</strong></div>
+            <div><span>Roll Number:</span> <strong>[Roll No: To be filled]</strong></div>
+            <div><span>Total Assignments:</span> <strong>15 of 15 Completed</strong></div>
+        </div>
+    </header>
+
+    <main>
+        <div class="grid-cards">
+
+            <!-- Assignment 1 -->
+            <article class="card">
+                <div class="card-header">
+                    <span class="lab-number">Assignment 01</span>
+                </div>
+                <h2>Starting a Git Repository</h2>
+                <p class="card-aim">Start a Git repository for your lab folder and save your work with commits.</p>
+                <ul class="tasks-list">
+                    <li class="task-item">
+                        <span class="task-name">terminal-output.txt</span>
+                        <a class="task-link" href="assignment-01/terminal-output.txt" target="_blank">View Output &rarr;</a>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-name">html-lab/index.html</span>
+                        <a class="task-link" href="assignment-01/html-lab/index.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                </ul>
+            </article>
+
+            <!-- Assignment 2 -->
+            <article class="card">
+                <div class="card-header">
+                    <span class="lab-number">Assignment 02</span>
+                </div>
+                <h2>Pushing and Cloning a Repository</h2>
+                <p class="card-aim">Send commits to a bare remote repository and make a cloned local copy.</p>
+                <ul class="tasks-list">
+                    <li class="task-item">
+                        <span class="task-name">terminal-output.txt</span>
+                        <a class="task-link" href="assignment-02/terminal-output.txt" target="_blank">View Output &rarr;</a>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-name">html-copy/index.html</span>
+                        <a class="task-link" href="assignment-02/html-copy/index.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                </ul>
+            </article>
+
+            <!-- Assignment 3 -->
+            <article class="card">
+                <div class="card-header">
+                    <span class="lab-number">Assignment 03</span>
+                </div>
+                <h2>Your First HTML Page</h2>
+                <p class="card-aim">Document structure, title, heading hierarchy, and inline formatting.</p>
+                <ul class="tasks-list">
+                    <li class="task-item">
+                        <span class="task-name">first.html</span>
+                        <a class="task-link" href="assignment-03/first.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-name">headings.html</span>
+                        <a class="task-link" href="assignment-03/headings.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-name">text-format.html</span>
+                        <a class="task-link" href="assignment-03/text-format.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                </ul>
+            </article>
+
+            <!-- Assignment 4 -->
+            <article class="card">
+                <div class="card-header">
+                    <span class="lab-number">Assignment 04</span>
+                </div>
+                <h2>Divs, Attributes & Small Fix</h2>
+                <p class="card-aim">Grouping layout blocks, custom data attributes, and debugging malformed HTML.</p>
+                <ul class="tasks-list">
+                    <li class="task-item">
+                        <span class="task-name">layout.html</span>
+                        <a class="task-link" href="assignment-04/layout.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-name">attributes.html</span>
+                        <a class="task-link" href="assignment-04/attributes.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-name">attendance-fixed.html</span>
+                        <a class="task-link" href="assignment-04/attendance-fixed.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                </ul>
+            </article>
+
+            <!-- Assignment 5 -->
+            <article class="card">
+                <div class="card-header">
+                    <span class="lab-number">Assignment 05</span>
+                </div>
+                <h2>Links and Images</h2>
+                <p class="card-aim">Hyperlinking multi-page documents and displaying accessible images.</p>
+                <ul class="tasks-list">
+                    <li class="task-item">
+                        <span class="task-name">home.html</span>
+                        <a class="task-link" href="assignment-05/home.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-name">portfolio.html</span>
+                        <a class="task-link" href="assignment-05/portfolio.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-name">portfolio-image.html</span>
+                        <a class="task-link" href="assignment-05/portfolio-image.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                </ul>
+            </article>
+
+            <!-- Assignment 6 -->
+            <article class="card">
+                <div class="card-header">
+                    <span class="lab-number">Assignment 06</span>
+                </div>
+                <h2>Types of HTML Lists</h2>
+                <p class="card-aim">Unordered bulleted lists, nested ordered lists, and description lists.</p>
+                <ul class="tasks-list">
+                    <li class="task-item">
+                        <span class="task-name">shopping-list.html</span>
+                        <a class="task-link" href="assignment-06/shopping-list.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-name">canteen-menu.html</span>
+                        <a class="task-link" href="assignment-06/canteen-menu.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-name">faq.html</span>
+                        <a class="task-link" href="assignment-06/faq.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                </ul>
+            </article>
+
+            <!-- Assignment 7 -->
+            <article class="card">
+                <div class="card-header">
+                    <span class="lab-number">Assignment 07</span>
+                </div>
+                <h2>About Me Page</h2>
+                <p class="card-aim">Semantic HTML5 tags: header, nav, main, section, and contact mailto footer.</p>
+                <ul class="tasks-list">
+                    <li class="task-item">
+                        <span class="task-name">about-me.html</span>
+                        <a class="task-link" href="assignment-07/about-me.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                </ul>
+            </article>
+
+            <!-- Assignment 8 -->
+            <article class="card">
+                <div class="card-header">
+                    <span class="lab-number">Assignment 08</span>
+                </div>
+                <h2>Sign-Up Forms and Choices</h2>
+                <p class="card-aim">Labelled form controls, radio groups, select dropdowns, and client validation.</p>
+                <ul class="tasks-list">
+                    <li class="task-item">
+                        <span class="task-name">signup.html</span>
+                        <a class="task-link" href="assignment-08/signup.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-name">choices.html</span>
+                        <a class="task-link" href="assignment-08/choices.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-name">signup-required.html</span>
+                        <a class="task-link" href="assignment-08/signup-required.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                </ul>
+            </article>
+
+            <!-- Assignment 9 -->
+            <article class="card">
+                <div class="card-header">
+                    <span class="lab-number">Assignment 09</span>
+                </div>
+                <h2>Tables with Headers & Footers</h2>
+                <p class="card-aim">Structured tables with thead, tbody, tfoot, captions, and accessibility scopes.</p>
+                <ul class="tasks-list">
+                    <li class="task-item">
+                        <span class="task-name">marks.html</span>
+                        <a class="task-link" href="assignment-09/marks.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-name">marks-average.html</span>
+                        <a class="task-link" href="assignment-09/marks-average.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-name">marks-accessible.html</span>
+                        <a class="task-link" href="assignment-09/marks-accessible.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                </ul>
+            </article>
+
+            <!-- Assignment 10 -->
+            <article class="card">
+                <div class="card-header">
+                    <span class="lab-number">Assignment 10</span>
+                </div>
+                <h2>CSS Fundamentals</h2>
+                <p class="card-aim">Inline, internal, and external stylesheets with element, class, and ID selectors.</p>
+                <ul class="tasks-list">
+                    <li class="task-item">
+                        <span class="task-name">inline-internal.html</span>
+                        <a class="task-link" href="assignment-10/inline-internal.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-name">style.css</span>
+                        <a class="task-link" href="assignment-10/style.css" target="_blank">View CSS &rarr;</a>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-name">linked.html</span>
+                        <a class="task-link" href="assignment-10/linked.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                </ul>
+            </article>
+
+            <!-- Assignment 11 -->
+            <article class="card">
+                <div class="card-header">
+                    <span class="lab-number">Assignment 11</span>
+                </div>
+                <h2>Units and CSS Variables</h2>
+                <p class="card-aim">Comparing px, %, rem units and defining design tokens with :root variables.</p>
+                <ul class="tasks-list">
+                    <li class="task-item">
+                        <span class="task-name">units.html</span>
+                        <a class="task-link" href="assignment-11/units.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-name">variables.html</span>
+                        <a class="task-link" href="assignment-11/variables.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-name">tokens.css</span>
+                        <a class="task-link" href="assignment-11/tokens.css" target="_blank">View CSS &rarr;</a>
+                    </li>
+                </ul>
+            </article>
+
+            <!-- Assignment 12 -->
+            <article class="card">
+                <div class="card-header">
+                    <span class="lab-number">Assignment 12</span>
+                </div>
+                <h2>Box Model, Cards & Scrolling</h2>
+                <p class="card-aim">content-box vs border-box, rounded card design, and overflow scroll containers.</p>
+                <ul class="tasks-list">
+                    <li class="task-item">
+                        <span class="task-name">box-model.html</span>
+                        <a class="task-link" href="assignment-12/box-model.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-name">card.html</span>
+                        <a class="task-link" href="assignment-12/card.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-name">scroll.html</span>
+                        <a class="task-link" href="assignment-12/scroll.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                </ul>
+            </article>
+
+            <!-- Assignment 13 -->
+            <article class="card">
+                <div class="card-header">
+                    <span class="lab-number">Assignment 13</span>
+                </div>
+                <h2>Flexbox Layouts</h2>
+                <p class="card-aim">Horizontal navigation bars, centered item alignments, and responsive flex-wrap.</p>
+                <ul class="tasks-list">
+                    <li class="task-item">
+                        <span class="task-name">nav-flex.html</span>
+                        <a class="task-link" href="assignment-13/nav-flex.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-name">centred-cards.html</span>
+                        <a class="task-link" href="assignment-13/centred-cards.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-name">wrapping-cards.html</span>
+                        <a class="task-link" href="assignment-13/wrapping-cards.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                </ul>
+            </article>
+
+            <!-- Assignment 14 -->
+            <article class="card">
+                <div class="card-header">
+                    <span class="lab-number">Assignment 14</span>
+                </div>
+                <h2>CSS Grid Layouts</h2>
+                <p class="card-aim">Fractional unit columns, auto-fill minmax responsive galleries, and named areas.</p>
+                <ul class="tasks-list">
+                    <li class="task-item">
+                        <span class="task-name">grid-first.html</span>
+                        <a class="task-link" href="assignment-14/grid-first.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-name">gallery.html</span>
+                        <a class="task-link" href="assignment-14/gallery.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-name">dashboard-areas.html</span>
+                        <a class="task-link" href="assignment-14/dashboard-areas.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                </ul>
+            </article>
+
+            <!-- Assignment 15 -->
+            <article class="card">
+                <div class="card-header">
+                    <span class="lab-number">Assignment 15</span>
+                </div>
+                <h2>Responsive Media Queries</h2>
+                <p class="card-aim">Mobile-first breakpoint design, fluid responsive images, and scalable rem typography.</p>
+                <ul class="tasks-list">
+                    <li class="task-item">
+                        <span class="task-name">mobile-first.html</span>
+                        <a class="task-link" href="assignment-15/mobile-first.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-name">responsive-image.html</span>
+                        <a class="task-link" href="assignment-15/responsive-image.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                    <li class="task-item">
+                        <span class="task-name">responsive-text.html</span>
+                        <a class="task-link" href="assignment-15/responsive-text.html" target="_blank">Preview &rarr;</a>
+                    </li>
+                </ul>
+            </article>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>Invertis University &bull; B.Tech Computer Science & Engineering (Third Year)</p>
+        <p style="margin-top: 0.5rem; color: #64748b;">HTML & CSS Development Lab (BCS554) &bull; Submitted by Karan [Roll No: To be filled]</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!--
+  Name: Karan
+  Roll Number: [Roll No: To be filled]
+  Assignment: Assignment 7 - About Me Page
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Karan</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #0f172a;
+            color: #ffffff;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.75rem;
+            letter-spacing: -0.025em;
+        }
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        nav a:hover {
+            color: #38bdf8;
+        }
+        main {
+            flex: 1;
+            max-width: 800px;
+            width: 100%;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
+        section#about {
+            background: #ffffff;
+            padding: 2.5rem;
+            border-radius: 0.75rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        section#about h2 {
+            color: #0f172a;
+            margin-top: 0;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+        section#about p {
+            color: #475569;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 0;
+        }
+        footer#contact {
+            background-color: #1e293b;
+            color: #94a3b8;
+            padding: 2rem;
+            text-align: center;
+            margin-top: auto;
+        }
+        footer#contact p {
+            margin: 0;
+            font-size: 1.05rem;
+        }
+        footer#contact a {
+            color: #38bdf8;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        footer#contact a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Karan</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>About me</h2>
+            <p>I am a third-year B.Tech Computer Science and Engineering student at Invertis University, Bareilly. I have a keen interest in full-stack web development, modern frontend user interfaces, and algorithmic problem-solving. Through this HTML & CSS lab, I aim to master clean, semantic, and responsive design systems.</p>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <p>Get in touch: <a href="mailto:karan@invertis.edu">karan@invertis.edu</a></p>
+    </footer>
+</body>
+</html>

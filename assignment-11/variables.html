@@ -1,0 +1,37 @@
+<!--
+  Name: Karan
+  Roll Number: [Roll No: To be filled]
+  Assignment: Assignment 11 - Units and CSS Variables (Task 2)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Custom Properties (Variables)</title>
+    <style>
+        :root {
+            --main-color: #1d3557;
+            --accent-color: #e63946;
+            --page-padding: 20px;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            color: var(--main-color);
+            padding: var(--page-padding);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: var(--accent-color);
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Variables Design System</h1>
+    <p>This paragraph text inherits the main color variable (--main-color: #1d3557) defined in :root. The page padding and heading accent color are dynamically applied via var().</p>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!--
+  Name: Karan
+  Roll Number: [Roll No: To be filled]
+  Assignment: Assignment 12 - Box Model, Cards and Scrolling (Task 3)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow Scroll Box</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            padding: 2.5rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .container {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        h2 {
+            margin-top: 0;
+            font-size: 1.4rem;
+            color: #0f172a;
+        }
+        .scroll-box {
+            height: 120px;
+            overflow: auto;
+            border: 2px solid #cbd5e1;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1rem;
+            background-color: #f8fafc;
+        }
+        .scroll-box p {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            background: #ffffff;
+            border-radius: 0.25rem;
+            border: 1px solid #e2e8f0;
+            color: #334155;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Scrollable Container</h2>
+        <div class="scroll-box">
+            <p>Line 1: Introduction to Web Design and CSS Layouts</p>
+            <p>Line 2: Understanding Box Model geometry and boundaries</p>
+            <p>Line 3: Managing content overflow with scrollbars</p>
+            <p>Line 4: Creating responsive mobile viewport rules</p>
+            <p>Line 5: Enhancing user accessibility across modern browsers</p>
+        </div>
+    </div>
+</body>
+</html>

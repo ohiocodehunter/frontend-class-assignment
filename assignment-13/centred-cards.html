@@ -1,0 +1,85 @@
+<!--
+  Name: Karan
+  Roll Number: [Roll No: To be filled]
+  Assignment: Assignment 13 - Flexbox Layouts (Task 2)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centred Flexbox Cards</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            margin: 0;
+            padding: 2rem;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        h2 {
+            text-align: center;
+            color: #0f172a;
+            margin-bottom: 2rem;
+        }
+        .row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            width: 100%;
+        }
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            padding: 2rem 2.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            min-width: 180px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #0f172a;
+            font-size: 1.4rem;
+        }
+        .card p {
+            margin: 0;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+        .card p::before {
+            content: "₹";
+            font-size: 1.25rem;
+            margin-right: 2px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Subscription Plans</h2>
+    <div class="row">
+        <div class="card">
+            <h3>Starter</h3>
+            <p>199</p>
+        </div>
+        <div class="card">
+            <h3>Standard</h3>
+            <p>349</p>
+        </div>
+        <div class="card">
+            <h3>Premium</h3>
+            <p>499</p>
+        </div>
+    </div>
+</body>
+</html>

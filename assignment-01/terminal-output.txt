@@ -1,0 +1,50 @@
+=== ASSIGNMENT 1 TERMINAL SESSION ===
+$ mkdir html-lab && cd html-lab
+$ git init -b main
+Initialized empty Git repository in /private/var/folders/15/g03jrnmx593chp02kyq3w1q80000gn/T/tmp.vJoA36cR7I/html-lab/.git/
+$ git config --local user.name "Karan"
+$ git config --local user.email "karan@invertis.edu"
+$ git config user.name
+Karan
+$ git config user.email
+karan@invertis.edu
+
+$ cat << "EOF" > index.html
+<!--
+  Name: Karan
+  Roll Number: [Roll No: To be filled]
+  Assignment: Assignment 1 - Starting a Git Repository
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Lab</title>
+</head>
+<body>
+    <h1>Welcome to HTML & CSS Development Lab</h1>
+</body>
+</html>
+EOF
+$ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+$ git add index.html
+$ git commit -m "Add home page"
+[main (root-commit) 142b14b] Add home page
+ 1 file changed, 15 insertions(+)
+ create mode 100644 index.html
+
+$ git commit -am "Add next meeting heading"
+[main 421ff47] Add next meeting heading
+ 1 file changed, 1 insertion(+)
+$ git log --oneline
+421ff47 Add next meeting heading
+142b14b Add home page

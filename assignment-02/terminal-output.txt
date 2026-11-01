@@ -1,0 +1,20 @@
+=== ASSIGNMENT 2 TERMINAL SESSION ===
+$ git init --bare ../html-remote
+Initialized empty Git repository in /private/var/folders/15/g03jrnmx593chp02kyq3w1q80000gn/T/tmp.vJoA36cR7I/html-remote/
+$ git remote add origin ../html-remote
+$ git remote -v
+origin	../html-remote (fetch)
+origin	../html-remote (push)
+
+$ git push origin main
+To ../html-remote
+ * [new branch]      main -> main
+
+$ cd ..
+$ git clone html-remote html-copy
+Cloning into 'html-copy'...
+done.
+$ cd html-copy
+$ git log --oneline
+421ff47 Add next meeting heading
+142b14b Add home page

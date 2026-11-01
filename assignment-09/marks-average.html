@@ -1,0 +1,93 @@
+<!--
+  Name: Karan
+  Roll Number: [Roll No: To be filled]
+  Assignment: Assignment 9 - Tables with Headers and Footers (Task 2)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marks of Class A - Average</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            padding: 2.5rem;
+            display: flex;
+            justify-content: center;
+        }
+        .table-container {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            max-width: 600px;
+            width: 100%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        caption {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+        th, td {
+            padding: 0.85rem 1.25rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        thead th {
+            background-color: #f1f5f9;
+            color: #334155;
+            font-weight: 600;
+        }
+        tfoot tr td {
+            background-color: #f8fafc;
+            font-weight: 700;
+            color: #0f172a;
+            border-top: 2px solid #cbd5e1;
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <table>
+            <caption>Marks of Class A</caption>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Maths</th>
+                    <th>Science</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Asha</td>
+                    <td>78</td>
+                    <td>85</td>
+                </tr>
+                <tr>
+                    <td>Rohan</td>
+                    <td>64</td>
+                    <td>70</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Class average</td>
+                    <td>71</td>
+                    <td>77.5</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</body>
+</html>

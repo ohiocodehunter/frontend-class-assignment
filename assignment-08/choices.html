@@ -1,0 +1,107 @@
+<!--
+  Name: Karan
+  Roll Number: [Roll No: To be filled]
+  Assignment: Assignment 8 - Sign-Up Forms and Choices (Task 2)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choices - Gender and Course</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: #f1f5f9;
+            color: #1e293b;
+            padding: 2.5rem 1rem;
+            display: flex;
+            justify-content: center;
+        }
+        .card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            padding: 2.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            max-width: 440px;
+        }
+        h2 {
+            margin-top: 0;
+            color: #0f172a;
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+        }
+        fieldset {
+            border: 1px solid #cbd5e1;
+            border-radius: 0.375rem;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+        legend {
+            font-weight: 600;
+            color: #334155;
+            padding: 0 0.5rem;
+        }
+        .radio-option {
+            display: inline-flex;
+            align-items: center;
+            margin-right: 1.5rem;
+            margin-top: 0.5rem;
+            cursor: pointer;
+        }
+        .radio-option input {
+            margin-right: 0.5rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        label.dropdown-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #334155;
+        }
+        select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 0.375rem;
+            font-size: 1rem;
+            background-color: white;
+            cursor: pointer;
+        }
+        select:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Student Enrollment Options</h2>
+        <form>
+            <fieldset>
+                <legend>Gender</legend>
+                <label class="radio-option">
+                    <input type="radio" name="gender" value="Female"> Female
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="gender" value="Male"> Male
+                </label>
+            </fieldset>
+
+            <div class="form-group">
+                <label for="courseSelect" class="dropdown-label">Select Course</label>
+                <select id="courseSelect" name="course">
+                    <option value="" disabled selected>-- Choose your course --</option>
+                    <option value="BCA">BCA</option>
+                    <option value="B.Tech">B.Tech</option>
+                </select>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+/*
+  Name: Karan
+  Roll Number: [Roll No: To be filled]
+  Assignment: Assignment 10 - CSS Fundamentals (Task 2)
+*/
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: #f8fafc;
+    padding: 2.5rem;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: navy;
+}
+
+.note {
+    font-style: italic;
+}
+
+#title {
+    text-decoration: underline;
+}
+
+p {
+    font-size: 18px;
+    color: grey;
+    line-height: 1.6;
+}

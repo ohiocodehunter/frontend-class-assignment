@@ -1,0 +1,102 @@
+<!--
+  Name: Karan
+  Roll Number: [Roll No: To be filled]
+  Assignment: Assignment 14 - CSS Grid Layouts (Task 3)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Grid Areas</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 1.5rem;
+            background-color: #f1f5f9;
+            color: #1e293b;
+            min-height: 90vh;
+            display: flex;
+            align-items: stretch;
+        }
+        .dashboard-container {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            grid-template-rows: auto 1fr auto;
+            grid-template-areas:
+                "header  header"
+                "sidebar main"
+                "footer  footer";
+            gap: 12px;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        header {
+            grid-area: header;
+            background-color: #0f172a;
+            color: #ffffff;
+            padding: 1.25rem 1.5rem;
+            border-radius: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+        aside {
+            grid-area: sidebar;
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+        }
+        aside ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0;
+            line-height: 2;
+            color: #475569;
+        }
+        main {
+            grid-area: main;
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 1.5rem 2rem;
+            border-radius: 0.5rem;
+            line-height: 1.6;
+        }
+        main h3 {
+            margin-top: 0;
+            color: #1e293b;
+        }
+        footer {
+            grid-area: footer;
+            background-color: #1e293b;
+            color: #94a3b8;
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>Portal Dashboard Header</header>
+        <aside>
+            Sidebar
+            <ul>
+                <li>&bull; Overview</li>
+                <li>&bull; Analytics</li>
+                <li>&bull; Reports</li>
+                <li>&bull; Settings</li>
+            </ul>
+        </aside>
+        <main>
+            <h3>Main Content Section</h3>
+            <p>This layout is implemented with CSS Grid <code>grid-template-areas</code>. The header and footer span both columns (200px and 1fr), while the sidebar occupies the left column and the main content fills the remainder.</p>
+        </main>
+        <footer>Dashboard Footer &copy; 2026 Invertis University</footer>
+    </div>
+</body>
+</html>

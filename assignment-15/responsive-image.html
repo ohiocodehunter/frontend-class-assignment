@@ -1,0 +1,61 @@
+<!--
+  Name: Karan
+  Roll Number: [Roll No: To be filled]
+  Assignment: Assignment 15 - Responsive Pages with Media Queries (Task 2)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            padding: 2.5rem 1rem;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+        h1 {
+            color: #0f172a;
+            margin-top: 0;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            border: 1px solid #e2e8f0;
+            display: block;
+            margin: 0 auto;
+        }
+        p {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-top: 1rem;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fluid Responsive Image</h1>
+        <img src="images/sample.jpg" alt="Study desk showing laptop and notebook">
+        <p>This image uses <code>max-width: 100%</code> and <code>height: auto</code>, ensuring it shrinks proportionally on narrow screens without overflowing.</p>
+    </div>
+</body>
+</html>

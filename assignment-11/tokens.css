@@ -1,0 +1,26 @@
+/*
+  Name: Karan
+  Roll Number: [Roll No: To be filled]
+  Assignment: Assignment 11 - Units and CSS Variables (Task 3: tokens.css)
+*/
+
+:root {
+    --primary-color: #1d3557;
+    --accent-color: #e63946;
+    --heading-size: 2rem;
+    --spacing-value: 16px;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: var(--primary-color);
+    padding: var(--spacing-value);
+    margin: 0;
+    line-height: 1.6;
+}
+
+h1 {
+    color: var(--accent-color);
+    font-size: var(--heading-size);
+    margin-top: 0;
+}
