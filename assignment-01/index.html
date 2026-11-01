@@ -7,10 +7,124 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>HTML Lab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 01 - Starting a Git Repository | HTML & CSS Lab</title>
+    <link rel="stylesheet" href="../assets/css/lab-theme.css">
 </head>
-<body>
-    <h1>Welcome to HTML & CSS Development Lab</h1>
-    <h2>Next Meeting: Friday at 10:00 AM</h2>
+<body class="lab-page">
+
+    <!-- Universal Navigation Bar -->
+    <nav class="lab-navbar">
+        <div class="lab-navbar-container">
+            <a href="../index.html" class="lab-nav-brand">
+                <span class="portal-badge">BCS554</span>
+                <span>HTML & CSS Lab Portal</span>
+            </a>
+            <ul class="lab-nav-links">
+                <li><a href="index.html" class="lab-nav-link active">Assignment 01 Hub</a></li>
+                <li><a href="html-lab/index.html" class="lab-nav-link">Task 2 & 3: html-lab/index.html</a></li>
+                <li><a href="terminal-output.txt" target="_blank" class="lab-nav-link">Terminal Output (.txt)</a></li>
+            </ul>
+            <div class="lab-nav-navigators">
+                <span class="nav-arrow-btn disabled">&larr; First Lab</span>
+                <a href="../assignment-02/index.html" class="nav-arrow-btn">Lab 02 &rarr;</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Student Ribbon -->
+    <div class="lab-ribbon">
+        <div class="lab-ribbon-container">
+            <div class="lab-breadcrumbs">
+                <a href="../index.html">Home</a> &rsaquo; <span>Assignment 01</span>
+            </div>
+            <div class="lab-student-tag">
+                <span>Student: <strong>Karan</strong></span>
+                <span>&bull;</span>
+                <span>Roll No: <strong>[Roll No: To be filled]</strong></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="lab-main-container">
+        <!-- Hero Card -->
+        <div class="assignment-hero-card">
+            <span class="assignment-hero-tag">Version Control System</span>
+            <h1>Assignment 1: Starting a Git Repository</h1>
+            <p>Aim: Start a Git repository for your lab folder, configure your local author identity, stage files, and track project history with commits.</p>
+            <div class="assignment-spec-row">
+                <div class="spec-item">Folder: <strong>html-lab</strong></div>
+                <div class="spec-item">Config: <strong>git config --local</strong></div>
+                <div class="spec-item">Commit 1: <strong>"Add home page"</strong></div>
+                <div class="spec-item">Commit 2: <strong>"Add next meeting heading"</strong></div>
+            </div>
+        </div>
+
+        <!-- Task Walkthrough & Terminal Output -->
+        <div class="demo-showcase-box">
+            <div class="demo-title-bar">
+                <h2>Terminal Session & Command Execution</h2>
+                <span class="demo-badge">Verified Shell Output</span>
+            </div>
+            <p>Below is the recorded terminal execution showing repository creation, local identity configuration, file creation, staging, and commit history tracking.</p>
+
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <span class="terminal-dot red"></span>
+                    <span class="terminal-dot yellow"></span>
+                    <span class="terminal-dot green"></span>
+                    <span class="terminal-title">zsh &mdash; html-lab git repository</span>
+                </div>
+                <div class="terminal-body"><span class="cmd">$ mkdir html-lab && cd html-lab</span>
+<span class="cmd">$ git init -b main</span>
+<span class="output">Initialized empty Git repository in /Users/ken/Codes of all Projects/frontend-class-assignment/assignment-01/html-lab/.git/</span>
+
+<span class="cmd">$ git config --local user.name "Karan"</span>
+<span class="cmd">$ git config --local user.email "karan@invertis.edu"</span>
+<span class="cmd">$ git config user.name</span>
+<span class="success">Karan</span>
+<span class="cmd">$ git config user.email</span>
+<span class="success">karan@invertis.edu</span>
+
+<span class="cmd">$ git status</span>
+<span class="output">On branch main
+No commits yet
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+	index.html</span>
+
+<span class="cmd">$ git add index.html</span>
+<span class="cmd">$ git commit -m "Add home page"</span>
+<span class="success">[main (root-commit) 142b14b] Add home page
+ 1 file changed, 25 insertions(+)
+ create mode 100644 index.html</span>
+
+<span class="cmd">$ git commit -am "Add next meeting heading"</span>
+<span class="success">[main 421ff47] Add next meeting heading
+ 1 file changed, 1 insertion(+)</span>
+
+<span class="cmd">$ git log --oneline</span>
+<span class="success">421ff47 Add next meeting heading</span>
+<span class="success">142b14b Add home page</span></div>
+            </div>
+
+            <div class="info-callout">
+                <strong>Key Takeaway:</strong> Setting <code>git config --local</code> isolates the identity to this specific lab repository without overriding global user settings. The <code>git log --oneline</code> command provides a compact view of the chronological commit chain.
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                <a href="html-lab/index.html" class="nav-arrow-btn" style="background: var(--primary); padding: 0.6rem 1.25rem; font-size: 0.9rem;">View html-lab/index.html &rarr;</a>
+                <a href="terminal-output.txt" target="_blank" class="nav-arrow-btn" style="color: var(--text-main); background: #f1f5f9; border-color: #cbd5e1; padding: 0.6rem 1.25rem; font-size: 0.9rem;">View Raw terminal-output.txt</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Universal Footer -->
+    <footer class="lab-footer">
+        <p>Invertis University, Bareilly &bull; B.Tech CSE Third Year &bull; HTML & CSS Development Lab (BCS554)</p>
+        <p style="margin-top: 0.5rem;"><a href="../index.html">&larr; Return to Central Lab Portal</a></p>
+    </footer>
+
 </body>
 </html>

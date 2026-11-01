@@ -1,62 +1,99 @@
 <!--
   Name: Karan
   Roll Number: [Roll No: To be filled]
-  Assignment: Assignment 6 - Types of HTML Lists (Task 2)
+  Assignment: Assignment 6 - Types of HTML Lists (Task 2: canteen-menu.html)
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canteen Menu</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
-            padding: 2.5rem;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        .card {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 0.75rem;
-            padding: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-        h1 {
-            color: #0f172a;
-            margin-top: 0;
-            font-size: 1.8rem;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 0.5rem;
-        }
-        ol {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #334155;
-            padding-left: 1.5rem;
-        }
-        ol ol {
-            margin-top: 0.5rem;
-            margin-bottom: 0.5rem;
-            color: #475569;
-        }
-    </style>
+    <title>Canteen Menu - Assignment 06</title>
+    <link rel="stylesheet" href="../assets/css/lab-theme.css">
 </head>
-<body>
-    <div class="card">
-        <h1>Canteen Menu</h1>
-        <ol>
-            <li>Samosa</li>
-            <li>Sandwich
-                <ol>
-                    <li>Cheese</li>
-                    <li>Vegetable</li>
-                </ol>
-            </li>
-        </ol>
+<body class="lab-page">
+
+    <!-- Universal Navigation Bar -->
+    <nav class="lab-navbar">
+        <div class="lab-navbar-container">
+            <a href="../index.html" class="lab-nav-brand">
+                <span class="portal-badge">BCS554</span>
+                <span>HTML & CSS Lab Portal</span>
+            </a>
+            <ul class="lab-nav-links">
+                <li><a href="shopping-list.html" class="lab-nav-link">Task 1: shopping-list.html</a></li>
+                <li><a href="canteen-menu.html" class="lab-nav-link active">Task 2: canteen-menu.html</a></li>
+                <li><a href="faq.html" class="lab-nav-link">Task 3: faq.html</a></li>
+            </ul>
+            <div class="lab-nav-navigators">
+                <a href="shopping-list.html" class="nav-arrow-btn">&larr; Task 1</a>
+                <a href="faq.html" class="nav-arrow-btn">Task 3 &rarr;</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Student Ribbon -->
+    <div class="lab-ribbon">
+        <div class="lab-ribbon-container">
+            <div class="lab-breadcrumbs">
+                <a href="../index.html">Home</a> &rsaquo; <span>Assignment 06</span> &rsaquo; <span>Task 2 (canteen-menu.html)</span>
+            </div>
+            <div class="lab-student-tag">
+                <span>Student: <strong>Karan</strong></span>
+                <span>&bull;</span>
+                <span>Roll No: <strong>[Roll No: To be filled]</strong></span>
+            </div>
+        </div>
     </div>
+
+    <!-- Main Content Area -->
+    <main class="lab-main-container">
+        <div class="assignment-hero-card">
+            <span class="assignment-hero-tag">Nested Ordered Lists</span>
+            <h1>Assignment 6 &bull; Task 2: Nested Ordered Lists</h1>
+            <p>Aim: Construct a multi-tier ordered list with a sub-list nested cleanly inside a parent list item.</p>
+            <div class="assignment-spec-row">
+                <div class="spec-item">File: <strong>canteen-menu.html</strong></div>
+                <div class="spec-item">Parent List: <strong>1. Samosa, 2. Sandwich</strong></div>
+                <div class="spec-item">Sub-list: <strong>1. Cheese, 2. Vegetable</strong></div>
+            </div>
+        </div>
+
+        <div class="demo-showcase-box">
+            <div class="demo-title-bar">
+                <h2>Canteen Menu Showcase</h2>
+                <span class="demo-badge">Rendered Output</span>
+            </div>
+
+            <!-- Required Heading and Nested Ordered List from Task 2 -->
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2.5rem; max-width: 500px; margin: 1.5rem auto; box-shadow: var(--shadow-sm);">
+                <h1 style="color: #0f172a; font-size: 2rem; font-weight: 800; margin-top: 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.75rem; margin-bottom: 1.5rem;">Canteen Menu</h1>
+                
+                <ol style="font-size: 1.15rem; color: #1e293b; line-height: 2; padding-left: 1.75rem; font-weight: 600;">
+                    <li>Samosa</li>
+                    <li>Sandwich
+                        <ol style="font-size: 1.05rem; color: #475569; line-height: 1.8; margin-top: 0.5rem; margin-bottom: 0.5rem; font-weight: 400;">
+                            <li>Cheese</li>
+                            <li>Vegetable</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="info-callout">
+                <strong>Correct Nesting Syntax Rule:</strong> In standard HTML5, the nested <code>&lt;ol&gt;</code> must be placed directly <em>inside</em> the parent <code>&lt;li&gt;Sandwich ... &lt;/li&gt;</code> tag before the parent tag closes, never as a sibling between two <code>&lt;li&gt;</code> elements.
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <a href="faq.html" class="nav-arrow-btn" style="background: var(--primary); padding: 0.6rem 1.25rem; font-size: 0.9rem;">Proceed to Task 3: faq.html &rarr;</a>
+                <a href="shopping-list.html" class="nav-arrow-btn" style="color: var(--text-main); background: #f1f5f9; border-color: #cbd5e1; padding: 0.6rem 1.25rem; font-size: 0.9rem;">&larr; Back to Task 1</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="lab-footer">
+        <p>Invertis University, Bareilly &bull; B.Tech CSE Third Year &bull; HTML & CSS Development Lab (BCS554)</p>
+    </footer>
+
 </body>
 </html>

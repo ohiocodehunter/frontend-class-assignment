@@ -1,46 +1,101 @@
 <!--
   Name: Karan
   Roll Number: [Roll No: To be filled]
-  Assignment: Assignment 3 - Your First HTML Page (Task 3)
+  Assignment: Assignment 3 - Your First HTML Page (Task 3: text-format.html)
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Formatting</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: #f8fafc;
-            color: #334155;
-            padding: 2rem;
-            max-width: 650px;
-            margin: 0 auto;
-            line-height: 1.7;
-        }
-        .card {
-            background: #ffffff;
-            padding: 2rem;
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            border: 1px solid #e2e8f0;
-        }
-        strong {
-            color: #0f172a;
-            font-weight: 700;
-        }
-        em {
-            color: #0369a1;
-            font-style: italic;
-        }
-    </style>
+    <title>Text Formatting - Assignment 03</title>
+    <link rel="stylesheet" href="../assets/css/lab-theme.css">
 </head>
-<body>
-    <div class="card">
-        <h2>Text Formatting Demonstration</h2>
-        <p>Web development requires attention to semantic markup.<br>Using the right elements improves accessibility and clarity.</p>
-        <p>It is <strong>essential</strong> to practice semantic markup because it provides <em>meaningful</em> context to user agents and screen readers.</p>
+<body class="lab-page">
+
+    <!-- Universal Navigation Bar -->
+    <nav class="lab-navbar">
+        <div class="lab-navbar-container">
+            <a href="../index.html" class="lab-nav-brand">
+                <span class="portal-badge">BCS554</span>
+                <span>HTML & CSS Lab Portal</span>
+            </a>
+            <ul class="lab-nav-links">
+                <li><a href="first.html" class="lab-nav-link">Task 1: first.html</a></li>
+                <li><a href="headings.html" class="lab-nav-link">Task 2: headings.html</a></li>
+                <li><a href="text-format.html" class="lab-nav-link active">Task 3: text-format.html</a></li>
+            </ul>
+            <div class="lab-nav-navigators">
+                <a href="headings.html" class="nav-arrow-btn">&larr; Task 2</a>
+                <a href="../assignment-04/layout.html" class="nav-arrow-btn">Lab 04 &rarr;</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Student Ribbon -->
+    <div class="lab-ribbon">
+        <div class="lab-ribbon-container">
+            <div class="lab-breadcrumbs">
+                <a href="../index.html">Home</a> &rsaquo; <span>Assignment 03</span> &rsaquo; <span>Task 3 (text-format.html)</span>
+            </div>
+            <div class="lab-student-tag">
+                <span>Student: <strong>Karan</strong></span>
+                <span>&bull;</span>
+                <span>Roll No: <strong>[Roll No: To be filled]</strong></span>
+            </div>
+        </div>
     </div>
+
+    <!-- Main Content Area -->
+    <main class="lab-main-container">
+        <div class="assignment-hero-card">
+            <span class="assignment-hero-tag">Text Elements</span>
+            <h1>Assignment 3 &bull; Task 3: Text Formatting</h1>
+            <p>Aim: Format inline text using semantic tags: strong importance, emphasized stress, and line breaks.</p>
+            <div class="assignment-spec-row">
+                <div class="spec-item">File: <strong>text-format.html</strong></div>
+                <div class="spec-item">Tags Used: <strong>&lt;strong&gt;, &lt;em&gt;, &lt;br&gt;</strong></div>
+            </div>
+        </div>
+
+        <div class="demo-showcase-box">
+            <div class="demo-title-bar">
+                <h2>Text Formatting Demonstration</h2>
+                <span class="demo-badge">Rendered Output</span>
+            </div>
+
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2.5rem; margin: 1.5rem 0; box-shadow: var(--shadow-sm); line-height: 1.8;">
+                <!-- Required Paragraph 1 with line break -->
+                <p style="color: #334155; font-size: 1.1rem; margin-bottom: 1.25rem;">
+                    Writing standard compliant markup is the bedrock of modern frontend engineering.<br>
+                    Dividing text across deliberate line breaks allows for distinct readability without creating an entirely new paragraph container.
+                </p>
+
+                <!-- Required Paragraph 2 with strong and em -->
+                <p style="color: #334155; font-size: 1.1rem; margin-top: 0;">
+                    It is <strong>essential</strong> to use semantic tags for accessibility because screen readers convey tone and urgency to users, ensuring the content is truly <em>meaningful</em>.
+                </p>
+            </div>
+
+            <div class="info-callout">
+                <strong>Semantic Distinction:</strong>
+                <ul style="margin: 0.5rem 0 0 1.25rem;">
+                    <li><code>&lt;strong&gt;</code> conveys serious importance or urgency (not merely visual boldness).</li>
+                    <li><code>&lt;em&gt;</code> alters sentence stress and pronunciation emphasis.</li>
+                    <li><code>&lt;br&gt;</code> produces a line break within text (e.g. poems, addresses, or stanza lines).</li>
+                </ul>
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <a href="../assignment-04/layout.html" class="nav-arrow-btn" style="background: var(--primary); padding: 0.6rem 1.25rem; font-size: 0.9rem;">Proceed to Assignment 04 &rarr;</a>
+                <a href="headings.html" class="nav-arrow-btn" style="color: var(--text-main); background: #f1f5f9; border-color: #cbd5e1; padding: 0.6rem 1.25rem; font-size: 0.9rem;">&larr; Back to Task 2</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="lab-footer">
+        <p>Invertis University, Bareilly &bull; B.Tech CSE Third Year &bull; HTML & CSS Development Lab (BCS554)</p>
+    </footer>
+
 </body>
 </html>

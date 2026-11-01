@@ -1,61 +1,124 @@
 <!--
   Name: Karan
   Roll Number: [Roll No: To be filled]
-  Assignment: Assignment 14 - CSS Grid Layouts (Task 1)
+  Assignment: Assignment 14 - CSS Grid Layouts (Task 1: grid-first.html)
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Grid - Equal Columns</title>
+    <title>CSS Grid Equal Columns - Assignment 14</title>
+    <link rel="stylesheet" href="../assets/css/lab-theme.css">
     <style>
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
-            padding: 2.5rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        h2 {
-            margin-top: 0;
-            color: #0f172a;
-            margin-bottom: 1.5rem;
-        }
-        .grid-container {
+        /* Required 3 Equal Columns (fr units) and 12px Gap from Task 1 */
+        .equal-grid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             gap: 12px;
+            margin: 1.5rem 0;
         }
-        .box {
-            background-color: #3b82f6;
+
+        .equal-grid .grid-box {
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
             color: #ffffff;
-            font-size: 1.75rem;
-            font-weight: 700;
-            height: 100px;
+            font-size: 2.25rem;
+            font-weight: 800;
+            height: 120px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s, background-color 0.2s;
+            border-radius: 10px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.25s ease;
         }
-        .box:hover {
+
+        .equal-grid .grid-box:hover {
             transform: scale(1.03);
-            background-color: #2563eb;
+            box-shadow: var(--shadow-md);
+            background: linear-gradient(135deg, #1d4ed8, #2563eb);
         }
     </style>
 </head>
-<body>
-    <h2>CSS Grid: 3 Equal Columns (1fr 1fr 1fr)</h2>
-    <div class="grid-container">
-        <div class="box">1</div>
-        <div class="box">2</div>
-        <div class="box">3</div>
-        <div class="box">4</div>
-        <div class="box">5</div>
-        <div class="box">6</div>
+<body class="lab-page">
+
+    <!-- Universal Navigation Bar -->
+    <nav class="lab-navbar">
+        <div class="lab-navbar-container">
+            <a href="../index.html" class="lab-nav-brand">
+                <span class="portal-badge">BCS554</span>
+                <span>HTML & CSS Lab Portal</span>
+            </a>
+            <ul class="lab-nav-links">
+                <li><a href="grid-first.html" class="lab-nav-link active">Task 1: grid-first.html</a></li>
+                <li><a href="gallery.html" class="lab-nav-link">Task 2: gallery.html</a></li>
+                <li><a href="dashboard-areas.html" class="lab-nav-link">Task 3: dashboard-areas.html</a></li>
+            </ul>
+            <div class="lab-nav-navigators">
+                <a href="../assignment-13/wrapping-cards.html" class="nav-arrow-btn">&larr; Lab 13</a>
+                <a href="../assignment-15/mobile-first.html" class="nav-arrow-btn">Lab 15 &rarr;</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Student Ribbon -->
+    <div class="lab-ribbon">
+        <div class="lab-ribbon-container">
+            <div class="lab-breadcrumbs">
+                <a href="../index.html">Home</a> &rsaquo; <span>Assignment 14</span> &rsaquo; <span>Task 1 (grid-first.html)</span>
+            </div>
+            <div class="lab-student-tag">
+                <span>Student: <strong>Karan</strong></span>
+                <span>&bull;</span>
+                <span>Roll No: <strong>[Roll No: To be filled]</strong></span>
+            </div>
+        </div>
     </div>
+
+    <!-- Main Content Area -->
+    <main class="lab-main-container">
+        <div class="assignment-hero-card">
+            <span class="assignment-hero-tag">2D Grid Layouts</span>
+            <h1>Assignment 14 &bull; Task 1: Fractional Unit Grid</h1>
+            <p>Aim: Construct a two-dimensional grid layout dividing space into three equal fractional units (1fr 1fr 1fr) with a 12px gap.</p>
+            <div class="assignment-spec-row">
+                <div class="spec-item">File: <strong>grid-first.html</strong></div>
+                <div class="spec-item">Columns: <strong>1fr 1fr 1fr</strong></div>
+                <div class="spec-item">Gap: <strong>12px</strong></div>
+                <div class="spec-item">Boxes: <strong>Numbers 1 to 6</strong></div>
+            </div>
+        </div>
+
+        <div class="demo-showcase-box">
+            <div class="demo-title-bar">
+                <h2>3 Equal Columns Grid Output</h2>
+                <span class="demo-badge">Rendered Output</span>
+            </div>
+
+            <!-- Required 6 Boxes in Grid of 3 Equal Columns with 12px Gap from Task 1 -->
+            <div class="equal-grid">
+                <div class="grid-box">1</div>
+                <div class="grid-box">2</div>
+                <div class="grid-box">3</div>
+                <div class="grid-box">4</div>
+                <div class="grid-box">5</div>
+                <div class="grid-box">6</div>
+            </div>
+
+            <div class="info-callout">
+                <strong>What is the <code>fr</code> Unit?</strong> The fractional unit (<code>fr</code>) represents a fraction of the available space in the grid container. A track definition of <code>1fr 1fr 1fr</code> divides available width into 3 mathematically identical tracks, subtracting the specified <code>gap</code> automatically.
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <a href="gallery.html" class="nav-arrow-btn" style="background: var(--primary); padding: 0.6rem 1.25rem; font-size: 0.9rem;">Proceed to Task 2: gallery.html &rarr;</a>
+                <a href="../index.html" class="nav-arrow-btn" style="color: var(--text-main); background: #f1f5f9; border-color: #cbd5e1; padding: 0.6rem 1.25rem; font-size: 0.9rem;">&larr; Back to Portal</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="lab-footer">
+        <p>Invertis University, Bareilly &bull; B.Tech CSE Third Year &bull; HTML & CSS Development Lab (BCS554)</p>
+    </footer>
+
 </body>
 </html>

@@ -1,63 +1,106 @@
 <!--
   Name: Karan
   Roll Number: [Roll No: To be filled]
-  Assignment: Assignment 6 - Types of HTML Lists (Task 3)
+  Assignment: Assignment 6 - Types of HTML Lists (Task 3: faq.html)
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frequently Asked Questions</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
-            padding: 2.5rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .card {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 0.75rem;
-            padding: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-        h1 {
-            color: #0f172a;
-            margin-top: 0;
-            font-size: 1.8rem;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 0.5rem;
-        }
-        dl {
-            margin: 1.5rem 0 0 0;
-        }
-        dt {
-            font-weight: 700;
-            color: #1e40af;
-            font-size: 1.1rem;
-            margin-top: 1rem;
-        }
-        dd {
-            margin-left: 0;
-            margin-top: 0.35rem;
-            color: #475569;
-            line-height: 1.6;
-        }
-    </style>
+    <title>Library FAQ - Assignment 06</title>
+    <link rel="stylesheet" href="../assets/css/lab-theme.css">
 </head>
-<body>
-    <div class="card">
-        <h1>Library FAQ</h1>
-        <dl>
-            <dt>How many books can I borrow?</dt>
-            <dd>Undergraduate students can borrow up to four books simultaneously for a duration of 14 days.</dd>
-            <dt>Is the library open on Sunday?</dt>
-            <dd>Yes, the library remains open on Sundays from 9:00 AM to 5:00 PM for reading room access.</dd>
-        </dl>
+<body class="lab-page">
+
+    <!-- Universal Navigation Bar -->
+    <nav class="lab-navbar">
+        <div class="lab-navbar-container">
+            <a href="../index.html" class="lab-nav-brand">
+                <span class="portal-badge">BCS554</span>
+                <span>HTML & CSS Lab Portal</span>
+            </a>
+            <ul class="lab-nav-links">
+                <li><a href="shopping-list.html" class="lab-nav-link">Task 1: shopping-list.html</a></li>
+                <li><a href="canteen-menu.html" class="lab-nav-link">Task 2: canteen-menu.html</a></li>
+                <li><a href="faq.html" class="lab-nav-link active">Task 3: faq.html</a></li>
+            </ul>
+            <div class="lab-nav-navigators">
+                <a href="canteen-menu.html" class="nav-arrow-btn">&larr; Task 2</a>
+                <a href="../assignment-07/about-me.html" class="nav-arrow-btn">Lab 07 &rarr;</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Student Ribbon -->
+    <div class="lab-ribbon">
+        <div class="lab-ribbon-container">
+            <div class="lab-breadcrumbs">
+                <a href="../index.html">Home</a> &rsaquo; <span>Assignment 06</span> &rsaquo; <span>Task 3 (faq.html)</span>
+            </div>
+            <div class="lab-student-tag">
+                <span>Student: <strong>Karan</strong></span>
+                <span>&bull;</span>
+                <span>Roll No: <strong>[Roll No: To be filled]</strong></span>
+            </div>
+        </div>
     </div>
+
+    <!-- Main Content Area -->
+    <main class="lab-main-container">
+        <div class="assignment-hero-card">
+            <span class="assignment-hero-tag">Description Lists</span>
+            <h1>Assignment 6 &bull; Task 3: Description Lists (&lt;dl&gt;)</h1>
+            <p>Aim: Implement a semantic question-and-answer FAQ list using term (&lt;dt&gt;) and description (&lt;dd&gt;) tags.</p>
+            <div class="assignment-spec-row">
+                <div class="spec-item">File: <strong>faq.html</strong></div>
+                <div class="spec-item">Tags: <strong>&lt;dl&gt;, &lt;dt&gt;, &lt;dd&gt;</strong></div>
+                <div class="spec-item">Q1: <strong>How many books can I borrow?</strong></div>
+                <div class="spec-item">Q2: <strong>Is the library open on Sunday?</strong></div>
+            </div>
+        </div>
+
+        <div class="demo-showcase-box">
+            <div class="demo-title-bar">
+                <h2>Library FAQ Showcase</h2>
+                <span class="demo-badge">Rendered Output</span>
+            </div>
+
+            <!-- Required Description List from Task 3 -->
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2.5rem; max-width: 650px; margin: 1.5rem auto; box-shadow: var(--shadow-sm);">
+                <h1 style="color: #0f172a; font-size: 2rem; font-weight: 800; margin-top: 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.75rem; margin-bottom: 1.5rem;">Central Library FAQ</h1>
+                
+                <dl style="margin: 0;">
+                    <div style="margin-bottom: 1.5rem; padding-bottom: 1.25rem; border-bottom: 1px dashed #e2e8f0;">
+                        <dt style="font-weight: 700; color: #1e40af; font-size: 1.2rem; margin-bottom: 0.4rem;">How many books can I borrow?</dt>
+                        <dd style="margin-left: 0; color: #475569; font-size: 1.05rem; line-height: 1.7;">
+                            Undergraduate B.Tech students are eligible to borrow up to 4 books simultaneously for a renewal period of 14 calendar days using their university smart card.
+                        </dd>
+                    </div>
+
+                    <div>
+                        <dt style="font-weight: 700; color: #1e40af; font-size: 1.2rem; margin-bottom: 0.4rem;">Is the library open on Sunday?</dt>
+                        <dd style="margin-left: 0; color: #475569; font-size: 1.05rem; line-height: 1.7;">
+                            Yes, the central reading room and digital library facilities remain open on Sundays and academic holidays from 9:00 AM to 5:00 PM for self-study.
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+
+            <div class="info-callout">
+                <strong>Why Description Lists Matter:</strong> Unlike ordered and unordered lists, a <code>&lt;dl&gt;</code> provides a key-value or term-definition association. Search engines and AI scrapers use this format for rich snippets and answer cards.
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <a href="../assignment-07/about-me.html" class="nav-arrow-btn" style="background: var(--primary); padding: 0.6rem 1.25rem; font-size: 0.9rem;">Proceed to Assignment 07 &rarr;</a>
+                <a href="canteen-menu.html" class="nav-arrow-btn" style="color: var(--text-main); background: #f1f5f9; border-color: #cbd5e1; padding: 0.6rem 1.25rem; font-size: 0.9rem;">&larr; Back to Task 2</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="lab-footer">
+        <p>Invertis University, Bareilly &bull; B.Tech CSE Third Year &bull; HTML & CSS Development Lab (BCS554)</p>
+    </footer>
+
 </body>
 </html>

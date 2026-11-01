@@ -1,30 +1,16 @@
 <!--
   Name: Karan
   Roll Number: [Roll No: To be filled]
-  Assignment: Assignment 11 - Units and CSS Variables (Task 1)
+  Assignment: Assignment 11 - Units and CSS Variables (Task 1: units.html)
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Units Demonstration</title>
+    <title>CSS Units - Assignment 11</title>
+    <link rel="stylesheet" href="../assets/css/lab-theme.css">
     <style>
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
-            padding: 2.5rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        .container {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 0.75rem;
-            padding: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
         .fixed-box {
             width: 200px;
             height: 40px;
@@ -33,9 +19,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 0.375rem;
+            border-radius: 6px;
+            font-weight: 600;
             margin-bottom: 1.5rem;
-            font-weight: 500;
+            box-shadow: var(--shadow-sm);
         }
         .percentage-box {
             width: 50%;
@@ -45,24 +32,107 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 0.375rem;
+            border-radius: 6px;
+            font-weight: 600;
             margin-bottom: 1.5rem;
-            font-weight: 500;
+            box-shadow: var(--shadow-sm);
         }
-        p {
+        .rem-text {
             font-size: 1.5rem;
-            color: #334155;
+            color: #1e293b;
+            line-height: 1.6;
             margin: 0;
-            line-height: 1.5;
+            font-weight: 500;
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h2>CSS Units (px, %, rem)</h2>
-        <div class="fixed-box">200px &times; 40px Box</div>
-        <div class="percentage-box">50% Width &times; 40px Box</div>
-        <p>This paragraph text is styled with a relative unit of 1.5rem.</p>
+<body class="lab-page">
+
+    <!-- Universal Navigation Bar -->
+    <nav class="lab-navbar">
+        <div class="lab-navbar-container">
+            <a href="../index.html" class="lab-nav-brand">
+                <span class="portal-badge">BCS554</span>
+                <span>HTML & CSS Lab Portal</span>
+            </a>
+            <ul class="lab-nav-links">
+                <li><a href="units.html" class="lab-nav-link active">Task 1: units.html</a></li>
+                <li><a href="variables.html" class="lab-nav-link">Task 2: variables.html</a></li>
+                <li><a href="tokens.css" target="_blank" class="lab-nav-link">Task 3: tokens.css</a></li>
+                <li><a href="tokens.html" class="lab-nav-link">tokens.html Demo</a></li>
+            </ul>
+            <div class="lab-nav-navigators">
+                <a href="../assignment-10/linked.html" class="nav-arrow-btn">&larr; Lab 10</a>
+                <a href="../assignment-12/box-model.html" class="nav-arrow-btn">Lab 12 &rarr;</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Student Ribbon -->
+    <div class="lab-ribbon">
+        <div class="lab-ribbon-container">
+            <div class="lab-breadcrumbs">
+                <a href="../index.html">Home</a> &rsaquo; <span>Assignment 11</span> &rsaquo; <span>Task 1 (units.html)</span>
+            </div>
+            <div class="lab-student-tag">
+                <span>Student: <strong>Karan</strong></span>
+                <span>&bull;</span>
+                <span>Roll No: <strong>[Roll No: To be filled]</strong></span>
+            </div>
+        </div>
     </div>
+
+    <!-- Main Content Area -->
+    <main class="lab-main-container">
+        <div class="assignment-hero-card">
+            <span class="assignment-hero-tag">CSS Measurement Units</span>
+            <h1>Assignment 11 &bull; Task 1: Absolute &amp; Relative Units</h1>
+            <p>Aim: Compare absolute pixel dimensions (px) with relative percentage (%) container scaling and root relative font sizing (rem).</p>
+            <div class="assignment-spec-row">
+                <div class="spec-item">File: <strong>units.html</strong></div>
+                <div class="spec-item">Box 1: <strong>width: 200px; height: 40px;</strong></div>
+                <div class="spec-item">Box 2: <strong>width: 50%; height: 40px;</strong></div>
+                <div class="spec-item">Text: <strong>font-size: 1.5rem;</strong></div>
+            </div>
+        </div>
+
+        <div class="demo-showcase-box">
+            <div class="demo-title-bar">
+                <h2>Rendered Units Comparison</h2>
+                <span class="demo-badge">Rendered Output</span>
+            </div>
+
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2.5rem; margin: 1.5rem 0; box-shadow: var(--shadow-sm);">
+                <!-- Required Box 1: 200px by 40px with background color -->
+                <div class="fixed-box">
+                    200px &times; 40px (Fixed)
+                </div>
+
+                <!-- Required Box 2: 50% width by 40px with background color -->
+                <div class="percentage-box">
+                    50% Width &times; 40px (Fluid)
+                </div>
+
+                <!-- Required Paragraph: font-size 1.5rem -->
+                <p class="rem-text">
+                    This paragraph text is rendered at exactly 1.5rem (24px based on a 16px root font size).
+                </p>
+            </div>
+
+            <div class="info-callout">
+                <strong>Why <code>rem</code> is Superior for Typography:</strong> Unlike <code>px</code>, which ignores user operating system accessibility settings, <code>rem</code> scales proportionally with the user's browser-level font size preferences, ensuring inclusive accessibility.
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <a href="variables.html" class="nav-arrow-btn" style="background: var(--primary); padding: 0.6rem 1.25rem; font-size: 0.9rem;">Proceed to Task 2: variables.html &rarr;</a>
+                <a href="../index.html" class="nav-arrow-btn" style="color: var(--text-main); background: #f1f5f9; border-color: #cbd5e1; padding: 0.6rem 1.25rem; font-size: 0.9rem;">&larr; Back to Portal</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="lab-footer">
+        <p>Invertis University, Bareilly &bull; B.Tech CSE Third Year &bull; HTML & CSS Development Lab (BCS554)</p>
+    </footer>
+
 </body>
 </html>

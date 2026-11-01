@@ -1,62 +1,107 @@
 <!--
   Name: Karan
   Roll Number: [Roll No: To be filled]
-  Assignment: Assignment 4 - Divs, Attributes and a Small Fix (Task 1)
+  Assignment: Assignment 4 - Divs, Attributes and a Small Fix (Task 1: layout.html)
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Div Layout</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: #f1f5f9;
-            margin: 0;
-            padding: 2rem;
-            color: #1e293b;
-        }
-        .container {
-            max-width: 700px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-        }
-        .header {
-            background-color: #1e293b;
-            color: #ffffff;
-            padding: 1.5rem 2rem;
-            border-radius: 0.5rem;
-            font-size: 1.25rem;
-            font-weight: 600;
-        }
-        .main {
-            background-color: #ffffff;
-            padding: 2rem;
-            border-radius: 0.5rem;
-            border: 1px solid #cbd5e1;
-            line-height: 1.6;
-        }
-        .footer {
-            background-color: #334155;
-            color: #e2e8f0;
-            padding: 1.25rem 2rem;
-            border-radius: 0.5rem;
-            text-align: center;
-            font-size: 0.95rem;
-        }
-    </style>
+    <title>Divs Layout - Assignment 04</title>
+    <link rel="stylesheet" href="../assets/css/lab-theme.css">
 </head>
-<body>
-    <div class="container">
-        <div class="header">Header Block: Welcome to Student Portal</div>
-        <div class="main">
-            <h3>Main Content Area</h3>
-            <p>This is the primary content block grouped using div elements. In HTML, div elements serve as generic containers to divide sections and apply consistent layout and styling rules.</p>
+<body class="lab-page">
+
+    <!-- Universal Navigation Bar -->
+    <nav class="lab-navbar">
+        <div class="lab-navbar-container">
+            <a href="../index.html" class="lab-nav-brand">
+                <span class="portal-badge">BCS554</span>
+                <span>HTML & CSS Lab Portal</span>
+            </a>
+            <ul class="lab-nav-links">
+                <li><a href="layout.html" class="lab-nav-link active">Task 1: layout.html</a></li>
+                <li><a href="attributes.html" class="lab-nav-link">Task 2: attributes.html</a></li>
+                <li><a href="attendance-fixed.html" class="lab-nav-link">Task 3: attendance-fixed.html</a></li>
+            </ul>
+            <div class="lab-nav-navigators">
+                <a href="../assignment-03/text-format.html" class="nav-arrow-btn">&larr; Lab 03</a>
+                <a href="../assignment-05/home.html" class="nav-arrow-btn">Lab 05 &rarr;</a>
+            </div>
         </div>
-        <div class="footer">Footer Block: &copy; 2026 Invertis University Lab Assignment</div>
+    </nav>
+
+    <!-- Student Ribbon -->
+    <div class="lab-ribbon">
+        <div class="lab-ribbon-container">
+            <div class="lab-breadcrumbs">
+                <a href="../index.html">Home</a> &rsaquo; <span>Assignment 04</span> &rsaquo; <span>Task 1 (layout.html)</span>
+            </div>
+            <div class="lab-student-tag">
+                <span>Student: <strong>Karan</strong></span>
+                <span>&bull;</span>
+                <span>Roll No: <strong>[Roll No: To be filled]</strong></span>
+            </div>
+        </div>
     </div>
+
+    <!-- Main Content Area -->
+    <main class="lab-main-container">
+        <div class="assignment-hero-card">
+            <span class="assignment-hero-tag">Document Layout Structure</span>
+            <h1>Assignment 4 &bull; Task 1: Divs Layout</h1>
+            <p>Aim: Group distinct parts of a page using div containers with specific structural classes (header, main, footer).</p>
+            <div class="assignment-spec-row">
+                <div class="spec-item">File: <strong>layout.html</strong></div>
+                <div class="spec-item">Div 1: <strong>class="header"</strong></div>
+                <div class="spec-item">Div 2: <strong>class="main"</strong></div>
+                <div class="spec-item">Div 3: <strong>class="footer"</strong></div>
+            </div>
+        </div>
+
+        <div class="demo-showcase-box">
+            <div class="demo-title-bar">
+                <h2>Live Layout Composition</h2>
+                <span class="demo-badge">Rendered Output</span>
+            </div>
+
+            <!-- Three Div Blocks Required by Task 1 -->
+            <div style="display: flex; flex-direction: column; gap: 1.25rem; margin: 1.5rem 0;">
+                <div class="header" style="background: #1e293b; color: #ffffff; padding: 1.5rem 2rem; border-radius: 8px; font-size: 1.25rem; font-weight: 700; display: flex; justify-content: space-between; align-items: center;">
+                    <span>Campus Academic Portal Header</span>
+                    <span style="font-size: 0.85rem; background: rgba(56, 189, 248, 0.2); color: #38bdf8; padding: 0.25rem 0.6rem; border-radius: 4px;">div.header</span>
+                </div>
+
+                <div class="main" style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 2rem; color: #334155; line-height: 1.7; box-shadow: var(--shadow-sm);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <h3 style="color: #0f172a; margin: 0; font-size: 1.4rem;">Main Content Container</h3>
+                        <span style="font-size: 0.85rem; background: #e0f2fe; color: #0369a1; padding: 0.25rem 0.6rem; border-radius: 4px; font-weight: 600;">div.main</span>
+                    </div>
+                    <p>
+                        This is the primary content block grouped using the <code>div</code> element. Before HTML5 introduced semantic elements like <code>&lt;header&gt;</code> and <code>&lt;main&gt;</code>, developers used classes on <code>div</code> tags to establish structural divisions.
+                    </p>
+                    <p style="margin-bottom: 0;">
+                        In modern applications, div containers remain essential for styling wrappers, CSS Grid/Flexbox parent containers, and JavaScript event target groupings.
+                    </p>
+                </div>
+
+                <div class="footer" style="background: #334155; color: #e2e8f0; padding: 1.25rem 2rem; border-radius: 8px; font-size: 0.95rem; text-align: center; display: flex; justify-content: space-between; align-items: center;">
+                    <span>&copy; 2026 Invertis University &bull; BCS554 Lab Work</span>
+                    <span style="font-size: 0.85rem; background: rgba(255, 255, 255, 0.1); color: #e2e8f0; padding: 0.25rem 0.6rem; border-radius: 4px;">div.footer</span>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <a href="attributes.html" class="nav-arrow-btn" style="background: var(--primary); padding: 0.6rem 1.25rem; font-size: 0.9rem;">Proceed to Task 2: attributes.html &rarr;</a>
+                <a href="../index.html" class="nav-arrow-btn" style="color: var(--text-main); background: #f1f5f9; border-color: #cbd5e1; padding: 0.6rem 1.25rem; font-size: 0.9rem;">&larr; Back to Portal</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="lab-footer">
+        <p>Invertis University, Bareilly &bull; B.Tech CSE Third Year &bull; HTML & CSS Development Lab (BCS554)</p>
+    </footer>
+
 </body>
 </html>

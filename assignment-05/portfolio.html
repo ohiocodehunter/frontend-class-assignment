@@ -1,57 +1,105 @@
 <!--
   Name: Karan
   Roll Number: [Roll No: To be filled]
-  Assignment: Assignment 5 - Links and Images (Task 2)
+  Assignment: Assignment 5 - Links and Images (Task 2: portfolio.html)
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
-            padding: 2.5rem;
-            max-width: 650px;
-            margin: 0 auto;
-        }
-        .card {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 0.75rem;
-            padding: 2.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-        h1 {
-            color: #0f172a;
-            margin-top: 0;
-            font-size: 2rem;
-        }
-        p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #475569;
-        }
-        a {
-            display: inline-block;
-            margin-top: 1rem;
-            color: #2563eb;
-            font-weight: 600;
-            text-decoration: underline;
-        }
-        a:hover {
-            color: #1d4ed8;
-        }
-    </style>
+    <title>Portfolio - Assignment 05</title>
+    <link rel="stylesheet" href="../assets/css/lab-theme.css">
 </head>
-<body>
-    <div class="card">
-        <h1>Student Portfolio</h1>
-        <p>Welcome to my student portfolio page. Here you can find details about my B.Tech CSE coursework, web projects, and laboratory assignments.</p>
-        <p><a href="home.html">&larr; Return to Home Page</a></p>
+<body class="lab-page">
+
+    <!-- Universal Navigation Bar -->
+    <nav class="lab-navbar">
+        <div class="lab-navbar-container">
+            <a href="../index.html" class="lab-nav-brand">
+                <span class="portal-badge">BCS554</span>
+                <span>HTML & CSS Lab Portal</span>
+            </a>
+            <ul class="lab-nav-links">
+                <li><a href="home.html" class="lab-nav-link">Task 1: home.html</a></li>
+                <li><a href="portfolio.html" class="lab-nav-link active">Task 2: portfolio.html</a></li>
+                <li><a href="portfolio-image.html" class="lab-nav-link">Task 3: portfolio-image.html</a></li>
+            </ul>
+            <div class="lab-nav-navigators">
+                <a href="home.html" class="nav-arrow-btn">&larr; Task 1</a>
+                <a href="portfolio-image.html" class="nav-arrow-btn">Task 3 &rarr;</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Student Ribbon -->
+    <div class="lab-ribbon">
+        <div class="lab-ribbon-container">
+            <div class="lab-breadcrumbs">
+                <a href="../index.html">Home</a> &rsaquo; <span>Assignment 05</span> &rsaquo; <span>Task 2 (portfolio.html)</span>
+            </div>
+            <div class="lab-student-tag">
+                <span>Student: <strong>Karan</strong></span>
+                <span>&bull;</span>
+                <span>Roll No: <strong>[Roll No: To be filled]</strong></span>
+            </div>
+        </div>
     </div>
+
+    <!-- Main Content Area -->
+    <main class="lab-main-container">
+        <div class="assignment-hero-card">
+            <span class="assignment-hero-tag">Bi-directional Routing</span>
+            <h1>Assignment 5 &bull; Task 2: Portfolio Return Navigation</h1>
+            <p>Aim: Create a secondary portfolio page with return navigation back to the home page.</p>
+            <div class="assignment-spec-row">
+                <div class="spec-item">File: <strong>portfolio.html</strong></div>
+                <div class="spec-item">Required Return Link: <strong>home.html</strong></div>
+            </div>
+        </div>
+
+        <div class="demo-showcase-box">
+            <div class="demo-title-bar">
+                <h2>Student Portfolio View</h2>
+                <span class="demo-badge">Rendered Output</span>
+            </div>
+
+            <!-- Required Heading and Return Link from Task 2 -->
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2.5rem; margin: 1.5rem 0; box-shadow: var(--shadow-sm);">
+                <h1 style="color: #0f172a; font-size: 2.25rem; font-weight: 800; margin-top: 0; margin-bottom: 1rem;">Student Engineering Portfolio</h1>
+                
+                <p style="color: #334155; font-size: 1.15rem; line-height: 1.8;">
+                    This portfolio showcases third-year computer science projects, core algorithms, responsive frontend layouts, and database systems completed at Invertis University.
+                </p>
+
+                <!-- Project Cards for Richer Content -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 1.25rem; border-radius: 8px;">
+                        <h4 style="margin: 0 0 0.5rem 0; color: #1e293b;">Web Development Lab</h4>
+                        <p style="margin: 0; color: #64748b; font-size: 0.95rem;">Semantic HTML5 & modern CSS3 layouts with full accessibility.</p>
+                    </div>
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 1.25rem; border-radius: 8px;">
+                        <h4 style="margin: 0 0 0.5rem 0; color: #1e293b;">Data Structures & Algorithms</h4>
+                        <p style="margin: 0; color: #64748b; font-size: 0.95rem;">Graph theory, dynamic programming, and binary search trees.</p>
+                    </div>
+                </div>
+
+                <!-- Required Return Link to home.html -->
+                <p style="margin-top: 2rem; font-size: 1.1rem;">
+                    <a href="home.html" style="color: var(--primary); font-weight: 700; text-decoration: underline;">&larr; Return to Home Page</a>
+                </p>
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <a href="portfolio-image.html" class="nav-arrow-btn" style="background: var(--primary); padding: 0.6rem 1.25rem; font-size: 0.9rem;">Proceed to Task 3: portfolio-image.html &rarr;</a>
+                <a href="home.html" class="nav-arrow-btn" style="color: var(--text-main); background: #f1f5f9; border-color: #cbd5e1; padding: 0.6rem 1.25rem; font-size: 0.9rem;">&larr; Back to home.html</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="lab-footer">
+        <p>Invertis University, Bareilly &bull; B.Tech CSE Third Year &bull; HTML & CSS Development Lab (BCS554)</p>
+    </footer>
+
 </body>
 </html>

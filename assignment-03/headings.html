@@ -1,43 +1,89 @@
 <!--
   Name: Karan
   Roll Number: [Roll No: To be filled]
-  Assignment: Assignment 3 - Your First HTML Page (Task 2)
+  Assignment: Assignment 3 - Your First HTML Page (Task 2: headings.html)
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Headings Hierarchy</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: #f8fafc;
-            color: #334155;
-            padding: 2rem;
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-        .content-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-            border: 1px solid #e2e8f0;
-        }
-        h1 { color: #0f172a; margin-top: 0; font-size: 2.2rem; }
-        h2 { color: #1e293b; font-size: 1.7rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.3rem; }
-        h3 { color: #334155; font-size: 1.3rem; }
-        p { color: #475569; font-size: 1.05rem; }
-    </style>
+    <title>Headings Hierarchy - Assignment 03</title>
+    <link rel="stylesheet" href="../assets/css/lab-theme.css">
 </head>
-<body>
-    <div class="content-card">
-        <h1>HTML & CSS Web Development</h1>
-        <h2>Module 1: Document Structure</h2>
-        <h3>Topic 1.1: Headings and Paragraphs</h3>
-        <p>HTML headings define the hierarchical outline of a web document, allowing search engines and assistive technologies to understand the content structure efficiently.</p>
+<body class="lab-page">
+
+    <!-- Universal Navigation Bar -->
+    <nav class="lab-navbar">
+        <div class="lab-navbar-container">
+            <a href="../index.html" class="lab-nav-brand">
+                <span class="portal-badge">BCS554</span>
+                <span>HTML & CSS Lab Portal</span>
+            </a>
+            <ul class="lab-nav-links">
+                <li><a href="first.html" class="lab-nav-link">Task 1: first.html</a></li>
+                <li><a href="headings.html" class="lab-nav-link active">Task 2: headings.html</a></li>
+                <li><a href="text-format.html" class="lab-nav-link">Task 3: text-format.html</a></li>
+            </ul>
+            <div class="lab-nav-navigators">
+                <a href="first.html" class="nav-arrow-btn">&larr; Task 1</a>
+                <a href="text-format.html" class="nav-arrow-btn">Task 3 &rarr;</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Student Ribbon -->
+    <div class="lab-ribbon">
+        <div class="lab-ribbon-container">
+            <div class="lab-breadcrumbs">
+                <a href="../index.html">Home</a> &rsaquo; <span>Assignment 03</span> &rsaquo; <span>Task 2 (headings.html)</span>
+            </div>
+            <div class="lab-student-tag">
+                <span>Student: <strong>Karan</strong></span>
+                <span>&bull;</span>
+                <span>Roll No: <strong>[Roll No: To be filled]</strong></span>
+            </div>
+        </div>
     </div>
+
+    <!-- Main Content Area -->
+    <main class="lab-main-container">
+        <div class="assignment-hero-card">
+            <span class="assignment-hero-tag">Heading Levels</span>
+            <h1>Assignment 3 &bull; Task 2: Headings Hierarchy</h1>
+            <p>Aim: Structure document headings proportionally using h1, h2, h3 and an explanatory paragraph.</p>
+            <div class="assignment-spec-row">
+                <div class="spec-item">File: <strong>headings.html</strong></div>
+                <div class="spec-item">Elements: <strong>&lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;p&gt;</strong></div>
+            </div>
+        </div>
+
+        <div class="demo-showcase-box">
+            <div class="demo-title-bar">
+                <h2>Live Heading Hierarchy Demonstration</h2>
+                <span class="demo-badge">Rendered Output</span>
+            </div>
+
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2.5rem; margin: 1.5rem 0; box-shadow: var(--shadow-sm);">
+                <!-- Required h1, h2, h3 and paragraph -->
+                <h1 style="color: #0f172a; font-size: 2.25rem; font-weight: 800; margin-top: 0; margin-bottom: 0.75rem;">Computer Science & Engineering Department</h1>
+                <h2 style="color: #1e3a8a; font-size: 1.7rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.5rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.4rem;">Web Technologies Laboratory (BCS554)</h2>
+                <h3 style="color: #2563eb; font-size: 1.3rem; font-weight: 600; margin-top: 1.25rem; margin-bottom: 0.5rem;">Module 1: Semantic Document Architecture</h3>
+                <p style="color: #475569; font-size: 1.05rem; line-height: 1.7; margin-top: 0.75rem;">
+                    HTML heading tags (from &lt;h1&gt; down to &lt;h6&gt;) establish the structural outline of a web page. Search engines and screen readers rely on this hierarchical nesting to understand the relative importance and organization of sections.
+                </p>
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <a href="text-format.html" class="nav-arrow-btn" style="background: var(--primary); padding: 0.6rem 1.25rem; font-size: 0.9rem;">Proceed to Task 3: text-format.html &rarr;</a>
+                <a href="first.html" class="nav-arrow-btn" style="color: var(--text-main); background: #f1f5f9; border-color: #cbd5e1; padding: 0.6rem 1.25rem; font-size: 0.9rem;">&larr; Back to Task 1</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="lab-footer">
+        <p>Invertis University, Bareilly &bull; B.Tech CSE Third Year &bull; HTML & CSS Development Lab (BCS554)</p>
+    </footer>
+
 </body>
 </html>

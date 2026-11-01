@@ -1,7 +1,7 @@
 <!--
   Name: Karan
   Roll Number: [Roll No: To be filled]
-  Assignment: Assignment 3 - Your First HTML Page (Task 1)
+  Assignment: Assignment 3 - Your First HTML Page (Task 1: first.html)
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -9,35 +9,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My First Page</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 80vh;
-            margin: 0;
-        }
-        .container {
-            background: white;
-            padding: 3rem 4rem;
-            border-radius: 1rem;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-            border: 1px solid #e2e8f0;
-            text-align: center;
-        }
-        h1 {
-            color: #0f172a;
-            margin: 0;
-            font-size: 2.25rem;
-        }
-    </style>
+    <link rel="stylesheet" href="../assets/css/lab-theme.css">
 </head>
-<body>
-    <div class="container">
-        <h1>Hello, I am Asha.</h1>
+<body class="lab-page">
+
+    <!-- Universal Navigation Bar -->
+    <nav class="lab-navbar">
+        <div class="lab-navbar-container">
+            <a href="../index.html" class="lab-nav-brand">
+                <span class="portal-badge">BCS554</span>
+                <span>HTML & CSS Lab Portal</span>
+            </a>
+            <ul class="lab-nav-links">
+                <li><a href="first.html" class="lab-nav-link active">Task 1: first.html</a></li>
+                <li><a href="headings.html" class="lab-nav-link">Task 2: headings.html</a></li>
+                <li><a href="text-format.html" class="lab-nav-link">Task 3: text-format.html</a></li>
+            </ul>
+            <div class="lab-nav-navigators">
+                <a href="../assignment-02/index.html" class="nav-arrow-btn">&larr; Lab 02</a>
+                <a href="../assignment-04/layout.html" class="nav-arrow-btn">Lab 04 &rarr;</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Student Ribbon -->
+    <div class="lab-ribbon">
+        <div class="lab-ribbon-container">
+            <div class="lab-breadcrumbs">
+                <a href="../index.html">Home</a> &rsaquo; <span>Assignment 03</span> &rsaquo; <span>Task 1 (first.html)</span>
+            </div>
+            <div class="lab-student-tag">
+                <span>Student: <strong>Karan</strong></span>
+                <span>&bull;</span>
+                <span>Roll No: <strong>[Roll No: To be filled]</strong></span>
+            </div>
+        </div>
     </div>
+
+    <!-- Main Content Area -->
+    <main class="lab-main-container">
+        <div class="assignment-hero-card">
+            <span class="assignment-hero-tag">HTML5 Foundations</span>
+            <h1>Assignment 3 &bull; Task 1: Your First HTML Page</h1>
+            <p>Aim: Write a first HTML page with document structure, page title, and a primary heading.</p>
+            <div class="assignment-spec-row">
+                <div class="spec-item">File: <strong>first.html</strong></div>
+                <div class="spec-item">Page Title: <strong>My First Page</strong></div>
+                <div class="spec-item">Required Element: <strong>&lt;h1&gt;Hello, I am Asha.&lt;/h1&gt;</strong></div>
+            </div>
+        </div>
+
+        <div class="demo-showcase-box">
+            <div class="demo-title-bar">
+                <h2>Task 1 Live Render Output</h2>
+                <span class="demo-badge">Rendered Component</span>
+            </div>
+
+            <!-- Task 1 Required Output -->
+            <div style="background: linear-gradient(135deg, #f8fafc, #edf2f7); border: 2px dashed #cbd5e1; border-radius: 12px; padding: 3rem 2rem; text-align: center; margin: 1.5rem 0;">
+                <h1 style="color: #0f172a; font-size: 2.5rem; font-weight: 800; margin: 0; letter-spacing: -0.02em;">Hello, I am Asha.</h1>
+            </div>
+
+            <div class="info-callout">
+                <strong>HTML Document Structure Anatomy:</strong>
+                <ul style="margin: 0.5rem 0 0 1.25rem; line-height: 1.7;">
+                    <li><code>&lt;!DOCTYPE html&gt;</code> specifies the HTML5 standard to the browser engine.</li>
+                    <li><code>&lt;title&gt;My First Page&lt;/title&gt;</code> controls the window and tab label.</li>
+                    <li><code>&lt;h1&gt;</code> represents the single top-level heading on the page for SEO and accessibility.</li>
+                </ul>
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <a href="headings.html" class="nav-arrow-btn" style="background: var(--primary); padding: 0.6rem 1.25rem; font-size: 0.9rem;">Proceed to Task 2: headings.html &rarr;</a>
+                <a href="../index.html" class="nav-arrow-btn" style="color: var(--text-main); background: #f1f5f9; border-color: #cbd5e1; padding: 0.6rem 1.25rem; font-size: 0.9rem;">&larr; Back to Portal</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="lab-footer">
+        <p>Invertis University, Bareilly &bull; B.Tech CSE Third Year &bull; HTML & CSS Development Lab (BCS554)</p>
+    </footer>
+
 </body>
 </html>

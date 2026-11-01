@@ -8,111 +8,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Karan</title>
+    <title>About Me - Karan | Assignment 07</title>
+    <link rel="stylesheet" href="../assets/css/lab-theme.css">
     <style>
-        * {
-            box-sizing: border-box;
+        html {
             scroll-behavior: smooth;
         }
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        header {
-            background-color: #0f172a;
+        .portfolio-header {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
             color: #ffffff;
-            padding: 1.5rem 2rem;
+            padding: 2rem;
+            border-radius: var(--radius-lg);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-md);
+            margin-bottom: 2rem;
         }
-        header h1 {
+        .portfolio-header h1 {
             margin: 0;
-            font-size: 1.75rem;
-            letter-spacing: -0.025em;
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
         }
-        nav a {
+        .portfolio-nav a {
             color: #cbd5e1;
             text-decoration: none;
             margin-left: 1.5rem;
-            font-weight: 500;
-            transition: color 0.2s ease;
-        }
-        nav a:hover {
-            color: #38bdf8;
-        }
-        main {
-            flex: 1;
-            max-width: 800px;
-            width: 100%;
-            margin: 2.5rem auto;
-            padding: 0 1.5rem;
-        }
-        section#about {
-            background: #ffffff;
-            padding: 2.5rem;
-            border-radius: 0.75rem;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-        section#about h2 {
-            color: #0f172a;
-            margin-top: 0;
-            font-size: 1.8rem;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 0.5rem;
-        }
-        section#about p {
-            color: #475569;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 0;
-        }
-        footer#contact {
-            background-color: #1e293b;
-            color: #94a3b8;
-            padding: 2rem;
-            text-align: center;
-            margin-top: auto;
-        }
-        footer#contact p {
-            margin: 0;
-            font-size: 1.05rem;
-        }
-        footer#contact a {
-            color: #38bdf8;
             font-weight: 600;
-            text-decoration: none;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            transition: all 0.2s;
         }
-        footer#contact a:hover {
-            text-decoration: underline;
+        .portfolio-nav a:hover {
+            color: #38bdf8;
+            background: rgba(255, 255, 255, 0.08);
+        }
+        #about {
+            background: #ffffff;
+            border: 1px solid var(--surface-border);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 2rem;
+        }
+        #about h2 {
+            color: #0f172a;
+            font-size: 1.85rem;
+            font-weight: 800;
+            margin-top: 0;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.6rem;
+            margin-bottom: 1.25rem;
+        }
+        #about p {
+            color: #334155;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1rem;
+        }
+        .skill-tag {
+            background: #f1f5f9;
+            color: #1e293b;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            border: 1px solid #cbd5e1;
+        }
+        #contact {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+        }
+        #contact p {
+            margin: 0;
+            font-size: 1.15rem;
+            color: #e2e8f0;
+        }
+        #contact a {
+            color: #38bdf8;
+            font-weight: 700;
+            text-decoration: none;
+            background: rgba(56, 189, 248, 0.15);
+            padding: 0.35rem 0.85rem;
+            border-radius: 6px;
+            display: inline-block;
+            margin-top: 0.5rem;
+            transition: all 0.2s;
+        }
+        #contact a:hover {
+            background: #38bdf8;
+            color: #0f172a;
         }
     </style>
 </head>
-<body>
-    <header>
-        <h1>Karan</h1>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+<body class="lab-page">
 
-    <main>
-        <section id="about">
-            <h2>About me</h2>
-            <p>I am a third-year B.Tech Computer Science and Engineering student at Invertis University, Bareilly. I have a keen interest in full-stack web development, modern frontend user interfaces, and algorithmic problem-solving. Through this HTML & CSS lab, I aim to master clean, semantic, and responsive design systems.</p>
-        </section>
+    <!-- Universal Navigation Bar -->
+    <nav class="lab-navbar">
+        <div class="lab-navbar-container">
+            <a href="../index.html" class="lab-nav-brand">
+                <span class="portal-badge">BCS554</span>
+                <span>HTML & CSS Lab Portal</span>
+            </a>
+            <ul class="lab-nav-links">
+                <li><a href="about-me.html" class="lab-nav-link active">Assignment 07: about-me.html</a></li>
+                <li><a href="#about" class="lab-nav-link">#about Section</a></li>
+                <li><a href="#contact" class="lab-nav-link">#contact Section</a></li>
+            </ul>
+            <div class="lab-nav-navigators">
+                <a href="../assignment-06/faq.html" class="nav-arrow-btn">&larr; Lab 06</a>
+                <a href="../assignment-08/signup.html" class="nav-arrow-btn">Lab 08 &rarr;</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Student Ribbon -->
+    <div class="lab-ribbon">
+        <div class="lab-ribbon-container">
+            <div class="lab-breadcrumbs">
+                <a href="../index.html">Home</a> &rsaquo; <span>Assignment 07</span> &rsaquo; <span>about-me.html</span>
+            </div>
+            <div class="lab-student-tag">
+                <span>Student: <strong>Karan</strong></span>
+                <span>&bull;</span>
+                <span>Roll No: <strong>[Roll No: To be filled]</strong></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="lab-main-container">
+        <!-- Hero Specification Card -->
+        <div class="assignment-hero-card">
+            <span class="assignment-hero-tag">Semantic Page Layout</span>
+            <h1>Assignment 7: About Me Page</h1>
+            <p>Aim: Build a semantic portfolio page using &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;section id="about"&gt;, and &lt;footer id="contact"&gt; with in-page anchor jumps.</p>
+            <div class="assignment-spec-row">
+                <div class="spec-item">File: <strong>about-me.html</strong></div>
+                <div class="spec-item">Header: <strong>&lt;header&gt; with name &amp; nav links</strong></div>
+                <div class="spec-item">Section: <strong>&lt;section id="about"&gt;</strong></div>
+                <div class="spec-item">Footer: <strong>&lt;footer id="contact"&gt; with mailto:</strong></div>
+            </div>
+        </div>
+
+        <!-- Semantic Header with Name and Nav -->
+        <header class="portfolio-header">
+            <h1>Karan</h1>
+            <nav class="portfolio-nav">
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <!-- Semantic Main Container -->
+        <main>
+            <!-- Semantic Section with id="about" -->
+            <section id="about">
+                <h2>About me</h2>
+                <p>
+                    I am a third-year undergraduate student pursuing a Bachelor of Technology in Computer Science and Engineering at Invertis University, Bareilly. I have a passion for designing scalable web architectures, crafting responsive and accessible user interfaces, and solving algorithmic problems. My technical journey spans full-stack engineering, database systems, and modern browser APIs.
+                </p>
+
+                <h3 style="color: #1e293b; font-size: 1.2rem; margin-top: 1.5rem; margin-bottom: 0.5rem;">Core Competencies &amp; Technical Skills:</h3>
+                <div class="skills-grid">
+                    <span class="skill-tag">HTML5 Semantic Architecture</span>
+                    <span class="skill-tag">CSS3 Flexbox &amp; Grid</span>
+                    <span class="skill-tag">JavaScript (ES6+)</span>
+                    <span class="skill-tag">Git &amp; GitHub Version Control</span>
+                    <span class="skill-tag">Data Structures &amp; Algorithms</span>
+                    <span class="skill-tag">Responsive Web Design</span>
+                </div>
+            </section>
+        </main>
+
+        <!-- Semantic Footer with id="contact" and mailto link -->
+        <footer id="contact">
+            <p>Ready to collaborate or discuss engineering opportunities?</p>
+            <p>Reach out directly: <a href="mailto:karan@invertis.edu">karan@invertis.edu</a></p>
+        </footer>
+
+        <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+            <a href="../assignment-08/signup.html" class="nav-arrow-btn" style="background: var(--primary); padding: 0.6rem 1.25rem; font-size: 0.9rem;">Proceed to Assignment 08 &rarr;</a>
+            <a href="../index.html" class="nav-arrow-btn" style="color: var(--text-main); background: #f1f5f9; border-color: #cbd5e1; padding: 0.6rem 1.25rem; font-size: 0.9rem;">&larr; Back to Portal</a>
+        </div>
     </main>
 
-    <footer id="contact">
-        <p>Get in touch: <a href="mailto:karan@invertis.edu">karan@invertis.edu</a></p>
+    <footer class="lab-footer">
+        <p>Invertis University, Bareilly &bull; B.Tech CSE Third Year &bull; HTML & CSS Development Lab (BCS554)</p>
     </footer>
+
 </body>
 </html>

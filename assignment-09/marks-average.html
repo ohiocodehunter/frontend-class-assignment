@@ -1,93 +1,156 @@
 <!--
   Name: Karan
   Roll Number: [Roll No: To be filled]
-  Assignment: Assignment 9 - Tables with Headers and Footers (Task 2)
+  Assignment: Assignment 9 - Tables with Headers and Footers (Task 2: marks-average.html)
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marks of Class A - Average</title>
+    <title>Class Average - Assignment 09</title>
+    <link rel="stylesheet" href="../assets/css/lab-theme.css">
     <style>
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
-            padding: 2.5rem;
-            display: flex;
-            justify-content: center;
-        }
-        .table-container {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 0.75rem;
-            padding: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            max-width: 600px;
-            width: 100%;
-        }
-        table {
+        .gradebook-table {
             width: 100%;
             border-collapse: collapse;
-            text-align: left;
+            font-size: 1.05rem;
+            margin-top: 1rem;
         }
-        caption {
-            font-size: 1.4rem;
-            font-weight: 700;
+        .gradebook-table caption {
+            font-size: 1.5rem;
+            font-weight: 800;
             color: #0f172a;
-            margin-bottom: 1rem;
             text-align: left;
+            margin-bottom: 1.25rem;
         }
-        th, td {
-            padding: 0.85rem 1.25rem;
+        .gradebook-table th, .gradebook-table td {
+            padding: 1rem 1.5rem;
             border-bottom: 1px solid #e2e8f0;
+            text-align: left;
         }
-        thead th {
-            background-color: #f1f5f9;
-            color: #334155;
-            font-weight: 600;
-        }
-        tfoot tr td {
-            background-color: #f8fafc;
+        .gradebook-table thead th {
+            background: #f1f5f9;
+            color: #1e293b;
             font-weight: 700;
-            color: #0f172a;
-            border-top: 2px solid #cbd5e1;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            font-size: 0.88rem;
+        }
+        .gradebook-table tfoot td {
+            background: #eff6ff;
+            color: #1e40af;
+            font-weight: 800;
+            border-top: 2px solid #93c5fd;
             border-bottom: none;
         }
     </style>
 </head>
-<body>
-    <div class="table-container">
-        <table>
-            <caption>Marks of Class A</caption>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Maths</th>
-                    <th>Science</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Asha</td>
-                    <td>78</td>
-                    <td>85</td>
-                </tr>
-                <tr>
-                    <td>Rohan</td>
-                    <td>64</td>
-                    <td>70</td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td>Class average</td>
-                    <td>71</td>
-                    <td>77.5</td>
-                </tr>
-            </tfoot>
-        </table>
+<body class="lab-page">
+
+    <!-- Universal Navigation Bar -->
+    <nav class="lab-navbar">
+        <div class="lab-navbar-container">
+            <a href="../index.html" class="lab-nav-brand">
+                <span class="portal-badge">BCS554</span>
+                <span>HTML & CSS Lab Portal</span>
+            </a>
+            <ul class="lab-nav-links">
+                <li><a href="marks.html" class="lab-nav-link">Task 1: marks.html</a></li>
+                <li><a href="marks-average.html" class="lab-nav-link active">Task 2: marks-average.html</a></li>
+                <li><a href="marks-accessible.html" class="lab-nav-link">Task 3: marks-accessible.html</a></li>
+            </ul>
+            <div class="lab-nav-navigators">
+                <a href="marks.html" class="nav-arrow-btn">&larr; Task 1</a>
+                <a href="marks-accessible.html" class="nav-arrow-btn">Task 3 &rarr;</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Student Ribbon -->
+    <div class="lab-ribbon">
+        <div class="lab-ribbon-container">
+            <div class="lab-breadcrumbs">
+                <a href="../index.html">Home</a> &rsaquo; <span>Assignment 09</span> &rsaquo; <span>Task 2 (marks-average.html)</span>
+            </div>
+            <div class="lab-student-tag">
+                <span>Student: <strong>Karan</strong></span>
+                <span>&bull;</span>
+                <span>Roll No: <strong>[Roll No: To be filled]</strong></span>
+            </div>
+        </div>
     </div>
+
+    <!-- Main Content Area -->
+    <main class="lab-main-container">
+        <div class="assignment-hero-card">
+            <span class="assignment-hero-tag">Table Footers</span>
+            <h1>Assignment 9 &bull; Task 2: Table Footers (&lt;tfoot&gt;)</h1>
+            <p>Aim: Incorporate summary statistics and calculated row values using the dedicated &lt;tfoot&gt; container element.</p>
+            <div class="assignment-spec-row">
+                <div class="spec-item">File: <strong>marks-average.html</strong></div>
+                <div class="spec-item">Footer Tag: <strong>&lt;tfoot&gt;</strong></div>
+                <div class="spec-item">Summary: <strong>Class average (Maths: 71, Science: 77.5)</strong></div>
+            </div>
+        </div>
+
+        <div class="demo-showcase-box">
+            <div class="demo-title-bar">
+                <h2>Computed Averages Table</h2>
+                <span class="demo-badge">Rendered Output</span>
+            </div>
+
+            <!-- Required Table from Task 2 -->
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2rem; max-width: 650px; margin: 1.5rem auto; box-shadow: var(--shadow-sm); overflow-x: auto;">
+                <table class="gradebook-table">
+                    <caption>Marks of Class A</caption>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Maths</th>
+                            <th>Science</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: 600; color: #0f172a;">Asha</td>
+                            <td>78</td>
+                            <td>85</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600; color: #0f172a;">Rohan</td>
+                            <td>64</td>
+                            <td>70</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>Class average</td>
+                            <td>71</td>
+                            <td>77.5</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <div class="info-callout">
+                <strong>Calculation Verification:</strong>
+                <ul style="margin: 0.5rem 0 0 1.25rem;">
+                    <li>Maths Average: (78 + 64) / 2 = <strong>71</strong></li>
+                    <li>Science Average: (85 + 70) / 2 = <strong>77.5</strong></li>
+                </ul>
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <a href="marks-accessible.html" class="nav-arrow-btn" style="background: var(--primary); padding: 0.6rem 1.25rem; font-size: 0.9rem;">Proceed to Task 3: marks-accessible.html &rarr;</a>
+                <a href="marks.html" class="nav-arrow-btn" style="color: var(--text-main); background: #f1f5f9; border-color: #cbd5e1; padding: 0.6rem 1.25rem; font-size: 0.9rem;">&larr; Back to Task 1</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="lab-footer">
+        <p>Invertis University, Bareilly &bull; B.Tech CSE Third Year &bull; HTML & CSS Development Lab (BCS554)</p>
+    </footer>
+
 </body>
 </html>

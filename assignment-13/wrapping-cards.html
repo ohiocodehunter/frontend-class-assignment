@@ -1,86 +1,161 @@
 <!--
   Name: Karan
   Roll Number: [Roll No: To be filled]
-  Assignment: Assignment 13 - Flexbox Layouts (Task 3)
+  Assignment: Assignment 13 - Flexbox Layouts (Task 3: wrapping-cards.html)
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stationery Shop</title>
+    <title>Stationery Shop - Assignment 13</title>
+    <link rel="stylesheet" href="../assets/css/lab-theme.css">
     <style>
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
-            padding: 2.5rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        h1 {
-            color: #0f172a;
-            font-size: 2rem;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 0.5rem;
-            margin-bottom: 2rem;
-        }
+        /* Required Flex-Wrap Row and Cards from Task 3 */
         .cards-row {
             display: flex;
             flex-wrap: wrap;
             gap: 1.5rem;
+            margin: 1.5rem 0;
         }
-        .card {
+
+        .cards-row .card {
             background-color: #ffffff;
             border: 1px solid #e2e8f0;
-            border-radius: 0.75rem;
-            padding: 1.5rem;
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
             flex: 1 1 200px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            box-shadow: var(--shadow-sm);
             text-align: center;
-            transition: transform 0.2s;
+            transition: all 0.2s ease;
         }
-        .card:hover {
-            transform: translateY(-2px);
+
+        .cards-row .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: #cbd5e1;
         }
-        .card h3 {
+
+        .cards-row .card h3 {
             margin-top: 0;
             color: #0f172a;
-            font-size: 1.25rem;
+            font-size: 1.35rem;
+            font-weight: 700;
             margin-bottom: 0.5rem;
         }
-        .card p {
+
+        .cards-row .card p {
             margin: 0;
-            font-size: 1.4rem;
-            font-weight: 700;
+            font-size: 1.75rem;
+            font-weight: 800;
             color: #059669;
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 2px;
         }
-        .card p::before {
+
+        .cards-row .card p::before {
             content: "₹";
-            font-size: 1rem;
-            margin-right: 2px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #64748b;
         }
     </style>
 </head>
-<body>
-    <h1>Stationery Shop</h1>
-    <div class="cards-row">
-        <div class="card">
-            <h3>Notebook</h3>
-            <p>60</p>
+<body class="lab-page">
+
+    <!-- Universal Navigation Bar -->
+    <nav class="lab-navbar">
+        <div class="lab-navbar-container">
+            <a href="../index.html" class="lab-nav-brand">
+                <span class="portal-badge">BCS554</span>
+                <span>HTML & CSS Lab Portal</span>
+            </a>
+            <ul class="lab-nav-links">
+                <li><a href="nav-flex.html" class="lab-nav-link">Task 1: nav-flex.html</a></li>
+                <li><a href="centred-cards.html" class="lab-nav-link">Task 2: centred-cards.html</a></li>
+                <li><a href="wrapping-cards.html" class="lab-nav-link active">Task 3: wrapping-cards.html</a></li>
+            </ul>
+            <div class="lab-nav-navigators">
+                <a href="centred-cards.html" class="nav-arrow-btn">&larr; Task 2</a>
+                <a href="../assignment-14/grid-first.html" class="nav-arrow-btn">Lab 14 &rarr;</a>
+            </div>
         </div>
-        <div class="card">
-            <h3>Pen</h3>
-            <p>15</p>
-        </div>
-        <div class="card">
-            <h3>Bag</h3>
-            <p>350</p>
-        </div>
-        <div class="card">
-            <h3>Book</h3>
-            <p>120</p>
+    </nav>
+
+    <!-- Student Ribbon -->
+    <div class="lab-ribbon">
+        <div class="lab-ribbon-container">
+            <div class="lab-breadcrumbs">
+                <a href="../index.html">Home</a> &rsaquo; <span>Assignment 13</span> &rsaquo; <span>Task 3 (wrapping-cards.html)</span>
+            </div>
+            <div class="lab-student-tag">
+                <span>Student: <strong>Karan</strong></span>
+                <span>&bull;</span>
+                <span>Roll No: <strong>[Roll No: To be filled]</strong></span>
+            </div>
         </div>
     </div>
+
+    <!-- Main Content Area -->
+    <main class="lab-main-container">
+        <div class="assignment-hero-card">
+            <span class="assignment-hero-tag">Multi-Line Flexbox</span>
+            <h1>Assignment 13 &bull; Task 3: Flex-Wrap Shop Catalog</h1>
+            <p>Aim: Implement fluid multi-line wrapping using flex-wrap: wrap and flex-basis sizing for responsive product displays.</p>
+            <div class="assignment-spec-row">
+                <div class="spec-item">File: <strong>wrapping-cards.html</strong></div>
+                <div class="spec-item">Heading: <strong>Stationery Shop</strong></div>
+                <div class="spec-item">Rule: <strong>flex-wrap: wrap</strong></div>
+                <div class="spec-item">Cards: <strong>Notebook (60), Pen (15), Bag (350), Book (120)</strong></div>
+            </div>
+        </div>
+
+        <div class="demo-showcase-box">
+            <div class="demo-title-bar">
+                <h2>Product Wrapping Catalog</h2>
+                <span class="demo-badge">Rendered Output</span>
+            </div>
+
+            <!-- Required Heading and 4 Cards in flex-wrap row from Task 3 -->
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2rem; margin: 1.5rem 0;">
+                <h1 style="color: #0f172a; font-size: 2rem; font-weight: 800; margin-top: 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.75rem; margin-bottom: 1.5rem;">Stationery Shop</h1>
+
+                <div class="cards-row">
+                    <div class="card">
+                        <h3>Notebook</h3>
+                        <p>60</p>
+                    </div>
+                    <div class="card">
+                        <h3>Pen</h3>
+                        <p>15</p>
+                    </div>
+                    <div class="card">
+                        <h3>Bag</h3>
+                        <p>350</p>
+                    </div>
+                    <div class="card">
+                        <h3>Book</h3>
+                        <p>120</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-callout">
+                <strong>Responsiveness Test:</strong> Resize or narrow your browser window. Thanks to <code>flex: 1 1 200px</code> and <code>flex-wrap: wrap</code>, whenever a screen has less than ~880px available width, the cards gracefully wrap into two or four equal rows.
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <a href="../assignment-14/grid-first.html" class="nav-arrow-btn" style="background: var(--primary); padding: 0.6rem 1.25rem; font-size: 0.9rem;">Proceed to Assignment 14 &rarr;</a>
+                <a href="centred-cards.html" class="nav-arrow-btn" style="color: var(--text-main); background: #f1f5f9; border-color: #cbd5e1; padding: 0.6rem 1.25rem; font-size: 0.9rem;">&larr; Back to Task 2</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="lab-footer">
+        <p>Invertis University, Bareilly &bull; B.Tech CSE Third Year &bull; HTML & CSS Development Lab (BCS554)</p>
+    </footer>
+
 </body>
 </html>

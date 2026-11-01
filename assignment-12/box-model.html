@@ -1,68 +1,147 @@
 <!--
   Name: Karan
   Roll Number: [Roll No: To be filled]
-  Assignment: Assignment 12 - Box Model, Cards and Scrolling (Task 1)
+  Assignment: Assignment 12 - Box Model, Cards and Scrolling (Task 1: box-model.html)
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Box Sizing Comparison</title>
+    <title>Box Model Comparison - Assignment 12</title>
+    <link rel="stylesheet" href="../assets/css/lab-theme.css">
     <style>
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
-            padding: 2.5rem;
-            max-width: 650px;
-            margin: 0 auto;
+        .box-model-demo {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin: 1.5rem 0;
         }
-        .container {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 0.75rem;
-            padding: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-        h2 {
-            margin-top: 0;
-            color: #0f172a;
-        }
+
+        /* Required CSS Box Model Specifications from Task 1 */
         .box {
             width: 200px;
             padding: 20px;
             border: 5px solid #2563eb;
-            margin-bottom: 1.5rem;
             color: #ffffff;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 0.95rem;
+            line-height: 1.4;
         }
+
         .content-box {
             box-sizing: content-box;
             background-color: #3b82f6;
         }
+
         .border-box {
             box-sizing: border-box;
             background-color: #10b981;
             border-color: #059669;
         }
-        .note {
-            font-size: 0.95rem;
-            color: #64748b;
+
+        .calc-breakdown {
+            font-size: 0.82rem;
+            font-weight: 400;
+            margin-top: 0.5rem;
+            opacity: 0.9;
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h2>Box Model: content-box vs border-box</h2>
-        <div class="box content-box">
-            box-sizing: content-box
-            <p class="note" style="color: white; margin: 0.5rem 0 0;">Total rendered width: 250px (200 + 40 + 10)</p>
+<body class="lab-page">
+
+    <!-- Universal Navigation Bar -->
+    <nav class="lab-navbar">
+        <div class="lab-navbar-container">
+            <a href="../index.html" class="lab-nav-brand">
+                <span class="portal-badge">BCS554</span>
+                <span>HTML & CSS Lab Portal</span>
+            </a>
+            <ul class="lab-nav-links">
+                <li><a href="box-model.html" class="lab-nav-link active">Task 1: box-model.html</a></li>
+                <li><a href="card.html" class="lab-nav-link">Task 2: card.html</a></li>
+                <li><a href="scroll.html" class="lab-nav-link">Task 3: scroll.html</a></li>
+            </ul>
+            <div class="lab-nav-navigators">
+                <a href="../assignment-11/tokens.html" class="nav-arrow-btn">&larr; Lab 11</a>
+                <a href="../assignment-13/nav-flex.html" class="nav-arrow-btn">Lab 13 &rarr;</a>
+            </div>
         </div>
-        <div class="box border-box">
-            box-sizing: border-box
-            <p class="note" style="color: white; margin: 0.5rem 0 0;">Total rendered width: exactly 200px</p>
+    </nav>
+
+    <!-- Student Ribbon -->
+    <div class="lab-ribbon">
+        <div class="lab-ribbon-container">
+            <div class="lab-breadcrumbs">
+                <a href="../index.html">Home</a> &rsaquo; <span>Assignment 12</span> &rsaquo; <span>Task 1 (box-model.html)</span>
+            </div>
+            <div class="lab-student-tag">
+                <span>Student: <strong>Karan</strong></span>
+                <span>&bull;</span>
+                <span>Roll No: <strong>[Roll No: To be filled]</strong></span>
+            </div>
         </div>
     </div>
+
+    <!-- Main Content Area -->
+    <main class="lab-main-container">
+        <div class="assignment-hero-card">
+            <span class="assignment-hero-tag">CSS Box Model</span>
+            <h1>Assignment 12 &bull; Task 1: Box Sizing Comparison</h1>
+            <p>Aim: Compare how content-box adds padding and border to the specified width, while border-box absorbs them inside the specified width.</p>
+            <div class="assignment-spec-row">
+                <div class="spec-item">File: <strong>box-model.html</strong></div>
+                <div class="spec-item">Dimensions: <strong>width: 200px; padding: 20px; border: 5px solid;</strong></div>
+                <div class="spec-item">Modes: <strong>content-box vs border-box</strong></div>
+            </div>
+        </div>
+
+        <div class="demo-showcase-box">
+            <div class="demo-title-bar">
+                <h2>Visual Dimension Comparison</h2>
+                <span class="demo-badge">Rendered Output</span>
+            </div>
+
+            <div class="box-model-demo">
+                <div>
+                    <h3 style="color: #1e3a8a; margin-top: 0; margin-bottom: 0.5rem;">1. content-box (Standard Box Sizing)</h3>
+                    <!-- Required Content-Box -->
+                    <div class="box content-box">
+                        box-sizing: content-box
+                        <div class="calc-breakdown">
+                            Rendered Width: 250px<br>
+                            [200px + 40px padding + 10px border]
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="color: #065f46; margin-top: 0; margin-bottom: 0.5rem;">2. border-box (Modern Predictable Sizing)</h3>
+                    <!-- Required Border-Box -->
+                    <div class="box border-box">
+                        box-sizing: border-box
+                        <div class="calc-breakdown">
+                            Rendered Width: exactly 200px<br>
+                            [Content shrinks to 150px to accommodate padding &amp; border]
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-callout">
+                <strong>Industry Standard Practice:</strong> Modern web resets universally apply <code>* { box-sizing: border-box; }</code> so that adding padding or borders never unexpectedly breaks grid columns or causes container overflow.
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <a href="card.html" class="nav-arrow-btn" style="background: var(--primary); padding: 0.6rem 1.25rem; font-size: 0.9rem;">Proceed to Task 2: card.html &rarr;</a>
+                <a href="../index.html" class="nav-arrow-btn" style="color: var(--text-main); background: #f1f5f9; border-color: #cbd5e1; padding: 0.6rem 1.25rem; font-size: 0.9rem;">&larr; Back to Portal</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="lab-footer">
+        <p>Invertis University, Bareilly &bull; B.Tech CSE Third Year &bull; HTML & CSS Development Lab (BCS554)</p>
+    </footer>
+
 </body>
 </html>

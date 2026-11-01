@@ -1,64 +1,134 @@
 <!--
   Name: Karan
   Roll Number: [Roll No: To be filled]
-  Assignment: Assignment 12 - Box Model, Cards and Scrolling (Task 3)
+  Assignment: Assignment 12 - Box Model, Cards and Scrolling (Task 3: scroll.html)
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Overflow Scroll Box</title>
+    <title>Scrollable Box - Assignment 12</title>
+    <link rel="stylesheet" href="../assets/css/lab-theme.css">
     <style>
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
-            padding: 2.5rem;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        .container {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 0.75rem;
-            padding: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-        h2 {
-            margin-top: 0;
-            font-size: 1.4rem;
-            color: #0f172a;
-        }
-        .scroll-box {
+        /* Required Scrollable Box from Task 3 */
+        .scroll-container {
             height: 120px;
             overflow: auto;
             border: 2px solid #cbd5e1;
-            border-radius: 0.5rem;
-            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            padding: 0.75rem 1.25rem;
             background-color: #f8fafc;
+            max-width: 500px;
+            margin: 1.5rem auto;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
         }
-        .scroll-box p {
-            margin: 0.5rem 0;
-            padding: 0.5rem;
+
+        .scroll-container p {
+            margin: 0.6rem 0;
+            padding: 0.5rem 0.75rem;
             background: #ffffff;
-            border-radius: 0.25rem;
             border: 1px solid #e2e8f0;
+            border-radius: 6px;
             color: #334155;
             font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        /* Smooth Custom Scrollbar */
+        .scroll-container::-webkit-scrollbar {
+            width: 8px;
+        }
+        .scroll-container::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .scroll-container::-webkit-scrollbar-thumb {
+            background: #94a3b8;
+            border-radius: 4px;
+        }
+        .scroll-container::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h2>Scrollable Container</h2>
-        <div class="scroll-box">
-            <p>Line 1: Introduction to Web Design and CSS Layouts</p>
-            <p>Line 2: Understanding Box Model geometry and boundaries</p>
-            <p>Line 3: Managing content overflow with scrollbars</p>
-            <p>Line 4: Creating responsive mobile viewport rules</p>
-            <p>Line 5: Enhancing user accessibility across modern browsers</p>
+<body class="lab-page">
+
+    <!-- Universal Navigation Bar -->
+    <nav class="lab-navbar">
+        <div class="lab-navbar-container">
+            <a href="../index.html" class="lab-nav-brand">
+                <span class="portal-badge">BCS554</span>
+                <span>HTML & CSS Lab Portal</span>
+            </a>
+            <ul class="lab-nav-links">
+                <li><a href="box-model.html" class="lab-nav-link">Task 1: box-model.html</a></li>
+                <li><a href="card.html" class="lab-nav-link">Task 2: card.html</a></li>
+                <li><a href="scroll.html" class="lab-nav-link active">Task 3: scroll.html</a></li>
+            </ul>
+            <div class="lab-nav-navigators">
+                <a href="card.html" class="nav-arrow-btn">&larr; Task 2</a>
+                <a href="../assignment-13/nav-flex.html" class="nav-arrow-btn">Lab 13 &rarr;</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Student Ribbon -->
+    <div class="lab-ribbon">
+        <div class="lab-ribbon-container">
+            <div class="lab-breadcrumbs">
+                <a href="../index.html">Home</a> &rsaquo; <span>Assignment 12</span> &rsaquo; <span>Task 3 (scroll.html)</span>
+            </div>
+            <div class="lab-student-tag">
+                <span>Student: <strong>Karan</strong></span>
+                <span>&bull;</span>
+                <span>Roll No: <strong>[Roll No: To be filled]</strong></span>
+            </div>
         </div>
     </div>
+
+    <!-- Main Content Area -->
+    <main class="lab-main-container">
+        <div class="assignment-hero-card">
+            <span class="assignment-hero-tag">Overflow Management</span>
+            <h1>Assignment 12 &bull; Task 3: Overflow Scrolling</h1>
+            <p>Aim: Control content overflow within a constrained 120px viewport using overflow: auto.</p>
+            <div class="assignment-spec-row">
+                <div class="spec-item">File: <strong>scroll.html</strong></div>
+                <div class="spec-item">Height: <strong>height: 120px</strong></div>
+                <div class="spec-item">Overflow: <strong>overflow: auto</strong></div>
+                <div class="spec-item">Contents: <strong>Five paragraph lines</strong></div>
+            </div>
+        </div>
+
+        <div class="demo-showcase-box">
+            <div class="demo-title-bar">
+                <h2>Scrollable Log Container</h2>
+                <span class="demo-badge">Rendered Output</span>
+            </div>
+
+            <!-- Required 120px Fixed Height Container with overflow: auto and 5 Lines from Task 3 -->
+            <div class="scroll-container">
+                <p>Line 1: Initialize CSS Box Model viewport constraints</p>
+                <p>Line 2: Compute aggregate line-height and margin metrics</p>
+                <p>Line 3: Trigger vertical scrollbars upon boundary overflow</p>
+                <p>Line 4: Retain responsive container layout integrity</p>
+                <p>Line 5: Completed execution of Lab 12 requirements</p>
+            </div>
+
+            <div class="info-callout">
+                <strong>Why <code>overflow: auto</code> is Optimal:</strong> Unlike <code>overflow: scroll</code> (which forces inactive scrollbar tracks even when content fits), <code>overflow: auto</code> dynamically introduces scrollbars only when the rendered content genuinely exceeds container bounds.
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <a href="../assignment-13/nav-flex.html" class="nav-arrow-btn" style="background: var(--primary); padding: 0.6rem 1.25rem; font-size: 0.9rem;">Proceed to Assignment 13 &rarr;</a>
+                <a href="card.html" class="nav-arrow-btn" style="color: var(--text-main); background: #f1f5f9; border-color: #cbd5e1; padding: 0.6rem 1.25rem; font-size: 0.9rem;">&larr; Back to Task 2</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="lab-footer">
+        <p>Invertis University, Bareilly &bull; B.Tech CSE Third Year &bull; HTML & CSS Development Lab (BCS554)</p>
+    </footer>
+
 </body>
 </html>

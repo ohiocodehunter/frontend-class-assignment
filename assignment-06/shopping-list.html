@@ -1,53 +1,95 @@
 <!--
   Name: Karan
   Roll Number: [Roll No: To be filled]
-  Assignment: Assignment 6 - Types of HTML Lists (Task 1)
+  Assignment: Assignment 6 - Types of HTML Lists (Task 1: shopping-list.html)
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping List</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
-            padding: 2.5rem;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        .card {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 0.75rem;
-            padding: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-        h1 {
-            color: #0f172a;
-            margin-top: 0;
-            font-size: 1.8rem;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 0.5rem;
-        }
-        ul {
-            font-size: 1.1rem;
-            line-height: 2;
-            color: #334155;
-            padding-left: 1.5rem;
-        }
-    </style>
+    <title>Shopping List - Assignment 06</title>
+    <link rel="stylesheet" href="../assets/css/lab-theme.css">
 </head>
-<body>
-    <div class="card">
-        <h1>Shopping List</h1>
-        <ul>
-            <li>Notebook</li>
-            <li>Pen</li>
-            <li>Bag</li>
-        </ul>
+<body class="lab-page">
+
+    <!-- Universal Navigation Bar -->
+    <nav class="lab-navbar">
+        <div class="lab-navbar-container">
+            <a href="../index.html" class="lab-nav-brand">
+                <span class="portal-badge">BCS554</span>
+                <span>HTML & CSS Lab Portal</span>
+            </a>
+            <ul class="lab-nav-links">
+                <li><a href="shopping-list.html" class="lab-nav-link active">Task 1: shopping-list.html</a></li>
+                <li><a href="canteen-menu.html" class="lab-nav-link">Task 2: canteen-menu.html</a></li>
+                <li><a href="faq.html" class="lab-nav-link">Task 3: faq.html</a></li>
+            </ul>
+            <div class="lab-nav-navigators">
+                <a href="../assignment-05/portfolio-image.html" class="nav-arrow-btn">&larr; Lab 05</a>
+                <a href="../assignment-07/about-me.html" class="nav-arrow-btn">Lab 07 &rarr;</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Student Ribbon -->
+    <div class="lab-ribbon">
+        <div class="lab-ribbon-container">
+            <div class="lab-breadcrumbs">
+                <a href="../index.html">Home</a> &rsaquo; <span>Assignment 06</span> &rsaquo; <span>Task 1 (shopping-list.html)</span>
+            </div>
+            <div class="lab-student-tag">
+                <span>Student: <strong>Karan</strong></span>
+                <span>&bull;</span>
+                <span>Roll No: <strong>[Roll No: To be filled]</strong></span>
+            </div>
+        </div>
     </div>
+
+    <!-- Main Content Area -->
+    <main class="lab-main-container">
+        <div class="assignment-hero-card">
+            <span class="assignment-hero-tag">HTML Lists</span>
+            <h1>Assignment 6 &bull; Task 1: Unordered Lists</h1>
+            <p>Aim: Create an unordered bulleted list for items where sequence does not impact semantic meaning.</p>
+            <div class="assignment-spec-row">
+                <div class="spec-item">File: <strong>shopping-list.html</strong></div>
+                <div class="spec-item">Tag: <strong>&lt;ul&gt; &amp; &lt;li&gt;</strong></div>
+                <div class="spec-item">Items: <strong>Notebook, Pen, Bag</strong></div>
+            </div>
+        </div>
+
+        <div class="demo-showcase-box">
+            <div class="demo-title-bar">
+                <h2>Shopping List Demonstration</h2>
+                <span class="demo-badge">Rendered Output</span>
+            </div>
+
+            <!-- Required Heading and Unordered List from Task 1 -->
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2.5rem; max-width: 500px; margin: 1.5rem auto; box-shadow: var(--shadow-sm);">
+                <h1 style="color: #0f172a; font-size: 2rem; font-weight: 800; margin-top: 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.75rem; margin-bottom: 1.5rem;">Shopping List</h1>
+                
+                <ul style="font-size: 1.15rem; color: #334155; line-height: 2.2; padding-left: 1.75rem;">
+                    <li>Notebook</li>
+                    <li>Pen</li>
+                    <li>Bag</li>
+                </ul>
+            </div>
+
+            <div class="info-callout">
+                <strong>When to Use Unordered Lists:</strong> Use <code>&lt;ul&gt;</code> whenever items have equal weight and can be reordered without losing meaning (e.g., shopping lists, feature bullets, tags, navigation menus).
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <a href="canteen-menu.html" class="nav-arrow-btn" style="background: var(--primary); padding: 0.6rem 1.25rem; font-size: 0.9rem;">Proceed to Task 2: canteen-menu.html &rarr;</a>
+                <a href="../index.html" class="nav-arrow-btn" style="color: var(--text-main); background: #f1f5f9; border-color: #cbd5e1; padding: 0.6rem 1.25rem; font-size: 0.9rem;">&larr; Back to Portal</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="lab-footer">
+        <p>Invertis University, Bareilly &bull; B.Tech CSE Third Year &bull; HTML & CSS Development Lab (BCS554)</p>
+    </footer>
+
 </body>
 </html>

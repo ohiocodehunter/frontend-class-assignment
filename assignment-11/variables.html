@@ -1,14 +1,16 @@
 <!--
   Name: Karan
   Roll Number: [Roll No: To be filled]
-  Assignment: Assignment 11 - Units and CSS Variables (Task 2)
+  Assignment: Assignment 11 - Units and CSS Variables (Task 2: variables.html)
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Custom Properties (Variables)</title>
+    <title>CSS Variables - Assignment 11</title>
+    <link rel="stylesheet" href="../assets/css/lab-theme.css">
+    <!-- Required Variables from Task 2 in :root -->
     <style>
         :root {
             --main-color: #1d3557;
@@ -16,22 +18,109 @@
             --page-padding: 20px;
         }
 
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        .variables-demo-canvas {
             color: var(--main-color);
             padding: var(--page-padding);
-            margin: 0;
-            line-height: 1.6;
+            background: #ffffff;
+            border: 2px dashed #cbd5e1;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            box-shadow: var(--shadow-sm);
         }
 
-        h1 {
+        .variables-demo-canvas h1 {
             color: var(--accent-color);
             margin-top: 0;
+            font-size: 2.25rem;
+            font-weight: 800;
+        }
+
+        .variables-demo-canvas p {
+            color: var(--main-color);
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 0;
         }
     </style>
 </head>
-<body>
-    <h1>CSS Variables Design System</h1>
-    <p>This paragraph text inherits the main color variable (--main-color: #1d3557) defined in :root. The page padding and heading accent color are dynamically applied via var().</p>
+<body class="lab-page">
+
+    <!-- Universal Navigation Bar -->
+    <nav class="lab-navbar">
+        <div class="lab-navbar-container">
+            <a href="../index.html" class="lab-nav-brand">
+                <span class="portal-badge">BCS554</span>
+                <span>HTML & CSS Lab Portal</span>
+            </a>
+            <ul class="lab-nav-links">
+                <li><a href="units.html" class="lab-nav-link">Task 1: units.html</a></li>
+                <li><a href="variables.html" class="lab-nav-link active">Task 2: variables.html</a></li>
+                <li><a href="tokens.css" target="_blank" class="lab-nav-link">Task 3: tokens.css</a></li>
+                <li><a href="tokens.html" class="lab-nav-link">tokens.html Demo</a></li>
+            </ul>
+            <div class="lab-nav-navigators">
+                <a href="units.html" class="nav-arrow-btn">&larr; Task 1</a>
+                <a href="tokens.html" class="nav-arrow-btn">Task 3 &rarr;</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Student Ribbon -->
+    <div class="lab-ribbon">
+        <div class="lab-ribbon-container">
+            <div class="lab-breadcrumbs">
+                <a href="../index.html">Home</a> &rsaquo; <span>Assignment 11</span> &rsaquo; <span>Task 2 (variables.html)</span>
+            </div>
+            <div class="lab-student-tag">
+                <span>Student: <strong>Karan</strong></span>
+                <span>&bull;</span>
+                <span>Roll No: <strong>[Roll No: To be filled]</strong></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="lab-main-container">
+        <div class="assignment-hero-card">
+            <span class="assignment-hero-tag">CSS Custom Properties</span>
+            <h1>Assignment 11 &bull; Task 2: CSS Variables in :root</h1>
+            <p>Aim: Define reusable design variables in the :root pseudo-class and apply them via var() functions.</p>
+            <div class="assignment-spec-row">
+                <div class="spec-item">File: <strong>variables.html</strong></div>
+                <div class="spec-item">--main-color: <strong>#1d3557</strong></div>
+                <div class="spec-item">--accent-color: <strong>#e63946</strong></div>
+                <div class="spec-item">--page-padding: <strong>20px</strong></div>
+            </div>
+        </div>
+
+        <div class="demo-showcase-box">
+            <div class="demo-title-bar">
+                <h2>Custom Properties Rendering</h2>
+                <span class="demo-badge">Rendered Output</span>
+            </div>
+
+            <!-- Required h1 and paragraph styled using var() from Task 2 -->
+            <div class="variables-demo-canvas">
+                <h1>Design System Headings with Accent Color</h1>
+                <p>
+                    This paragraph is rendered using <code>var(--main-color)</code> which resolves to deep navy (#1d3557). The heading above utilizes <code>var(--accent-color)</code> which resolves to vibrant crimson (#e63946). The container padding is controlled globally by <code>var(--page-padding)</code> set to 20px.
+                </p>
+            </div>
+
+            <div class="info-callout">
+                <strong>Why CSS Variables are Dynamic:</strong> Unlike preprocessor variables (Sass/Less) which compile to static values, CSS Custom Properties stay live in the browser DOM. They can be dynamically updated at runtime using JavaScript or overridden within media queries.
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <a href="tokens.html" class="nav-arrow-btn" style="background: var(--primary); padding: 0.6rem 1.25rem; font-size: 0.9rem;">Proceed to Task 3: tokens.html Demo &rarr;</a>
+                <a href="units.html" class="nav-arrow-btn" style="color: var(--text-main); background: #f1f5f9; border-color: #cbd5e1; padding: 0.6rem 1.25rem; font-size: 0.9rem;">&larr; Back to Task 1</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="lab-footer">
+        <p>Invertis University, Bareilly &bull; B.Tech CSE Third Year &bull; HTML & CSS Development Lab (BCS554)</p>
+    </footer>
+
 </body>
 </html>

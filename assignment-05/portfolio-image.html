@@ -1,58 +1,95 @@
 <!--
   Name: Karan
   Roll Number: [Roll No: To be filled]
-  Assignment: Assignment 5 - Links and Images (Task 3)
+  Assignment: Assignment 5 - Links and Images (Task 3: portfolio-image.html)
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Image</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
-            padding: 2.5rem;
-            max-width: 650px;
-            margin: 0 auto;
-        }
-        .card {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 0.75rem;
-            padding: 2.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            text-align: center;
-        }
-        h1 {
-            color: #0f172a;
-            margin-top: 0;
-            font-size: 2rem;
-        }
-        img {
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            border: 2px solid #e2e8f0;
-            margin: 1rem auto;
-            display: block;
-        }
-        .caption {
-            color: #64748b;
-            font-size: 0.95rem;
-            margin-top: 0.5rem;
-        }
-    </style>
+    <title>Portfolio Image - Assignment 05</title>
+    <link rel="stylesheet" href="../assets/css/lab-theme.css">
 </head>
-<body>
-    <div class="card">
-        <h1>My Workspace Profile</h1>
-        <img src="images/sample.jpg" alt="A student workspace showing a laptop, study materials, and notebook on a desk" width="200" height="200">
-        <p class="caption">Profile snapshot displayed at 200 &times; 200 pixels.</p>
+<body class="lab-page">
+
+    <!-- Universal Navigation Bar -->
+    <nav class="lab-navbar">
+        <div class="lab-navbar-container">
+            <a href="../index.html" class="lab-nav-brand">
+                <span class="portal-badge">BCS554</span>
+                <span>HTML & CSS Lab Portal</span>
+            </a>
+            <ul class="lab-nav-links">
+                <li><a href="home.html" class="lab-nav-link">Task 1: home.html</a></li>
+                <li><a href="portfolio.html" class="lab-nav-link">Task 2: portfolio.html</a></li>
+                <li><a href="portfolio-image.html" class="lab-nav-link active">Task 3: portfolio-image.html</a></li>
+            </ul>
+            <div class="lab-nav-navigators">
+                <a href="portfolio.html" class="nav-arrow-btn">&larr; Task 2</a>
+                <a href="../assignment-06/shopping-list.html" class="nav-arrow-btn">Lab 06 &rarr;</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Student Ribbon -->
+    <div class="lab-ribbon">
+        <div class="lab-ribbon-container">
+            <div class="lab-breadcrumbs">
+                <a href="../index.html">Home</a> &rsaquo; <span>Assignment 05</span> &rsaquo; <span>Task 3 (portfolio-image.html)</span>
+            </div>
+            <div class="lab-student-tag">
+                <span>Student: <strong>Karan</strong></span>
+                <span>&bull;</span>
+                <span>Roll No: <strong>[Roll No: To be filled]</strong></span>
+            </div>
+        </div>
     </div>
+
+    <!-- Main Content Area -->
+    <main class="lab-main-container">
+        <div class="assignment-hero-card">
+            <span class="assignment-hero-tag">Media &amp; Accessibility</span>
+            <h1>Assignment 5 &bull; Task 3: Portfolio Image with Dimensions &amp; Alt Text</h1>
+            <p>Aim: Embed an image from the local images folder with explicit 200x200 dimensions and descriptive alternative text.</p>
+            <div class="assignment-spec-row">
+                <div class="spec-item">File: <strong>portfolio-image.html</strong></div>
+                <div class="spec-item">Dimensions: <strong>width="200" height="200"</strong></div>
+                <div class="spec-item">Path: <strong>images/sample.jpg</strong></div>
+            </div>
+        </div>
+
+        <div class="demo-showcase-box">
+            <div class="demo-title-bar">
+                <h2>Image Rendering &amp; Alt Tag Verification</h2>
+                <span class="demo-badge">Rendered Output</span>
+            </div>
+
+            <!-- Required Heading and Image from Task 3 -->
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2.5rem; margin: 1.5rem 0; text-align: center; box-shadow: var(--shadow-sm);">
+                <h1 style="color: #0f172a; font-size: 2.25rem; font-weight: 800; margin-top: 0; margin-bottom: 1.5rem;">Student Engineering Workspace</h1>
+                
+                <img src="images/sample.jpg" alt="A well-organized student study desk with a laptop displaying code, course notebooks, study notes, and a coffee mug in warm natural lighting" width="200" height="200" style="border-radius: 12px; border: 3px solid #e2e8f0; box-shadow: var(--shadow-md); display: block; margin: 0 auto; object-fit: cover;">
+
+                <p style="color: #64748b; font-size: 0.95rem; margin-top: 1rem; margin-bottom: 0;">
+                    Image rendered at exact dimensions of <strong>200 &times; 200 pixels</strong> with an accessible <code>alt</code> description.
+                </p>
+            </div>
+
+            <div class="info-callout">
+                <strong>Why Explicit Width &amp; Height Attributes Matter:</strong> Specifying <code>width="200"</code> and <code>height="200"</code> directly on the HTML <code>&lt;img&gt;</code> element allows browsers to reserve the exact layout space before the image binary is downloaded, preventing <em>Cumulative Layout Shift (CLS)</em>.
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <a href="../assignment-06/shopping-list.html" class="nav-arrow-btn" style="background: var(--primary); padding: 0.6rem 1.25rem; font-size: 0.9rem;">Proceed to Assignment 06 &rarr;</a>
+                <a href="portfolio.html" class="nav-arrow-btn" style="color: var(--text-main); background: #f1f5f9; border-color: #cbd5e1; padding: 0.6rem 1.25rem; font-size: 0.9rem;">&larr; Back to Task 2</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="lab-footer">
+        <p>Invertis University, Bareilly &bull; B.Tech CSE Third Year &bull; HTML & CSS Development Lab (BCS554)</p>
+    </footer>
+
 </body>
 </html>

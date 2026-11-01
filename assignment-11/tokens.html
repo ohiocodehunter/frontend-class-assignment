@@ -8,11 +8,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Design Tokens Demonstration</title>
+    <title>Design Tokens Demonstration - Assignment 11</title>
+    <link rel="stylesheet" href="../assets/css/lab-theme.css">
+    <!-- Required Tokens Stylesheet from Task 3 -->
     <link rel="stylesheet" href="tokens.css">
+    <style>
+        .tokens-showcase-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: var(--spacing-value);
+            box-shadow: var(--shadow-sm);
+            margin: 1.5rem 0;
+        }
+        .token-swatches {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .swatch-card {
+            flex: 1;
+            min-width: 140px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #ffffff;
+        }
+        .swatch-color {
+            height: 60px;
+            width: 100%;
+        }
+        .swatch-meta {
+            padding: 0.75rem;
+            font-size: 0.85rem;
+        }
+    </style>
 </head>
-<body>
-    <h1>Design Tokens Applied</h1>
-    <p>This document links directly to tokens.css. The primary color (#1d3557) is applied to body text, the accent color (#e63946) and 2rem heading size are applied to the h1, and 16px spacing is applied as padding.</p>
+<body class="lab-page">
+
+    <!-- Universal Navigation Bar -->
+    <nav class="lab-navbar">
+        <div class="lab-navbar-container">
+            <a href="../index.html" class="lab-nav-brand">
+                <span class="portal-badge">BCS554</span>
+                <span>HTML & CSS Lab Portal</span>
+            </a>
+            <ul class="lab-nav-links">
+                <li><a href="units.html" class="lab-nav-link">Task 1: units.html</a></li>
+                <li><a href="variables.html" class="lab-nav-link">Task 2: variables.html</a></li>
+                <li><a href="tokens.css" target="_blank" class="lab-nav-link">Task 3: tokens.css</a></li>
+                <li><a href="tokens.html" class="lab-nav-link active">tokens.html Demo</a></li>
+            </ul>
+            <div class="lab-nav-navigators">
+                <a href="variables.html" class="nav-arrow-btn">&larr; Task 2</a>
+                <a href="../assignment-12/box-model.html" class="nav-arrow-btn">Lab 12 &rarr;</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Student Ribbon -->
+    <div class="lab-ribbon">
+        <div class="lab-ribbon-container">
+            <div class="lab-breadcrumbs">
+                <a href="../index.html">Home</a> &rsaquo; <span>Assignment 11</span> &rsaquo; <span>Task 3 (tokens.html)</span>
+            </div>
+            <div class="lab-student-tag">
+                <span>Student: <strong>Karan</strong></span>
+                <span>&bull;</span>
+                <span>Roll No: <strong>[Roll No: To be filled]</strong></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="lab-main-container">
+        <div class="assignment-hero-card">
+            <span class="assignment-hero-tag">Design System Tokens</span>
+            <h1>Assignment 11 &bull; Task 3: External Design Tokens</h1>
+            <p>Aim: Maintain brand design tokens in an external tokens.css stylesheet, establishing unified typography, palette, and rhythm.</p>
+            <div class="assignment-spec-row">
+                <div class="spec-item">File: <strong>tokens.css &amp; tokens.html</strong></div>
+                <div class="spec-item">Primary Token: <strong>#1d3557</strong></div>
+                <div class="spec-item">Accent Token: <strong>#e63946</strong></div>
+                <div class="spec-item">Scale: <strong>heading: 2rem, spacing: 16px</strong></div>
+            </div>
+        </div>
+
+        <div class="demo-showcase-box">
+            <div class="demo-title-bar">
+                <h2>Tokens Applied Live from tokens.css</h2>
+                <span class="demo-badge">Rendered Output</span>
+            </div>
+
+            <div class="tokens-showcase-card">
+                <!-- Styled with var(--accent-color) and var(--heading-size) from tokens.css -->
+                <h1>Design Tokens in Production</h1>
+                
+                <!-- Styled with var(--primary-color) from tokens.css -->
+                <p>
+                    This document links directly to <code>tokens.css</code>. Every visual variable declared in the root scope governs the document canvas. When a design refresh is required, updating the token in one single file instantly updates all connected screens.
+                </p>
+
+                <div class="token-swatches">
+                    <div class="swatch-card">
+                        <div class="swatch-color" style="background: #1d3557;"></div>
+                        <div class="swatch-meta">
+                            <strong>--primary-color</strong><br>
+                            <code>#1d3557</code>
+                        </div>
+                    </div>
+                    <div class="swatch-card">
+                        <div class="swatch-color" style="background: #e63946;"></div>
+                        <div class="swatch-meta">
+                            <strong>--accent-color</strong><br>
+                            <code>#e63946</code>
+                        </div>
+                    </div>
+                    <div class="swatch-card">
+                        <div class="swatch-color" style="background: #f1f5f9; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #1e293b;">2rem</div>
+                        <div class="swatch-meta">
+                            <strong>--heading-size</strong><br>
+                            <code>2rem (32px)</code>
+                        </div>
+                    </div>
+                    <div class="swatch-card">
+                        <div class="swatch-color" style="background: #f1f5f9; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #1e293b;">16px</div>
+                        <div class="swatch-meta">
+                            <strong>--spacing-value</strong><br>
+                            <code>16px (1rem)</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <a href="../assignment-12/box-model.html" class="nav-arrow-btn" style="background: var(--primary); padding: 0.6rem 1.25rem; font-size: 0.9rem;">Proceed to Assignment 12 &rarr;</a>
+                <a href="tokens.css" target="_blank" class="nav-arrow-btn" style="color: var(--text-main); background: #f1f5f9; border-color: #cbd5e1; padding: 0.6rem 1.25rem; font-size: 0.9rem;">View tokens.css Source</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="lab-footer">
+        <p>Invertis University, Bareilly &bull; B.Tech CSE Third Year &bull; HTML & CSS Development Lab (BCS554)</p>
+    </footer>
+
 </body>
 </html>

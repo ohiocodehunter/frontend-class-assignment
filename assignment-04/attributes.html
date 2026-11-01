@@ -1,44 +1,96 @@
 <!--
   Name: Karan
   Roll Number: [Roll No: To be filled]
-  Assignment: Assignment 4 - Divs, Attributes and a Small Fix (Task 2)
+  Assignment: Assignment 4 - Divs, Attributes and a Small Fix (Task 2: attributes.html)
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Attributes</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: #f8fafc;
-            color: #334155;
-            padding: 2.5rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        #profile {
-            background-color: #ffffff;
-            border-left: 4px solid #3b82f6;
-            padding: 2rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-        h2 {
-            margin-top: 0;
-            color: #0f172a;
-        }
-        p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-    </style>
+    <title>Attributes - Assignment 04</title>
+    <link rel="stylesheet" href="../assets/css/lab-theme.css">
 </head>
-<body>
-    <div id="profile">
-        <h2>User Profile</h2>
-        <p data-topic="hobbies">In my free time, I enjoy reading technology blogs, competitive programming, and playing chess with friends.</p>
+<body class="lab-page">
+
+    <!-- Universal Navigation Bar -->
+    <nav class="lab-navbar">
+        <div class="lab-navbar-container">
+            <a href="../index.html" class="lab-nav-brand">
+                <span class="portal-badge">BCS554</span>
+                <span>HTML & CSS Lab Portal</span>
+            </a>
+            <ul class="lab-nav-links">
+                <li><a href="layout.html" class="lab-nav-link">Task 1: layout.html</a></li>
+                <li><a href="attributes.html" class="lab-nav-link active">Task 2: attributes.html</a></li>
+                <li><a href="attendance-fixed.html" class="lab-nav-link">Task 3: attendance-fixed.html</a></li>
+            </ul>
+            <div class="lab-nav-navigators">
+                <a href="layout.html" class="nav-arrow-btn">&larr; Task 1</a>
+                <a href="attendance-fixed.html" class="nav-arrow-btn">Task 3 &rarr;</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Student Ribbon -->
+    <div class="lab-ribbon">
+        <div class="lab-ribbon-container">
+            <div class="lab-breadcrumbs">
+                <a href="../index.html">Home</a> &rsaquo; <span>Assignment 04</span> &rsaquo; <span>Task 2 (attributes.html)</span>
+            </div>
+            <div class="lab-student-tag">
+                <span>Student: <strong>Karan</strong></span>
+                <span>&bull;</span>
+                <span>Roll No: <strong>[Roll No: To be filled]</strong></span>
+            </div>
+        </div>
     </div>
+
+    <!-- Main Content Area -->
+    <main class="lab-main-container">
+        <div class="assignment-hero-card">
+            <span class="assignment-hero-tag">Custom Data Attributes</span>
+            <h1>Assignment 4 &bull; Task 2: HTML Data Attributes</h1>
+            <p>Aim: Assign an id attribute to a div element and embed custom metadata via data-* attributes on an inner paragraph.</p>
+            <div class="assignment-spec-row">
+                <div class="spec-item">File: <strong>attributes.html</strong></div>
+                <div class="spec-item">Target Div: <strong>id="profile"</strong></div>
+                <div class="spec-item">Paragraph Attribute: <strong>data-topic="hobbies"</strong></div>
+            </div>
+        </div>
+
+        <div class="demo-showcase-box">
+            <div class="demo-title-bar">
+                <h2>Live Attribute Demonstration</h2>
+                <span class="demo-badge">Rendered Output</span>
+            </div>
+
+            <!-- Required Div with id="profile" and paragraph with data-topic="hobbies" -->
+            <div id="profile" style="background: #ffffff; border-left: 5px solid #2563eb; border-radius: 8px; padding: 2rem; box-shadow: var(--shadow-sm); border-top: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <h3 style="color: #0f172a; margin: 0; font-size: 1.4rem;">Student Profile</h3>
+                    <span style="font-family: var(--font-mono); font-size: 0.8rem; background: #eff6ff; color: #2563eb; padding: 0.25rem 0.6rem; border-radius: 4px;">#profile</span>
+                </div>
+                
+                <p data-topic="hobbies" style="color: #334155; font-size: 1.1rem; line-height: 1.7; margin: 0;">
+                    During weekends and semester breaks, I enjoy competitive programming, experimenting with modern frontend frameworks, reading open-source system architectures, and playing collegiate chess.
+                </p>
+            </div>
+
+            <div class="info-callout" style="margin-top: 1.5rem;">
+                <strong>DOM Inspection Insight:</strong> The <code>data-topic="hobbies"</code> attribute is embedded directly in the HTML tag. While invisible in standard page rendering, it is accessible to JavaScript via <code>element.dataset.topic</code> and to CSS via attribute selectors (e.g. <code>p[data-topic="hobbies"]</code>).
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <a href="attendance-fixed.html" class="nav-arrow-btn" style="background: var(--primary); padding: 0.6rem 1.25rem; font-size: 0.9rem;">Proceed to Task 3: attendance-fixed.html &rarr;</a>
+                <a href="layout.html" class="nav-arrow-btn" style="color: var(--text-main); background: #f1f5f9; border-color: #cbd5e1; padding: 0.6rem 1.25rem; font-size: 0.9rem;">&larr; Back to Task 1</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="lab-footer">
+        <p>Invertis University, Bareilly &bull; B.Tech CSE Third Year &bull; HTML & CSS Development Lab (BCS554)</p>
+    </footer>
+
 </body>
 </html>

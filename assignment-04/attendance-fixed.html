@@ -1,49 +1,101 @@
 <!--
   Name: Karan
   Roll Number: [Roll No: To be filled]
-  Assignment: Assignment 4 - Divs, Attributes and a Small Fix (Task 3)
+  Assignment: Assignment 4 - Divs, Attributes and a Small Fix (Task 3: attendance-fixed.html)
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Attendance</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
-            padding: 2.5rem;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        .report-card {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 0.75rem;
-            padding: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-        h1 {
-            color: #0f172a;
-            margin-top: 0;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 0.5rem;
-            font-size: 1.75rem;
-        }
-        p {
-            font-size: 1.1rem;
-            margin: 0.75rem 0;
-            color: #334155;
-            font-weight: 500;
-        }
-    </style>
+    <link rel="stylesheet" href="../assets/css/lab-theme.css">
 </head>
-<body>
-    <div class="report-card">
-        <h1>Attendance Report</h1>
-        <p>Asha: 92%</p>
-        <p>Rohan: 85%</p>
+<body class="lab-page">
+
+    <!-- Universal Navigation Bar -->
+    <nav class="lab-navbar">
+        <div class="lab-navbar-container">
+            <a href="../index.html" class="lab-nav-brand">
+                <span class="portal-badge">BCS554</span>
+                <span>HTML & CSS Lab Portal</span>
+            </a>
+            <ul class="lab-nav-links">
+                <li><a href="layout.html" class="lab-nav-link">Task 1: layout.html</a></li>
+                <li><a href="attributes.html" class="lab-nav-link">Task 2: attributes.html</a></li>
+                <li><a href="attendance-fixed.html" class="lab-nav-link active">Task 3: attendance-fixed.html</a></li>
+            </ul>
+            <div class="lab-nav-navigators">
+                <a href="attributes.html" class="nav-arrow-btn">&larr; Task 2</a>
+                <a href="../assignment-05/home.html" class="nav-arrow-btn">Lab 05 &rarr;</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Student Ribbon -->
+    <div class="lab-ribbon">
+        <div class="lab-ribbon-container">
+            <div class="lab-breadcrumbs">
+                <a href="../index.html">Home</a> &rsaquo; <span>Assignment 04</span> &rsaquo; <span>Task 3 (attendance-fixed.html)</span>
+            </div>
+            <div class="lab-student-tag">
+                <span>Student: <strong>Karan</strong></span>
+                <span>&bull;</span>
+                <span>Roll No: <strong>[Roll No: To be filled]</strong></span>
+            </div>
+        </div>
     </div>
+
+    <!-- Main Content Area -->
+    <main class="lab-main-container">
+        <div class="assignment-hero-card">
+            <span class="assignment-hero-tag">Syntax Validation &amp; Debugging</span>
+            <h1>Assignment 4 &bull; Task 3: Fixing Broken Markup</h1>
+            <p>Aim: Identify and correct unclosed tags, malformed syntax, and improper nesting in HTML pages.</p>
+            <div class="assignment-spec-row">
+                <div class="spec-item">File: <strong>attendance-fixed.html</strong></div>
+                <div class="spec-item">Fix 1: <strong>Closed &lt;h1&gt;Attendance Report&lt;/h1&gt;</strong></div>
+                <div class="spec-item">Fix 2: <strong>Replaced unclosed &lt;p&gt; with closing &lt;/p&gt;</strong></div>
+            </div>
+        </div>
+
+        <div class="demo-showcase-box">
+            <div class="demo-title-bar">
+                <h2>Corrected Page Output</h2>
+                <span class="demo-badge" style="background: #dcfce7; color: #166534;">Errors Resolved</span>
+            </div>
+
+            <!-- Required Corrected Output -->
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2rem; max-width: 480px; margin: 1.5rem auto; box-shadow: var(--shadow-md);">
+                <h1 style="color: #0f172a; margin-top: 0; font-size: 1.75rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.6rem; margin-bottom: 1rem;">Attendance Report</h1>
+                <p style="font-size: 1.15rem; color: #166534; font-weight: 600; margin: 0.75rem 0; display: flex; justify-content: space-between;">
+                    <span>Asha:</span>
+                    <span style="background: #dcfce7; padding: 0.2rem 0.6rem; border-radius: 4px;">92%</span>
+                </p>
+                <p style="font-size: 1.15rem; color: #1e40af; font-weight: 600; margin: 0.75rem 0; display: flex; justify-content: space-between;">
+                    <span>Rohan:</span>
+                    <span style="background: #dbeafe; padding: 0.2rem 0.6rem; border-radius: 4px;">85%</span>
+                </p>
+            </div>
+
+            <div class="info-callout" style="margin-top: 1.5rem;">
+                <strong>Errors Identified and Corrected:</strong>
+                <ol style="margin: 0.5rem 0 0 1.25rem; line-height: 1.7;">
+                    <li><strong>Unclosed Heading:</strong> The original line <code>&lt;h1&gt;Attendance Report</code> was missing its closing <code>&lt;/h1&gt;</code> tag, which caused browsers to treat subsequent paragraphs as heading content.</li>
+                    <li><strong>Mismatched Paragraph Tag:</strong> The line <code>&lt;p&gt;Asha: 92%&lt;p&gt;</code> had an opening tag at the end instead of the proper closing <code>&lt;/p&gt;</code> tag.</li>
+                </ol>
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <a href="../assignment-05/home.html" class="nav-arrow-btn" style="background: var(--primary); padding: 0.6rem 1.25rem; font-size: 0.9rem;">Proceed to Assignment 05 &rarr;</a>
+                <a href="attributes.html" class="nav-arrow-btn" style="color: var(--text-main); background: #f1f5f9; border-color: #cbd5e1; padding: 0.6rem 1.25rem; font-size: 0.9rem;">&larr; Back to Task 2</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="lab-footer">
+        <p>Invertis University, Bareilly &bull; B.Tech CSE Third Year &bull; HTML & CSS Development Lab (BCS554)</p>
+    </footer>
+
 </body>
 </html>

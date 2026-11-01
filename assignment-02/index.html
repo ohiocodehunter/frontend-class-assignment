@@ -1,0 +1,120 @@
+<!--
+  Name: Karan
+  Roll Number: [Roll No: To be filled]
+  Assignment: Assignment 2 - Pushing and Cloning a Repository
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 02 - Pushing and Cloning a Repository | HTML & CSS Lab</title>
+    <link rel="stylesheet" href="../assets/css/lab-theme.css">
+</head>
+<body class="lab-page">
+
+    <!-- Universal Navigation Bar -->
+    <nav class="lab-navbar">
+        <div class="lab-navbar-container">
+            <a href="../index.html" class="lab-nav-brand">
+                <span class="portal-badge">BCS554</span>
+                <span>HTML & CSS Lab Portal</span>
+            </a>
+            <ul class="lab-nav-links">
+                <li><a href="index.html" class="lab-nav-link active">Assignment 02 Hub</a></li>
+                <li><a href="html-copy/index.html" class="lab-nav-link">Task 3: html-copy/index.html</a></li>
+                <li><a href="terminal-output.txt" target="_blank" class="lab-nav-link">Terminal Output (.txt)</a></li>
+            </ul>
+            <div class="lab-nav-navigators">
+                <a href="../assignment-01/index.html" class="nav-arrow-btn">&larr; Lab 01</a>
+                <a href="../assignment-03/first.html" class="nav-arrow-btn">Lab 03 &rarr;</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Student Ribbon -->
+    <div class="lab-ribbon">
+        <div class="lab-ribbon-container">
+            <div class="lab-breadcrumbs">
+                <a href="../index.html">Home</a> &rsaquo; <span>Assignment 02</span>
+            </div>
+            <div class="lab-student-tag">
+                <span>Student: <strong>Karan</strong></span>
+                <span>&bull;</span>
+                <span>Roll No: <strong>[Roll No: To be filled]</strong></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="lab-main-container">
+        <!-- Hero Card -->
+        <div class="assignment-hero-card">
+            <span class="assignment-hero-tag">Remote Repositories & Collaboration</span>
+            <h1>Assignment 2: Pushing and Cloning a Repository</h1>
+            <p>Aim: Send your commits to a second repository on your computer and make a copy of it with clone.</p>
+            <div class="assignment-spec-row">
+                <div class="spec-item">Remote: <strong>git init --bare ../html-remote</strong></div>
+                <div class="spec-item">Remote URL: <strong>git remote add origin ../html-remote</strong></div>
+                <div class="spec-item">Push: <strong>git push origin main</strong></div>
+                <div class="spec-item">Clone: <strong>git clone html-remote html-copy</strong></div>
+            </div>
+        </div>
+
+        <!-- Task Walkthrough & Terminal Output -->
+        <div class="demo-showcase-box">
+            <div class="demo-title-bar">
+                <h2>Terminal Session & Command Execution</h2>
+                <span class="demo-badge">Verified Shell Output</span>
+            </div>
+            <p>Below is the terminal output showing the bare remote setup, push operation, and local cloning process verifying that the exact commit history is preserved.</p>
+
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <span class="terminal-dot red"></span>
+                    <span class="terminal-dot yellow"></span>
+                    <span class="terminal-dot green"></span>
+                    <span class="terminal-title">zsh &mdash; html-remote &amp; html-copy git session</span>
+                </div>
+                <div class="terminal-body"><span class="cmd">$ git init --bare ../html-remote</span>
+<span class="output">Initialized empty Git repository in /Users/ken/Codes of all Projects/frontend-class-assignment/assignment-02/html-remote/</span>
+
+<span class="cmd">$ git remote add origin ../html-remote</span>
+<span class="cmd">$ git remote -v</span>
+<span class="success">origin	../html-remote (fetch)
+origin	../html-remote (push)</span>
+
+<span class="cmd">$ git push origin main</span>
+<span class="output">To ../html-remote
+ * [new branch]      main -&gt; main</span>
+
+<span class="cmd">$ cd ..</span>
+<span class="cmd">$ git clone html-remote html-copy</span>
+<span class="output">Cloning into 'html-copy'...
+done.</span>
+
+<span class="cmd">$ cd html-copy</span>
+<span class="cmd">$ git log --oneline</span>
+<span class="success">421ff47 Add next meeting heading</span>
+<span class="success">142b14b Add home page</span></div>
+            </div>
+
+            <div class="info-callout">
+                <strong>Key Takeaway:</strong> A bare Git repository (created with <code>--bare</code>) has no working tree and acts exclusively as a storage and synchronization hub for remote pushing and pulling. Cloning from it creates a full, working copy with complete commit logs.
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                <a href="html-copy/index.html" class="nav-arrow-btn" style="background: var(--primary); padding: 0.6rem 1.25rem; font-size: 0.9rem;">View Cloned html-copy/index.html &rarr;</a>
+                <a href="terminal-output.txt" target="_blank" class="nav-arrow-btn" style="color: var(--text-main); background: #f1f5f9; border-color: #cbd5e1; padding: 0.6rem 1.25rem; font-size: 0.9rem;">View Raw terminal-output.txt</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Universal Footer -->
+    <footer class="lab-footer">
+        <p>Invertis University, Bareilly &bull; B.Tech CSE Third Year &bull; HTML & CSS Development Lab (BCS554)</p>
+        <p style="margin-top: 0.5rem;"><a href="../index.html">&larr; Return to Central Lab Portal</a></p>
+    </footer>
+
+</body>
+</html>

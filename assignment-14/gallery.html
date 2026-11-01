@@ -1,63 +1,129 @@
 <!--
   Name: Karan
   Roll Number: [Roll No: To be filled]
-  Assignment: Assignment 14 - CSS Grid Layouts (Task 2)
+  Assignment: Assignment 14 - CSS Grid Layouts (Task 2: gallery.html)
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Club Photo Gallery</title>
+    <title>Club Photo Gallery - Assignment 14</title>
+    <link rel="stylesheet" href="../assets/css/lab-theme.css">
     <style>
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
-            padding: 2.5rem;
-            max-width: 960px;
-            margin: 0 auto;
-        }
-        h1 {
-            color: #0f172a;
-            font-size: 2rem;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 0.5rem;
-            margin-bottom: 2rem;
-        }
+        /* Required Gallery Grid Specifications from Task 2 */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             gap: 10px;
+            margin: 1.5rem 0;
         }
-        .photo-box {
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+
+        .gallery-box {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
             color: #ffffff;
             height: 140px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
+            font-size: 1.15rem;
+            font-weight: 700;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.25s ease;
         }
-        .photo-box:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
+
+        .gallery-box:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            background: linear-gradient(135deg, #4338ca, #6d28d9);
         }
     </style>
 </head>
-<body>
-    <h1>Club Photo Gallery</h1>
-    <div class="gallery-grid">
-        <div class="photo-box">Photo 1</div>
-        <div class="photo-box">Photo 2</div>
-        <div class="photo-box">Photo 3</div>
-        <div class="photo-box">Photo 4</div>
-        <div class="photo-box">Photo 5</div>
-        <div class="photo-box">Photo 6</div>
+<body class="lab-page">
+
+    <!-- Universal Navigation Bar -->
+    <nav class="lab-navbar">
+        <div class="lab-navbar-container">
+            <a href="../index.html" class="lab-nav-brand">
+                <span class="portal-badge">BCS554</span>
+                <span>HTML & CSS Lab Portal</span>
+            </a>
+            <ul class="lab-nav-links">
+                <li><a href="grid-first.html" class="lab-nav-link">Task 1: grid-first.html</a></li>
+                <li><a href="gallery.html" class="lab-nav-link active">Task 2: gallery.html</a></li>
+                <li><a href="dashboard-areas.html" class="lab-nav-link">Task 3: dashboard-areas.html</a></li>
+            </ul>
+            <div class="lab-nav-navigators">
+                <a href="grid-first.html" class="nav-arrow-btn">&larr; Task 1</a>
+                <a href="dashboard-areas.html" class="nav-arrow-btn">Task 3 &rarr;</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Student Ribbon -->
+    <div class="lab-ribbon">
+        <div class="lab-ribbon-container">
+            <div class="lab-breadcrumbs">
+                <a href="../index.html">Home</a> &rsaquo; <span>Assignment 14</span> &rsaquo; <span>Task 2 (gallery.html)</span>
+            </div>
+            <div class="lab-student-tag">
+                <span>Student: <strong>Karan</strong></span>
+                <span>&bull;</span>
+                <span>Roll No: <strong>[Roll No: To be filled]</strong></span>
+            </div>
+        </div>
     </div>
+
+    <!-- Main Content Area -->
+    <main class="lab-main-container">
+        <div class="assignment-hero-card">
+            <span class="assignment-hero-tag">Intrinsic Responsiveness</span>
+            <h1>Assignment 14 &bull; Task 2: Responsive Photo Gallery</h1>
+            <p>Aim: Build a self-responsive photo gallery with repeat(auto-fill, minmax(150px, 1fr)) and 10px gap without requiring any media queries.</p>
+            <div class="assignment-spec-row">
+                <div class="spec-item">File: <strong>gallery.html</strong></div>
+                <div class="spec-item">Heading: <strong>Club Photo Gallery</strong></div>
+                <div class="spec-item">Columns: <strong>repeat(auto-fill, minmax(150px, 1fr))</strong></div>
+                <div class="spec-item">Gap: <strong>10px</strong></div>
+            </div>
+        </div>
+
+        <div class="demo-showcase-box">
+            <div class="demo-title-bar">
+                <h2>Photo Gallery Showcase</h2>
+                <span class="demo-badge">Rendered Output</span>
+            </div>
+
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2rem; margin: 1.5rem 0;">
+                <!-- Required Heading from Task 2 -->
+                <h1 style="color: #0f172a; font-size: 2rem; font-weight: 800; margin-top: 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.75rem; margin-bottom: 1.5rem;">Club Photo Gallery</h1>
+
+                <!-- Required 6 Boxes Labelled Photo 1 to Photo 6 in Responsive Grid from Task 2 -->
+                <div class="gallery-grid">
+                    <div class="gallery-box">Photo 1</div>
+                    <div class="gallery-box">Photo 2</div>
+                    <div class="gallery-box">Photo 3</div>
+                    <div class="gallery-box">Photo 4</div>
+                    <div class="gallery-box">Photo 5</div>
+                    <div class="gallery-box">Photo 6</div>
+                </div>
+            </div>
+
+            <div class="info-callout">
+                <strong>How <code>auto-fill</code> + <code>minmax(150px, 1fr)</code> Works:</strong> The browser fits as many 150px columns as physically possible in each row. Any remaining leftover space is divided equally among the visible columns (<code>1fr</code>), dynamically adjusting columns from 1 to 6 as you resize your window.
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <a href="dashboard-areas.html" class="nav-arrow-btn" style="background: var(--primary); padding: 0.6rem 1.25rem; font-size: 0.9rem;">Proceed to Task 3: dashboard-areas.html &rarr;</a>
+                <a href="grid-first.html" class="nav-arrow-btn" style="color: var(--text-main); background: #f1f5f9; border-color: #cbd5e1; padding: 0.6rem 1.25rem; font-size: 0.9rem;">&larr; Back to Task 1</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="lab-footer">
+        <p>Invertis University, Bareilly &bull; B.Tech CSE Third Year &bull; HTML & CSS Development Lab (BCS554)</p>
+    </footer>
+
 </body>
 </html>

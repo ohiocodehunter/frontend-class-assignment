@@ -1,19 +1,106 @@
 <!--
   Name: Karan
   Roll Number: [Roll No: To be filled]
-  Assignment: Assignment 10 - CSS Fundamentals (Task 3)
+  Assignment: Assignment 10 - CSS Fundamentals (Task 3: linked.html)
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>External Linked CSS</title>
+    <title>Linked External Stylesheet - Assignment 10</title>
+    <link rel="stylesheet" href="../assets/css/lab-theme.css">
+    <!-- Required External Stylesheet from Task 2 -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1 id="title">CSS Fundamentals with Linked Stylesheet</h1>
-    <p class="note">First note paragraph: External stylesheets allow for separation of content and presentation, enhancing site maintenance.</p>
-    <p class="note">Second note paragraph: Reusable class selectors like .note ensure visual consistency across all pages.</p>
+<body class="lab-page">
+
+    <!-- Universal Navigation Bar -->
+    <nav class="lab-navbar">
+        <div class="lab-navbar-container">
+            <a href="../index.html" class="lab-nav-brand">
+                <span class="portal-badge">BCS554</span>
+                <span>HTML & CSS Lab Portal</span>
+            </a>
+            <ul class="lab-nav-links">
+                <li><a href="inline-internal.html" class="lab-nav-link">Task 1: inline-internal.html</a></li>
+                <li><a href="style.css" target="_blank" class="lab-nav-link">Task 2: style.css</a></li>
+                <li><a href="linked.html" class="lab-nav-link active">Task 3: linked.html</a></li>
+            </ul>
+            <div class="lab-nav-navigators">
+                <a href="inline-internal.html" class="nav-arrow-btn">&larr; Task 1</a>
+                <a href="../assignment-11/units.html" class="nav-arrow-btn">Lab 11 &rarr;</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Student Ribbon -->
+    <div class="lab-ribbon">
+        <div class="lab-ribbon-container">
+            <div class="lab-breadcrumbs">
+                <a href="../index.html">Home</a> &rsaquo; <span>Assignment 10</span> &rsaquo; <span>Task 3 (linked.html)</span>
+            </div>
+            <div class="lab-student-tag">
+                <span>Student: <strong>Karan</strong></span>
+                <span>&bull;</span>
+                <span>Roll No: <strong>[Roll No: To be filled]</strong></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="lab-main-container">
+        <div class="assignment-hero-card">
+            <span class="assignment-hero-tag">External Stylesheets</span>
+            <h1>Assignment 10 &bull; Task 3: External CSS Linking</h1>
+            <p>Aim: Link an external stylesheet (style.css) containing element, class, and ID selectors to format document headings and notes.</p>
+            <div class="assignment-spec-row">
+                <div class="spec-item">File: <strong>linked.html</strong></div>
+                <div class="spec-item">Linked CSS: <strong>style.css</strong></div>
+                <div class="spec-item">Heading with ID: <strong>&lt;h1 id="title"&gt;</strong></div>
+                <div class="spec-item">Paragraphs: <strong>class="note"</strong></div>
+            </div>
+        </div>
+
+        <div class="demo-showcase-box">
+            <div class="demo-title-bar">
+                <h2>External Stylesheet Output</h2>
+                <span class="demo-badge">Rendered Output</span>
+            </div>
+
+            <!-- Required Heading with id="title" and paragraphs with class="note" styled by style.css -->
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2.5rem; margin: 1.5rem 0; box-shadow: var(--shadow-sm);">
+                <h1 id="title">Modular CSS Styling Architecture</h1>
+                
+                <p class="note">
+                    Note 1: Linking external style files via the &lt;link rel="stylesheet"&gt; tag ensures clean separation between markup structure and visual presentation.
+                </p>
+
+                <p class="note">
+                    Note 2: External stylesheets enable high-efficiency browser caching across multiple pages, significantly reducing server requests and improving page load speeds.
+                </p>
+            </div>
+
+            <div class="info-callout">
+                <strong>Applied Rules from style.css:</strong>
+                <ul style="margin: 0.5rem 0 0 1.25rem;">
+                    <li><code>h1</code> &rarr; navy color</li>
+                    <li><code>#title</code> &rarr; underlined text decoration</li>
+                    <li><code>.note</code> &rarr; italic font style</li>
+                    <li><code>p</code> &rarr; 18px font size and grey color</li>
+                </ul>
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <a href="../assignment-11/units.html" class="nav-arrow-btn" style="background: var(--primary); padding: 0.6rem 1.25rem; font-size: 0.9rem;">Proceed to Assignment 11 &rarr;</a>
+                <a href="inline-internal.html" class="nav-arrow-btn" style="color: var(--text-main); background: #f1f5f9; border-color: #cbd5e1; padding: 0.6rem 1.25rem; font-size: 0.9rem;">&larr; Back to Task 1</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="lab-footer">
+        <p>Invertis University, Bareilly &bull; B.Tech CSE Third Year &bull; HTML & CSS Development Lab (BCS554)</p>
+    </footer>
+
 </body>
 </html>

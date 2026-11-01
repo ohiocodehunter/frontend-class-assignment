@@ -1,80 +1,149 @@
 <!--
   Name: Karan
   Roll Number: [Roll No: To be filled]
-  Assignment: Assignment 15 - Responsive Pages with Media Queries (Task 1)
+  Assignment: Assignment 15 - Responsive Pages with Media Queries (Task 1: mobile-first.html)
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- Required Viewport Meta Tag from Task 1 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile First Responsive Cards</title>
+    <title>Mobile First Responsive Cards - Assignment 15</title>
+    <link rel="stylesheet" href="../assets/css/lab-theme.css">
     <style>
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
-            padding: 2rem 1rem;
-            margin: 0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        h1 {
-            color: #0f172a;
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 1.75rem;
-        }
-        /* Mobile-first base styles: cards stack vertically */
+        /* Base styles for phones: cards stack vertically */
         .cards {
             display: flex;
             flex-direction: column;
             gap: 1.25rem;
-        }
-        .card {
-            background-color: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 0.75rem;
-            padding: 1.75rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-        .card h2 {
-            margin-top: 0;
-            color: #2563eb;
-            font-size: 1.35rem;
-        }
-        .card p {
-            margin: 0;
-            color: #475569;
-            line-height: 1.6;
+            margin: 1.5rem 0;
         }
 
-        /* Tablet & desktop screens: 600px and up */
+        .cards .card {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 2rem 1.75rem;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.25s ease;
+        }
+
+        .cards .card:hover {
+            box-shadow: var(--shadow-md);
+            border-color: #93c5fd;
+        }
+
+        .cards .card h2 {
+            margin-top: 0;
+            color: #2563eb;
+            font-size: 1.45rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+        }
+
+        .cards .card p {
+            margin: 0;
+            color: #475569;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* Required Media Query: 600px wide and up shows cards side by side */
         @media (min-width: 600px) {
             .cards {
                 flex-direction: row;
             }
-            .card {
+            .cards .card {
                 flex: 1;
             }
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h1>Responsive Cards (Mobile-First)</h1>
-        <div class="cards">
-            <div class="card">
-                <h2>Mobile Strategy</h2>
-                <p>Mobile-first development prioritizes compact screens, optimizing performance and essential content for handheld devices.</p>
+<body class="lab-page">
+
+    <!-- Universal Navigation Bar -->
+    <nav class="lab-navbar">
+        <div class="lab-navbar-container">
+            <a href="../index.html" class="lab-nav-brand">
+                <span class="portal-badge">BCS554</span>
+                <span>HTML & CSS Lab Portal</span>
+            </a>
+            <ul class="lab-nav-links">
+                <li><a href="mobile-first.html" class="lab-nav-link active">Task 1: mobile-first.html</a></li>
+                <li><a href="responsive-image.html" class="lab-nav-link">Task 2: responsive-image.html</a></li>
+                <li><a href="responsive-text.html" class="lab-nav-link">Task 3: responsive-text.html</a></li>
+            </ul>
+            <div class="lab-nav-navigators">
+                <a href="../assignment-14/dashboard-areas.html" class="nav-arrow-btn">&larr; Lab 14</a>
+                <a href="../index.html" class="nav-arrow-btn">Portal Home &rarr;</a>
             </div>
-            <div class="card">
-                <h2>Desktop Enhancement</h2>
-                <p>At screens 600px and wider, media queries trigger horizontal card arrangements to utilize available display width.</p>
+        </div>
+    </nav>
+
+    <!-- Student Ribbon -->
+    <div class="lab-ribbon">
+        <div class="lab-ribbon-container">
+            <div class="lab-breadcrumbs">
+                <a href="../index.html">Home</a> &rsaquo; <span>Assignment 15</span> &rsaquo; <span>Task 1 (mobile-first.html)</span>
+            </div>
+            <div class="lab-student-tag">
+                <span>Student: <strong>Karan</strong></span>
+                <span>&bull;</span>
+                <span>Roll No: <strong>[Roll No: To be filled]</strong></span>
             </div>
         </div>
     </div>
+
+    <!-- Main Content Area -->
+    <main class="lab-main-container">
+        <div class="assignment-hero-card">
+            <span class="assignment-hero-tag">Responsive Media Queries</span>
+            <h1>Assignment 15 &bull; Task 1: Mobile-First Card Layout</h1>
+            <p>Aim: Write mobile-first default styles where cards stack on phone screens, and apply a min-width: 600px media query to place them side by side.</p>
+            <div class="assignment-spec-row">
+                <div class="spec-item">File: <strong>mobile-first.html</strong></div>
+                <div class="spec-item">Meta Tag: <strong>viewport</strong></div>
+                <div class="spec-item">Breakpoint: <strong>@media (min-width: 600px)</strong></div>
+            </div>
+        </div>
+
+        <div class="demo-showcase-box">
+            <div class="demo-title-bar">
+                <h2>Mobile-First Responsive Testing</h2>
+                <span class="demo-badge">Breakpoint: 600px</span>
+            </div>
+
+            <!-- Required 2 Cards with h2 and p from Task 1 -->
+            <div class="cards">
+                <div class="card">
+                    <h2>Mobile Strategy</h2>
+                    <p>
+                        The mobile-first paradigm establishes lightweight base styles prioritizing cellular networks and compact touch displays before progressively enhancing with complex multi-column arrangements.
+                    </p>
+                </div>
+                <div class="card">
+                    <h2>Desktop Expansion</h2>
+                    <p>
+                        When the viewport achieves 600px or wider, the media query smoothly switches <code>flex-direction: column</code> to <code>row</code>, dividing the available screen width equally across both cards.
+                    </p>
+                </div>
+            </div>
+
+            <div class="info-callout">
+                <strong>Try It Live:</strong> Resize your browser window below and above 600px width. You will see the two cards toggle between a vertical column stack on narrow screens and an elegant horizontal row on wide screens.
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <a href="responsive-image.html" class="nav-arrow-btn" style="background: var(--primary); padding: 0.6rem 1.25rem; font-size: 0.9rem;">Proceed to Task 2: responsive-image.html &rarr;</a>
+                <a href="../index.html" class="nav-arrow-btn" style="color: var(--text-main); background: #f1f5f9; border-color: #cbd5e1; padding: 0.6rem 1.25rem; font-size: 0.9rem;">&larr; Back to Portal</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="lab-footer">
+        <p>Invertis University, Bareilly &bull; B.Tech CSE Third Year &bull; HTML & CSS Development Lab (BCS554)</p>
+    </footer>
+
 </body>
 </html>

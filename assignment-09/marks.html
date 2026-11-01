@@ -1,87 +1,147 @@
 <!--
   Name: Karan
   Roll Number: [Roll No: To be filled]
-  Assignment: Assignment 9 - Tables with Headers and Footers (Task 1)
+  Assignment: Assignment 9 - Tables with Headers and Footers (Task 1: marks.html)
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marks of Class A</title>
+    <title>Class A Marks - Assignment 09</title>
+    <link rel="stylesheet" href="../assets/css/lab-theme.css">
     <style>
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
-            padding: 2.5rem;
-            display: flex;
-            justify-content: center;
-        }
-        .table-container {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 0.75rem;
-            padding: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            max-width: 600px;
-            width: 100%;
-        }
-        table {
+        .gradebook-table {
             width: 100%;
             border-collapse: collapse;
-            text-align: left;
+            font-size: 1.05rem;
+            margin-top: 1rem;
         }
-        caption {
-            font-size: 1.4rem;
-            font-weight: 700;
+        .gradebook-table caption {
+            font-size: 1.5rem;
+            font-weight: 800;
             color: #0f172a;
-            margin-bottom: 1rem;
+            text-align: left;
+            margin-bottom: 1.25rem;
+        }
+        .gradebook-table th, .gradebook-table td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
             text-align: left;
         }
-        th, td {
-            padding: 0.85rem 1.25rem;
-            border-bottom: 1px solid #e2e8f0;
+        .gradebook-table thead th {
+            background: #f1f5f9;
+            color: #1e293b;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            font-size: 0.88rem;
         }
-        thead th {
-            background-color: #f1f5f9;
-            color: #334155;
-            font-weight: 600;
-        }
-        tbody tr:hover {
+        .gradebook-table tbody tr:hover {
             background-color: #f8fafc;
         }
     </style>
 </head>
-<body>
-    <div class="table-container">
-        <table>
-            <caption>Marks of Class A</caption>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Maths</th>
-                    <th>Science</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Asha</td>
-                    <td>78</td>
-                    <td>85</td>
-                </tr>
-                <tr>
-                    <td>Rohan</td>
-                    <td>64</td>
-                    <td>70</td>
-                </tr>
-                <tr>
-                    <td>Neha</td>
-                    <td>91</td>
-                    <td>88</td>
-                </tr>
-            </tbody>
-        </table>
+<body class="lab-page">
+
+    <!-- Universal Navigation Bar -->
+    <nav class="lab-navbar">
+        <div class="lab-navbar-container">
+            <a href="../index.html" class="lab-nav-brand">
+                <span class="portal-badge">BCS554</span>
+                <span>HTML & CSS Lab Portal</span>
+            </a>
+            <ul class="lab-nav-links">
+                <li><a href="marks.html" class="lab-nav-link active">Task 1: marks.html</a></li>
+                <li><a href="marks-average.html" class="lab-nav-link">Task 2: marks-average.html</a></li>
+                <li><a href="marks-accessible.html" class="lab-nav-link">Task 3: marks-accessible.html</a></li>
+            </ul>
+            <div class="lab-nav-navigators">
+                <a href="../assignment-08/signup-required.html" class="nav-arrow-btn">&larr; Lab 08</a>
+                <a href="../assignment-10/inline-internal.html" class="nav-arrow-btn">Lab 10 &rarr;</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Student Ribbon -->
+    <div class="lab-ribbon">
+        <div class="lab-ribbon-container">
+            <div class="lab-breadcrumbs">
+                <a href="../index.html">Home</a> &rsaquo; <span>Assignment 09</span> &rsaquo; <span>Task 1 (marks.html)</span>
+            </div>
+            <div class="lab-student-tag">
+                <span>Student: <strong>Karan</strong></span>
+                <span>&bull;</span>
+                <span>Roll No: <strong>[Roll No: To be filled]</strong></span>
+            </div>
+        </div>
     </div>
+
+    <!-- Main Content Area -->
+    <main class="lab-main-container">
+        <div class="assignment-hero-card">
+            <span class="assignment-hero-tag">Tabular Data Structures</span>
+            <h1>Assignment 9 &bull; Task 1: HTML Data Tables</h1>
+            <p>Aim: Construct semantic tables using &lt;caption&gt;, &lt;thead&gt;, and &lt;tbody&gt; to present student performance records.</p>
+            <div class="assignment-spec-row">
+                <div class="spec-item">File: <strong>marks.html</strong></div>
+                <div class="spec-item">Caption: <strong>Marks of Class A</strong></div>
+                <div class="spec-item">Headers: <strong>Name, Maths, Science</strong></div>
+                <div class="spec-item">Rows: <strong>Asha, Rohan, Neha</strong></div>
+            </div>
+        </div>
+
+        <div class="demo-showcase-box">
+            <div class="demo-title-bar">
+                <h2>Class Scoreboard Demonstration</h2>
+                <span class="demo-badge">Rendered Output</span>
+            </div>
+
+            <!-- Required Table from Task 1 -->
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2rem; max-width: 650px; margin: 1.5rem auto; box-shadow: var(--shadow-sm); overflow-x: auto;">
+                <table class="gradebook-table">
+                    <caption>Marks of Class A</caption>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Maths</th>
+                            <th>Science</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: 600; color: #0f172a;">Asha</td>
+                            <td>78</td>
+                            <td>85</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600; color: #0f172a;">Rohan</td>
+                            <td>64</td>
+                            <td>70</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600; color: #0f172a;">Neha</td>
+                            <td>91</td>
+                            <td>88</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="info-callout">
+                <strong>Semantic Grouping Benefit:</strong> The <code>&lt;thead&gt;</code> and <code>&lt;tbody&gt;</code> elements allow browser print drivers to repeat the header on every printed page and enable fixed-header scrolling in complex desktop dashboards.
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <a href="marks-average.html" class="nav-arrow-btn" style="background: var(--primary); padding: 0.6rem 1.25rem; font-size: 0.9rem;">Proceed to Task 2: marks-average.html &rarr;</a>
+                <a href="../index.html" class="nav-arrow-btn" style="color: var(--text-main); background: #f1f5f9; border-color: #cbd5e1; padding: 0.6rem 1.25rem; font-size: 0.9rem;">&larr; Back to Portal</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="lab-footer">
+        <p>Invertis University, Bareilly &bull; B.Tech CSE Third Year &bull; HTML & CSS Development Lab (BCS554)</p>
+    </footer>
+
 </body>
 </html>

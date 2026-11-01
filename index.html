@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invertis University | HTML & CSS Lab Portal (BCS554)</title>
+    <title>Invertis University | HTML & CSS Development Lab (BCS554)</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-primary: #090d16;
@@ -35,13 +35,13 @@
             min-height: 100vh;
             line-height: 1.6;
             background-image: 
-                radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.15) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(129, 140, 248, 0.12) 0px, transparent 50%);
+                radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.18) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(129, 140, 248, 0.15) 0px, transparent 50%);
             background-attachment: fixed;
         }
 
         header {
-            padding: 3.5rem 2rem 2.5rem;
+            padding: 3.5rem 2rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
             text-align: center;
@@ -57,14 +57,14 @@
             border-radius: 9999px;
             font-size: 0.85rem;
             color: var(--accent-blue);
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 1.25rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
 
         h1 {
-            font-size: 2.75rem;
+            font-size: 2.85rem;
             font-weight: 800;
             letter-spacing: -0.03em;
             background: linear-gradient(135deg, #ffffff 40%, #94a3b8 100%);
@@ -76,7 +76,7 @@
         .subtitle {
             font-size: 1.15rem;
             color: var(--text-secondary);
-            max-width: 650px;
+            max-width: 700px;
             margin: 0 auto 1.5rem;
         }
 
@@ -84,13 +84,16 @@
             display: inline-flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 2rem;
+            align-items: center;
+            gap: 1.75rem;
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             backdrop-filter: blur(12px);
             padding: 0.85rem 1.75rem;
             border-radius: 12px;
             font-size: 0.95rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            margin-bottom: 2rem;
         }
 
         .student-info-bar span {
@@ -102,10 +105,85 @@
             margin-left: 0.35rem;
         }
 
+        .github-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 0.4rem 0.9rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .github-link-btn:hover {
+            background: var(--accent-blue);
+            color: #0f172a;
+            border-color: var(--accent-blue);
+        }
+
+        /* Filter Controls */
+        .controls-bar {
+            max-width: 1200px;
+            margin: 0 auto 2rem;
+            padding: 0 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .search-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 0.65rem 1rem;
+            color: #ffffff;
+            font-family: var(--font-main);
+            font-size: 0.95rem;
+            width: 100%;
+            max-width: 340px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-box:focus {
+            border-color: var(--accent-blue);
+        }
+
+        .filter-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.4rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--accent-blue);
+            border-color: rgba(56, 189, 248, 0.4);
+        }
+
         main {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 1rem 2rem 5rem;
+            padding: 0 2rem 5rem;
         }
 
         .grid-cards {
@@ -141,7 +219,7 @@
 
         .card:hover {
             transform: translateY(-4px);
-            border-color: rgba(56, 189, 248, 0.3);
+            border-color: rgba(56, 189, 248, 0.35);
             box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5);
         }
 
@@ -159,11 +237,21 @@
         .lab-number {
             font-family: var(--font-mono);
             font-size: 0.8rem;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--accent-blue);
             background: rgba(56, 189, 248, 0.1);
             padding: 0.25rem 0.6rem;
             border-radius: 6px;
+        }
+
+        .lab-category {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #94a3b8;
+            background: rgba(255, 255, 255, 0.06);
+            padding: 0.2rem 0.55rem;
+            border-radius: 4px;
+            text-transform: uppercase;
         }
 
         .card h2 {
@@ -222,6 +310,30 @@
             text-decoration: underline;
         }
 
+        .card-footer-action {
+            display: flex;
+            justify-content: flex-end;
+            padding-top: 0.75rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .launch-hub-btn {
+            color: #ffffff;
+            background: rgba(56, 189, 248, 0.15);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            text-decoration: none;
+            padding: 0.4rem 0.85rem;
+            border-radius: 6px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .launch-hub-btn:hover {
+            background: var(--accent-blue);
+            color: #0f172a;
+        }
+
         footer {
             text-align: center;
             padding: 2.5rem;
@@ -231,366 +343,480 @@
             background: var(--bg-secondary);
         }
 
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
             h1 { font-size: 2rem; }
             .grid-cards { grid-template-columns: 1fr; }
             .student-info-bar { flex-direction: column; gap: 0.5rem; }
+            .controls-bar { flex-direction: column; align-items: stretch; }
+            .search-box { max-width: 100%; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="badge-pill">Invertis University, Bareilly &bull; B.Tech CSE</div>
+        <div class="badge-pill">Invertis University, Bareilly &bull; B.Tech CSE Third Year</div>
         <h1>HTML & CSS Development Lab</h1>
-        <p class="subtitle">Course Code: BCS554 &bull; Comprehensive Lab Assignments & Project Submissions</p>
+        <p class="subtitle">Course Code: BCS554 &bull; Comprehensive 15-Lab Assignment System with Bi-Directional Routing</p>
         
         <div class="student-info-bar">
             <div><span>Student Name:</span> <strong>Karan</strong></div>
             <div><span>Roll Number:</span> <strong>[Roll No: To be filled]</strong></div>
-            <div><span>Total Assignments:</span> <strong>15 of 15 Completed</strong></div>
+            <div><span>Total Labs:</span> <strong>15 of 15 Ready</strong></div>
+            <a href="https://github.com/ohiocodehunter/frontend-class-assignment" target="_blank" class="github-link-btn">
+                <span>GitHub Repository &rarr;</span>
+            </a>
         </div>
     </header>
 
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+        <input type="text" id="searchInput" class="search-box" placeholder="Search assignments, topics, or files...">
+        <div class="filter-tags">
+            <button class="filter-btn active" data-filter="all">All (15)</button>
+            <button class="filter-btn" data-filter="git">Git (2)</button>
+            <button class="filter-btn" data-filter="html">HTML5 (7)</button>
+            <button class="filter-btn" data-filter="css">CSS3 &amp; Layouts (6)</button>
+        </div>
+    </div>
+
     <main>
-        <div class="grid-cards">
+        <div class="grid-cards" id="cardsGrid">
 
             <!-- Assignment 1 -->
-            <article class="card">
+            <article class="card" data-category="git">
                 <div class="card-header">
                     <span class="lab-number">Assignment 01</span>
+                    <span class="lab-category">Git VCS</span>
                 </div>
                 <h2>Starting a Git Repository</h2>
-                <p class="card-aim">Start a Git repository for your lab folder and save your work with commits.</p>
+                <p class="card-aim">Start a Git repository for your lab folder, configure your local identity, and save work with commits.</p>
                 <ul class="tasks-list">
                     <li class="task-item">
                         <span class="task-name">terminal-output.txt</span>
-                        <a class="task-link" href="assignment-01/terminal-output.txt" target="_blank">View Output &rarr;</a>
+                        <a class="task-link" href="assignment-01/terminal-output.txt" target="_blank">View Terminal Log &rarr;</a>
                     </li>
                     <li class="task-item">
                         <span class="task-name">html-lab/index.html</span>
-                        <a class="task-link" href="assignment-01/html-lab/index.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-01/html-lab/index.html">Preview Page &rarr;</a>
                     </li>
                 </ul>
+                <div class="card-footer-action">
+                    <a href="assignment-01/index.html" class="launch-hub-btn">Open Lab 01 Hub &rarr;</a>
+                </div>
             </article>
 
             <!-- Assignment 2 -->
-            <article class="card">
+            <article class="card" data-category="git">
                 <div class="card-header">
                     <span class="lab-number">Assignment 02</span>
+                    <span class="lab-category">Git VCS</span>
                 </div>
-                <h2>Pushing and Cloning a Repository</h2>
-                <p class="card-aim">Send commits to a bare remote repository and make a cloned local copy.</p>
+                <h2>Pushing &amp; Cloning a Repository</h2>
+                <p class="card-aim">Send commits to a bare remote repository and make a cloned working local copy.</p>
                 <ul class="tasks-list">
                     <li class="task-item">
                         <span class="task-name">terminal-output.txt</span>
-                        <a class="task-link" href="assignment-02/terminal-output.txt" target="_blank">View Output &rarr;</a>
+                        <a class="task-link" href="assignment-02/terminal-output.txt" target="_blank">View Terminal Log &rarr;</a>
                     </li>
                     <li class="task-item">
                         <span class="task-name">html-copy/index.html</span>
-                        <a class="task-link" href="assignment-02/html-copy/index.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-02/html-copy/index.html">Preview Page &rarr;</a>
                     </li>
                 </ul>
+                <div class="card-footer-action">
+                    <a href="assignment-02/index.html" class="launch-hub-btn">Open Lab 02 Hub &rarr;</a>
+                </div>
             </article>
 
             <!-- Assignment 3 -->
-            <article class="card">
+            <article class="card" data-category="html">
                 <div class="card-header">
                     <span class="lab-number">Assignment 03</span>
+                    <span class="lab-category">HTML5</span>
                 </div>
                 <h2>Your First HTML Page</h2>
-                <p class="card-aim">Document structure, title, heading hierarchy, and inline formatting.</p>
+                <p class="card-aim">Document structure, title, heading hierarchy (h1-h3), and inline strong/em/br formatting.</p>
                 <ul class="tasks-list">
                     <li class="task-item">
                         <span class="task-name">first.html</span>
-                        <a class="task-link" href="assignment-03/first.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-03/first.html">Task 1: First Page &rarr;</a>
                     </li>
                     <li class="task-item">
                         <span class="task-name">headings.html</span>
-                        <a class="task-link" href="assignment-03/headings.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-03/headings.html">Task 2: Headings &rarr;</a>
                     </li>
                     <li class="task-item">
                         <span class="task-name">text-format.html</span>
-                        <a class="task-link" href="assignment-03/text-format.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-03/text-format.html">Task 3: Formatting &rarr;</a>
                     </li>
                 </ul>
+                <div class="card-footer-action">
+                    <a href="assignment-03/first.html" class="launch-hub-btn">Open Lab 03 &rarr;</a>
+                </div>
             </article>
 
             <!-- Assignment 4 -->
-            <article class="card">
+            <article class="card" data-category="html">
                 <div class="card-header">
                     <span class="lab-number">Assignment 04</span>
+                    <span class="lab-category">HTML5</span>
                 </div>
-                <h2>Divs, Attributes & Small Fix</h2>
+                <h2>Divs, Attributes &amp; Small Fix</h2>
                 <p class="card-aim">Grouping layout blocks, custom data attributes, and debugging malformed HTML.</p>
                 <ul class="tasks-list">
                     <li class="task-item">
                         <span class="task-name">layout.html</span>
-                        <a class="task-link" href="assignment-04/layout.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-04/layout.html">Task 1: Div Layout &rarr;</a>
                     </li>
                     <li class="task-item">
                         <span class="task-name">attributes.html</span>
-                        <a class="task-link" href="assignment-04/attributes.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-04/attributes.html">Task 2: Attributes &rarr;</a>
                     </li>
                     <li class="task-item">
                         <span class="task-name">attendance-fixed.html</span>
-                        <a class="task-link" href="assignment-04/attendance-fixed.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-04/attendance-fixed.html">Task 3: Bug Fix &rarr;</a>
                     </li>
                 </ul>
+                <div class="card-footer-action">
+                    <a href="assignment-04/layout.html" class="launch-hub-btn">Open Lab 04 &rarr;</a>
+                </div>
             </article>
 
             <!-- Assignment 5 -->
-            <article class="card">
+            <article class="card" data-category="html">
                 <div class="card-header">
                     <span class="lab-number">Assignment 05</span>
+                    <span class="lab-category">HTML5</span>
                 </div>
                 <h2>Links and Images</h2>
-                <p class="card-aim">Hyperlinking multi-page documents and displaying accessible images.</p>
+                <p class="card-aim">Hyperlinking multi-page documents and displaying accessible images with explicit dimensions.</p>
                 <ul class="tasks-list">
                     <li class="task-item">
                         <span class="task-name">home.html</span>
-                        <a class="task-link" href="assignment-05/home.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-05/home.html">Task 1: Home Page &rarr;</a>
                     </li>
                     <li class="task-item">
                         <span class="task-name">portfolio.html</span>
-                        <a class="task-link" href="assignment-05/portfolio.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-05/portfolio.html">Task 2: Portfolio &rarr;</a>
                     </li>
                     <li class="task-item">
                         <span class="task-name">portfolio-image.html</span>
-                        <a class="task-link" href="assignment-05/portfolio-image.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-05/portfolio-image.html">Task 3: Image (200x200) &rarr;</a>
                     </li>
                 </ul>
+                <div class="card-footer-action">
+                    <a href="assignment-05/home.html" class="launch-hub-btn">Open Lab 05 &rarr;</a>
+                </div>
             </article>
 
             <!-- Assignment 6 -->
-            <article class="card">
+            <article class="card" data-category="html">
                 <div class="card-header">
                     <span class="lab-number">Assignment 06</span>
+                    <span class="lab-category">HTML5</span>
                 </div>
                 <h2>Types of HTML Lists</h2>
-                <p class="card-aim">Unordered bulleted lists, nested ordered lists, and description lists.</p>
+                <p class="card-aim">Unordered bulleted lists, nested ordered lists, and key-value description lists.</p>
                 <ul class="tasks-list">
                     <li class="task-item">
                         <span class="task-name">shopping-list.html</span>
-                        <a class="task-link" href="assignment-06/shopping-list.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-06/shopping-list.html">Task 1: Unordered &rarr;</a>
                     </li>
                     <li class="task-item">
                         <span class="task-name">canteen-menu.html</span>
-                        <a class="task-link" href="assignment-06/canteen-menu.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-06/canteen-menu.html">Task 2: Nested Ordered &rarr;</a>
                     </li>
                     <li class="task-item">
                         <span class="task-name">faq.html</span>
-                        <a class="task-link" href="assignment-06/faq.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-06/faq.html">Task 3: Description List &rarr;</a>
                     </li>
                 </ul>
+                <div class="card-footer-action">
+                    <a href="assignment-06/shopping-list.html" class="launch-hub-btn">Open Lab 06 &rarr;</a>
+                </div>
             </article>
 
             <!-- Assignment 7 -->
-            <article class="card">
+            <article class="card" data-category="html">
                 <div class="card-header">
                     <span class="lab-number">Assignment 07</span>
+                    <span class="lab-category">HTML5</span>
                 </div>
                 <h2>About Me Page</h2>
                 <p class="card-aim">Semantic HTML5 tags: header, nav, main, section, and contact mailto footer.</p>
                 <ul class="tasks-list">
                     <li class="task-item">
                         <span class="task-name">about-me.html</span>
-                        <a class="task-link" href="assignment-07/about-me.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-07/about-me.html">Preview Semantic Page &rarr;</a>
                     </li>
                 </ul>
+                <div class="card-footer-action">
+                    <a href="assignment-07/about-me.html" class="launch-hub-btn">Open Lab 07 &rarr;</a>
+                </div>
             </article>
 
             <!-- Assignment 8 -->
-            <article class="card">
+            <article class="card" data-category="html">
                 <div class="card-header">
                     <span class="lab-number">Assignment 08</span>
+                    <span class="lab-category">HTML5 Forms</span>
                 </div>
-                <h2>Sign-Up Forms and Choices</h2>
+                <h2>Sign-Up Forms &amp; Choices</h2>
                 <p class="card-aim">Labelled form controls, radio groups, select dropdowns, and client validation.</p>
                 <ul class="tasks-list">
                     <li class="task-item">
                         <span class="task-name">signup.html</span>
-                        <a class="task-link" href="assignment-08/signup.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-08/signup.html">Task 1: Sign-Up Form &rarr;</a>
                     </li>
                     <li class="task-item">
                         <span class="task-name">choices.html</span>
-                        <a class="task-link" href="assignment-08/choices.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-08/choices.html">Task 2: Radio &amp; Select &rarr;</a>
                     </li>
                     <li class="task-item">
                         <span class="task-name">signup-required.html</span>
-                        <a class="task-link" href="assignment-08/signup-required.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-08/signup-required.html">Task 3: Validation &rarr;</a>
                     </li>
                 </ul>
+                <div class="card-footer-action">
+                    <a href="assignment-08/signup.html" class="launch-hub-btn">Open Lab 08 &rarr;</a>
+                </div>
             </article>
 
             <!-- Assignment 9 -->
-            <article class="card">
+            <article class="card" data-category="html">
                 <div class="card-header">
                     <span class="lab-number">Assignment 09</span>
+                    <span class="lab-category">HTML5 Tables</span>
                 </div>
-                <h2>Tables with Headers & Footers</h2>
+                <h2>Tables with Headers &amp; Footers</h2>
                 <p class="card-aim">Structured tables with thead, tbody, tfoot, captions, and accessibility scopes.</p>
                 <ul class="tasks-list">
                     <li class="task-item">
                         <span class="task-name">marks.html</span>
-                        <a class="task-link" href="assignment-09/marks.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-09/marks.html">Task 1: Marks Table &rarr;</a>
                     </li>
                     <li class="task-item">
                         <span class="task-name">marks-average.html</span>
-                        <a class="task-link" href="assignment-09/marks-average.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-09/marks-average.html">Task 2: Table Footer &rarr;</a>
                     </li>
                     <li class="task-item">
                         <span class="task-name">marks-accessible.html</span>
-                        <a class="task-link" href="assignment-09/marks-accessible.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-09/marks-accessible.html">Task 3: A11y Scopes &rarr;</a>
                     </li>
                 </ul>
+                <div class="card-footer-action">
+                    <a href="assignment-09/marks.html" class="launch-hub-btn">Open Lab 09 &rarr;</a>
+                </div>
             </article>
 
             <!-- Assignment 10 -->
-            <article class="card">
+            <article class="card" data-category="css">
                 <div class="card-header">
                     <span class="lab-number">Assignment 10</span>
+                    <span class="lab-category">CSS3</span>
                 </div>
                 <h2>CSS Fundamentals</h2>
                 <p class="card-aim">Inline, internal, and external stylesheets with element, class, and ID selectors.</p>
                 <ul class="tasks-list">
                     <li class="task-item">
                         <span class="task-name">inline-internal.html</span>
-                        <a class="task-link" href="assignment-10/inline-internal.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-10/inline-internal.html">Task 1: Inline/Internal &rarr;</a>
                     </li>
                     <li class="task-item">
                         <span class="task-name">style.css</span>
-                        <a class="task-link" href="assignment-10/style.css" target="_blank">View CSS &rarr;</a>
+                        <a class="task-link" href="assignment-10/style.css" target="_blank">Task 2: Stylesheet &rarr;</a>
                     </li>
                     <li class="task-item">
                         <span class="task-name">linked.html</span>
-                        <a class="task-link" href="assignment-10/linked.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-10/linked.html">Task 3: Linked Styles &rarr;</a>
                     </li>
                 </ul>
+                <div class="card-footer-action">
+                    <a href="assignment-10/inline-internal.html" class="launch-hub-btn">Open Lab 10 &rarr;</a>
+                </div>
             </article>
 
             <!-- Assignment 11 -->
-            <article class="card">
+            <article class="card" data-category="css">
                 <div class="card-header">
                     <span class="lab-number">Assignment 11</span>
+                    <span class="lab-category">CSS3</span>
                 </div>
                 <h2>Units and CSS Variables</h2>
                 <p class="card-aim">Comparing px, %, rem units and defining design tokens with :root variables.</p>
                 <ul class="tasks-list">
                     <li class="task-item">
                         <span class="task-name">units.html</span>
-                        <a class="task-link" href="assignment-11/units.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-11/units.html">Task 1: CSS Units &rarr;</a>
                     </li>
                     <li class="task-item">
                         <span class="task-name">variables.html</span>
-                        <a class="task-link" href="assignment-11/variables.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-11/variables.html">Task 2: CSS Variables &rarr;</a>
                     </li>
                     <li class="task-item">
-                        <span class="task-name">tokens.css</span>
-                        <a class="task-link" href="assignment-11/tokens.css" target="_blank">View CSS &rarr;</a>
+                        <span class="task-name">tokens.html</span>
+                        <a class="task-link" href="assignment-11/tokens.html">Task 3: Design Tokens &rarr;</a>
                     </li>
                 </ul>
+                <div class="card-footer-action">
+                    <a href="assignment-11/units.html" class="launch-hub-btn">Open Lab 11 &rarr;</a>
+                </div>
             </article>
 
             <!-- Assignment 12 -->
-            <article class="card">
+            <article class="card" data-category="css">
                 <div class="card-header">
                     <span class="lab-number">Assignment 12</span>
+                    <span class="lab-category">CSS3</span>
                 </div>
-                <h2>Box Model, Cards & Scrolling</h2>
+                <h2>Box Model, Cards &amp; Scrolling</h2>
                 <p class="card-aim">content-box vs border-box, rounded card design, and overflow scroll containers.</p>
                 <ul class="tasks-list">
                     <li class="task-item">
                         <span class="task-name">box-model.html</span>
-                        <a class="task-link" href="assignment-12/box-model.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-12/box-model.html">Task 1: Box Sizing &rarr;</a>
                     </li>
                     <li class="task-item">
                         <span class="task-name">card.html</span>
-                        <a class="task-link" href="assignment-12/card.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-12/card.html">Task 2: Card Design &rarr;</a>
                     </li>
                     <li class="task-item">
                         <span class="task-name">scroll.html</span>
-                        <a class="task-link" href="assignment-12/scroll.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-12/scroll.html">Task 3: Scroll Box &rarr;</a>
                     </li>
                 </ul>
+                <div class="card-footer-action">
+                    <a href="assignment-12/box-model.html" class="launch-hub-btn">Open Lab 12 &rarr;</a>
+                </div>
             </article>
 
             <!-- Assignment 13 -->
-            <article class="card">
+            <article class="card" data-category="css">
                 <div class="card-header">
                     <span class="lab-number">Assignment 13</span>
+                    <span class="lab-category">CSS3 Layouts</span>
                 </div>
                 <h2>Flexbox Layouts</h2>
                 <p class="card-aim">Horizontal navigation bars, centered item alignments, and responsive flex-wrap.</p>
                 <ul class="tasks-list">
                     <li class="task-item">
                         <span class="task-name">nav-flex.html</span>
-                        <a class="task-link" href="assignment-13/nav-flex.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-13/nav-flex.html">Task 1: Flex Navbar &rarr;</a>
                     </li>
                     <li class="task-item">
                         <span class="task-name">centred-cards.html</span>
-                        <a class="task-link" href="assignment-13/centred-cards.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-13/centred-cards.html">Task 2: Centred Cards &rarr;</a>
                     </li>
                     <li class="task-item">
                         <span class="task-name">wrapping-cards.html</span>
-                        <a class="task-link" href="assignment-13/wrapping-cards.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-13/wrapping-cards.html">Task 3: Wrapping Cards &rarr;</a>
                     </li>
                 </ul>
+                <div class="card-footer-action">
+                    <a href="assignment-13/nav-flex.html" class="launch-hub-btn">Open Lab 13 &rarr;</a>
+                </div>
             </article>
 
             <!-- Assignment 14 -->
-            <article class="card">
+            <article class="card" data-category="css">
                 <div class="card-header">
                     <span class="lab-number">Assignment 14</span>
+                    <span class="lab-category">CSS3 Layouts</span>
                 </div>
                 <h2>CSS Grid Layouts</h2>
                 <p class="card-aim">Fractional unit columns, auto-fill minmax responsive galleries, and named areas.</p>
                 <ul class="tasks-list">
                     <li class="task-item">
                         <span class="task-name">grid-first.html</span>
-                        <a class="task-link" href="assignment-14/grid-first.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-14/grid-first.html">Task 1: Equal Grid &rarr;</a>
                     </li>
                     <li class="task-item">
                         <span class="task-name">gallery.html</span>
-                        <a class="task-link" href="assignment-14/gallery.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-14/gallery.html">Task 2: Auto-Fill Gallery &rarr;</a>
                     </li>
                     <li class="task-item">
                         <span class="task-name">dashboard-areas.html</span>
-                        <a class="task-link" href="assignment-14/dashboard-areas.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-14/dashboard-areas.html">Task 3: Dashboard Areas &rarr;</a>
                     </li>
                 </ul>
+                <div class="card-footer-action">
+                    <a href="assignment-14/grid-first.html" class="launch-hub-btn">Open Lab 14 &rarr;</a>
+                </div>
             </article>
 
             <!-- Assignment 15 -->
-            <article class="card">
+            <article class="card" data-category="css">
                 <div class="card-header">
                     <span class="lab-number">Assignment 15</span>
+                    <span class="lab-category">Responsive Web</span>
                 </div>
                 <h2>Responsive Media Queries</h2>
                 <p class="card-aim">Mobile-first breakpoint design, fluid responsive images, and scalable rem typography.</p>
                 <ul class="tasks-list">
                     <li class="task-item">
                         <span class="task-name">mobile-first.html</span>
-                        <a class="task-link" href="assignment-15/mobile-first.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-15/mobile-first.html">Task 1: Mobile-First Cards &rarr;</a>
                     </li>
                     <li class="task-item">
                         <span class="task-name">responsive-image.html</span>
-                        <a class="task-link" href="assignment-15/responsive-image.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-15/responsive-image.html">Task 2: Fluid Image &rarr;</a>
                     </li>
                     <li class="task-item">
                         <span class="task-name">responsive-text.html</span>
-                        <a class="task-link" href="assignment-15/responsive-text.html" target="_blank">Preview &rarr;</a>
+                        <a class="task-link" href="assignment-15/responsive-text.html">Task 3: REM Typography &rarr;</a>
                     </li>
                 </ul>
+                <div class="card-footer-action">
+                    <a href="assignment-15/mobile-first.html" class="launch-hub-btn">Open Lab 15 &rarr;</a>
+                </div>
             </article>
 
         </div>
     </main>
 
     <footer>
-        <p>Invertis University &bull; B.Tech Computer Science & Engineering (Third Year)</p>
-        <p style="margin-top: 0.5rem; color: #64748b;">HTML & CSS Development Lab (BCS554) &bull; Submitted by Karan [Roll No: To be filled]</p>
+        <p>Invertis University, Bareilly &bull; B.Tech Computer Science &amp; Engineering (Third Year)</p>
+        <p style="margin-top: 0.5rem; color: #64748b;">HTML &amp; CSS Development Lab (BCS554) &bull; Submitted by Karan [Roll No: To be filled]</p>
     </footer>
+
+    <!-- Interactive Client Filtering Script -->
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const cardsGrid = document.getElementById('cardsGrid');
+        const cards = cardsGrid.getElementsByClassName('card');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        let currentFilter = 'all';
+
+        searchInput.addEventListener('input', applyFilters);
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentFilter = btn.getAttribute('data-filter');
+                applyFilters();
+            });
+        });
+
+        function applyFilters() {
+            const query = searchInput.value.toLowerCase().trim();
+
+            Array.from(cards).forEach(card => {
+                const category = card.getAttribute('data-category');
+                const text = card.textContent.toLowerCase();
+
+                const matchesFilter = (currentFilter === 'all') || (category === currentFilter);
+                const matchesSearch = query === '' || text.includes(query);
+
+                if (matchesFilter && matchesSearch) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
 
 </body>
 </html>
