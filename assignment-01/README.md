@@ -1,7 +1,7 @@
 # Assignment 1: Starting a Git Repository
 
 **Student Name:** Karan  
-**Roll Number:** [Roll No: To be filled]  
+**Roll Number:** 2410303221  
 **Course:** B.Tech CSE - Third Year | HTML & CSS Development Lab (BCS554)  
 **Institution:** Invertis University, Bareilly  
 
@@ -13,7 +13,7 @@ Start a Git repository for your lab folder and save your work with commits.
 ## Tasks & Execution Summary
 1. **Task 1: Initialize Git Repository & Set Local Identity**
    - Created folder `html-lab` and ran `git init`.
-   - Set local repository identity using `git config --local user.name "Karan"` and `git config --local user.email "karan@invertis.edu"`.
+   - Set local repository identity using `git config --local user.name "Karan"` and `git config --local user.email "evercoderbykaran@gmail.com"`.
    - Verified settings using `git config user.name` and `git config user.email`.
 
 2. **Task 2: Initial Commit**

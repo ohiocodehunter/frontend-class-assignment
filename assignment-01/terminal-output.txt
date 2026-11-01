@@ -3,16 +3,16 @@ $ mkdir html-lab && cd html-lab
 $ git init -b main
 Initialized empty Git repository in /private/var/folders/15/g03jrnmx593chp02kyq3w1q80000gn/T/tmp.vJoA36cR7I/html-lab/.git/
 $ git config --local user.name "Karan"
-$ git config --local user.email "karan@invertis.edu"
+$ git config --local user.email "evercoderbykaran@gmail.com"
 $ git config user.name
 Karan
 $ git config user.email
-karan@invertis.edu
+evercoderbykaran@gmail.com
 
 $ cat << "EOF" > index.html
 <!--
   Name: Karan
-  Roll Number: [Roll No: To be filled]
+  Roll Number: 2410303221
   Assignment: Assignment 1 - Starting a Git Repository
 -->
 <!DOCTYPE html>
